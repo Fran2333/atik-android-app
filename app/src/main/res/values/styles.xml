@@ -8,4 +8,93 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--Splashcreen style -->
+    <style name="sc_style.">
+        <item name="android:background">@color/splash_screen_color</item>
+        <item name="android:color">@color/bone_color</item>
+    </style>
+    
+    <!--Splashcreen content style-->
+    <style name="sc_content_style">
+        <item name="android:height">@dimen/photo_height</item>
+        <item name="android:width">@dimen/photo_width</item>
+    </style>
+    
+    <!--Splashcreen bar status style-->
+    <style name="sc_bar_status_style">
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:height">@dimen/bs_height</item>
+        <item name="android:width">@dimen/bs_width</item>
+
+    </style>
+
+    <!--Principal view style-->
+    <style name="pv_style">
+    </style>
+    
+    <!-- Button Register style-->
+    <style name="btn_register_style">
+        <item name="android:background">@color/bone_color</item>
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:textSize">@dimen/btn_register_text_size</item>
+        <item name="android:height">@dimen/btn_register_height</item>
+        <item name="android:width">@dimen/btn_register_width</item>
+        <item name="android:text">@string/btn_register_name</item>
+        <item name="android:textColor">@color/base_color_3</item>
+    </style>
+
+    <!-- Button Login style-->
+    <style name="btn_login_style">
+        <item name="android:background">@color/bone_color</item>
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:textSize">@dimen/btn_login_text_size</item>
+        <item name="android:height">@dimen/btn_login_height</item>
+        <item name="android:width">@dimen/btn_register_width</item>
+        <item name="android:text">@string/btn_login_name</item>
+        <item name="android:textColor">@color/base_color_3</item>
+    </style>
+
+    <!-- Button confirm style-->
+    <style name="btn_confirm_style">
+        <item name="android:background">@color/bone_color</item>
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:textSize">@dimen/btn_confirm_text_size</item>
+        <item name="android:height">@dimen/btn_confirm_height</item>
+        <item name="android:width">@dimen/btn_confirm_width</item>
+        <item name="android:text">@string/btn_confirm_name</item>
+        <item name="android:textColor">@color/base_color_3</item>
+    </style>
+
+    <!-- Button add style-->
+    <style name="btn_add_style">
+        <item name="android:background">@color/bone_color</item>
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:textSize">@dimen/btn_confirm_text_size</item>
+        <item name="android:height">@dimen/btn_confirm_height</item>
+        <item name="android:width">@dimen/btn_confirm_width</item>
+        <item name="android:text">@string/btn_add_name</item>
+        <item name="android:textColor">@color/base_color_3</item>
+    </style>
+
+    <!--Title text style-->
+    <style name="title_text_style">
+        <item name="android:fontFamily">@font/halant_semibold</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/size_title_letter1</item>
+    </style>
+
+    <!--Content text style-->
+    <style name="content_text_style">
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/size_content_letter</item>
+    </style>
+
+    <!--Icon style-->
+    <style name="icon_style">
+        <item name="android:color">@color/icons_fields_color</item>
+    </style>
+
+
+
 </resources>
