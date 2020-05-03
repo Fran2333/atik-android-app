@@ -25,15 +25,10 @@
     <dimen name="promotions_width"></dimen>
     <dimen name="orders_width"></dimen>
 
-    <!-- Button Register dimens-->
-    <dimen name="btn_register_height">40dp</dimen>
-    <dimen name="btn_register_width">108dp</dimen>
-    <dimen name="btn_register_text_size">16sp</dimen>
-
-    <!-- Button Login dimens-->
-    <dimen name="btn_login_height">40dp</dimen>
-    <dimen name="btn_login_width">108dp</dimen>
-    <dimen name="btn_login_text_size">16sp</dimen>
+    <!-- Button Register/Login dimens-->
+    <dimen name="btn_register_login_height">40dp</dimen>
+    <dimen name="btn_register_login_width">108dp</dimen>
+    <dimen name="btn_register_login_text_size">16sp</dimen>
 
     <!-- Button confirm order-->
     <dimen name="btn_confirm_height">wrap_content</dimen>

@@ -9,7 +9,7 @@
     </style>
 
     <!--Splashcreen style -->
-    <style name="sc_style.">
+    <style name="sc_style">
         <item name="android:background">@color/splash_screen_color</item>
         <item name="android:color">@color/bone_color</item>
     </style>
@@ -36,9 +36,9 @@
     <style name="btn_register_style">
         <item name="android:background">@color/bone_color</item>
         <item name="android:fontFamily">@font/halant</item>
-        <item name="android:textSize">@dimen/btn_register_text_size</item>
-        <item name="android:height">@dimen/btn_register_height</item>
-        <item name="android:width">@dimen/btn_register_width</item>
+        <item name="android:textSize">@dimen/btn_register_login_text_size</item>
+        <item name="android:height">@dimen/btn_register_login_height</item>
+        <item name="android:width">@dimen/btn_register_login_width</item>
         <item name="android:text">@string/btn_register_name</item>
         <item name="android:textColor">@color/base_color_3</item>
     </style>
