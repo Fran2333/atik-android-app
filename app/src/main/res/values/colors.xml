@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="base_color_1">#0D2031</color>
+    <color name="splash_screen_color">#012C49</color>
+    <color name="base_color_2">#132a52</color>
+    <color name="base_color_3">#132a5d</color>
+    <color name="bone_color">#fff3f3</color>
+    <color name="icons_fields_color">#A6A6A6</color>
 </resources>

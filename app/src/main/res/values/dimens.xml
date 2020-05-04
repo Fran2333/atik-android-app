@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Margins-->
+    <dimen name="margin_e">8dp</dimen>
+    <dimen name="margin_st">16dp</dimen>
+    <dimen name="margin_tf">24dp</dimen>
+    <dimen name="margin_tt">32dp</dimen>
+    <dimen name="margin_ft">40dp</dimen>
+
+    <!--Letter size-->
+    <dimen name="size_title_letter1">24sp</dimen>
+    <dimen name="size_title_letter2">32sp</dimen>
+    <dimen name="size_content_letter">16sp</dimen>
+    
+    <!--Splashcreen dimens-->
+    <dimen name="photo_height">75dp</dimen>
+    <dimen name="photo_width">75dp</dimen>
+
+    <!--Principal view dimens-->
+    <dimen name="icon_menu_height"></dimen>
+    <dimen name="promotions_height"></dimen>
+    <dimen name="orders_height"></dimen>
+    <dimen name="icon_menu_width"></dimen>
+    <dimen name="promotions_width"></dimen>
+    <dimen name="orders_width"></dimen>
+
+    <!-- Button Register/Login dimens-->
+    <dimen name="btn_register_login_height">40dp</dimen>
+    <dimen name="btn_register_login_width">108dp</dimen>
+    <dimen name="btn_register_login_text_size">16sp</dimen>
+
+    <!-- Button confirm order-->
+    <dimen name="btn_confirm_height">40dp</dimen>
+    <dimen name="btn_confirm_width">108dp</dimen>
+    <dimen name="btn_confirm_text_size">16sp</dimen>
+
+    <!-- Bar status dimens-->
+    <dimen name="bs_height">20dp</dimen>
+    <dimen name="bs_width">100dp</dimen>
+
+</resources>
