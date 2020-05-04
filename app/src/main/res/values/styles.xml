@@ -9,7 +9,7 @@
     </style>
 
     <!--Splashcreen style -->
-    <style name="sc_style.">
+    <style name="sc_style">
         <item name="android:background">@color/splash_screen_color</item>
         <item name="android:color">@color/bone_color</item>
     </style>
