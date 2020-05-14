@@ -40,6 +40,7 @@
     <dimen name="bs_width">100dp</dimen>
 
 
+
     <!-- Tablet portrait dimens//principal view-->
     <dimen name="tv_menu_wdimen_tportrait">300dp</dimen>
     <dimen name="tv_menu_hdimen_tportrait">832dp</dimen>
@@ -52,12 +53,16 @@
     <dimen name="title_text_content_dimen_ppview">32sp</dimen>
     <dimen name ="content_text_content_dimen_ppview">24sp</dimen>
 
+
+
     <!--register dimens-->
     <dimen name="switch_text_size">12sp</dimen>
     <dimen name="text_size_forms">16sp</dimen>
     <dimen name="form_width">0dp</dimen>
     <dimen name="form_heigth_textView">25dp</dimen>
     <dimen name="form_heigth_editText">45dp</dimen>
+
+
 
 
 </resources>
