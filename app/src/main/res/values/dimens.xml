@@ -17,13 +17,13 @@
     <dimen name="photo_height">75dp</dimen>
     <dimen name="photo_width">75dp</dimen>
 
-    <!--Principal view dimens-->
+    <!--Principal view dimens
     <dimen name="icon_menu_height"></dimen>
     <dimen name="promotions_height"></dimen>
     <dimen name="orders_height"></dimen>
     <dimen name="icon_menu_width"></dimen>
     <dimen name="promotions_width"></dimen>
-    <dimen name="orders_width"></dimen>
+    <dimen name="orders_width"></dimen>-->
 
     <!-- Button Register/Login dimens-->
     <dimen name="btn_register_login_height">40dp</dimen>
@@ -38,5 +38,12 @@
     <!-- Bar status dimens-->
     <dimen name="bs_height">20dp</dimen>
     <dimen name="bs_width">100dp</dimen>
+
+    <!--register dimens-->
+    <dimen name="switch_text_size">12sp</dimen>
+    <dimen name="text_size_forms">16sp</dimen>
+    <dimen name="form_width">0dp</dimen>
+    <dimen name="form_heigth_textView">25dp</dimen>
+    <dimen name="form_heigth_editText">45dp</dimen>
 
 </resources>
