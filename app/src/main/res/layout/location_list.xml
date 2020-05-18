@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:orientation="vertical"
+    tools:context=".ListElement">
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_e"
+        android:layout_marginRight="@dimen/margin_e"
+        android:layout_toEndOf="@+id/locationIcon"
+        android:fontFamily="@font/halant_semibold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/margin_e"
+        android:layout_marginTop="@dimen/margin_e"
+        android:layout_marginRight="@dimen/margin_e"
+        android:layout_marginBottom="@dimen/margin_st"
+        android:layout_toEndOf="@id/locationIcon"
+        android:fontFamily="@font/halant"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/locationIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_st"
+        android:layout_marginRight="@dimen/margin_e" />
+
+
+</RelativeLayout>
