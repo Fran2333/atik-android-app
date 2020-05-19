@@ -12,41 +12,42 @@
     <ImageView
         android:id="@+id/chef_image"
         style="@style/sc_content_style"
-        android:layout_width="@dimen/photo_height"
-        android:layout_height="@dimen/photo_width"
-        android:layout_marginStart="@dimen/margin_tf"
-        android:layout_marginEnd="@dimen/margin_tf"
+        android:layout_width="@dimen/photo_twidth"
+        android:layout_height="@dimen/photo_theight"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cake_image"
-        app:layout_constraintStart_toEndOf="@+id/ingredients_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499"
         app:srcCompat="@drawable/chef" />
 
     <ImageView
         android:id="@+id/ingredients_image"
-        android:layout_width="@dimen/photo_width"
-        android:layout_height="@dimen/photo_height"
-        android:layout_marginStart="@dimen/margin_tf"
+        android:layout_width="@dimen/photo_twidth"
+        android:layout_height="@dimen/photo_theight"
+        android:layout_marginStart="@dimen/margin_tt"
         android:src="@drawable/ingredientes"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chef_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/cake_image"
-        android:layout_width="@dimen/photo_width"
-        android:layout_height="@dimen/photo_height"
-        android:layout_marginEnd="@dimen/margin_tf"
+        android:layout_width="@dimen/photo_twidth"
+        android:layout_height="@dimen/photo_theight"
+        android:layout_marginEnd="@dimen/margin_tt"
         android:src="@drawable/pastel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chef_image"
         app:layout_constraintTop_toTopOf="parent" />
 
-  <ProgressBar
+    <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="@dimen/bs_width"
-        android:layout_height="@dimen/bs_height"
+        android:layout_width="@dimen/bs_tablet_width"
+        android:layout_height="@dimen/bs_tablet_height"
         android:indeterminate="true"
         android:indeterminateTint="@color/bone_color"
         android:indeterminateTintMode="src_atop"
@@ -54,8 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chef_image"
-        app:layout_constraintVertical_bias="0.13" />
-
+        app:layout_constraintVertical_bias="0.39999998" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

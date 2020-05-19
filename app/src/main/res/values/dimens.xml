@@ -17,6 +17,10 @@
     <dimen name="photo_height">75dp</dimen>
     <dimen name="photo_width">75dp</dimen>
 
+    <!--Splashcreen dimens tablet-->
+    <dimen name="photo_theight">100dp</dimen>
+    <dimen name="photo_twidth">100dp</dimen>
+
     <!--Principal view dimens-->
     <dimen name="icon_menu_height"></dimen>
     <dimen name="promotions_height"></dimen>
@@ -39,4 +43,11 @@
     <dimen name="bs_height">20dp</dimen>
     <dimen name="bs_width">100dp</dimen>
 
+    <!--Bar status dimens tablet -->
+    <dimen name="bs_tablet_height">25dp</dimen>
+    <dimen name="bs_tablet_width">280dp</dimen>
+
+    <!--Bar status landscape dimens table-->
+    <dimen name="bs_tablet_landscape_height">25dp</dimen>
+    <dimen name="bs_tablet_landscape_width">350dp</dimen>
 </resources>
