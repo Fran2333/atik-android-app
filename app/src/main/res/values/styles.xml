@@ -44,6 +44,18 @@
         <item name="android:fontFamily">@font/halant</item>
     </style>
 
+    <!--Title principal view style// landscape-->
+    <style name="title_ppview_landscape_style">
+        <item name="android:textSize">@dimen/title_text_content_dimen_landscape_ppview</item>
+        <item name="android:fontFamily">@font/halant_semibold</item>
+    </style>
+
+    <!--Content principal view style// landscape-->
+    <style name="content_ppview_landscape_style">
+        <item name="android:textSize">@dimen/content_text_content_dimen_landscape_ppview</item>
+        <item name="android:fontFamily">@font/halant</item>
+    </style>
+
     <!--Image principal view style-->
     <style name="iv_ppview_style">
         <item name="android:width">@dimen/iv_wdimen_tportrait</item>

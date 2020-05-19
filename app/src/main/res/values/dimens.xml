@@ -52,4 +52,13 @@
     <dimen name="title_text_content_dimen_ppview">32sp</dimen>
     <dimen name ="content_text_content_dimen_ppview">24sp</dimen>
 
+
+    <!-- Tablet landscape dimens// principal view-->
+    <dimen name="title_text_content_dimen_landscape_ppview">28sp</dimen>
+    <dimen name="content_text_content_dimen_landscape_ppview">20sp</dimen>
+    <dimen name="tv_menu_wdimen_landscape">482dp</dimen>
+    <dimen name="tv_menu_hdimen_landscape">600dp</dimen>
+    <dimen name="tv_pp_wdimen_landscape">480dp</dimen>
+    <dimen name="tv_pp_hdimen_landscape">300dp</dimen>
+
 </resources>
