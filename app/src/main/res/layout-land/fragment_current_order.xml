@@ -137,7 +137,7 @@
         android:layout_height="37dp"
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="80dp"
-        android:text="@string/completa_tu_orden"
+        android:text="@string/btn_confirm_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
