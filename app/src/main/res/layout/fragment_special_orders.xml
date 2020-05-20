@@ -281,18 +281,18 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="210dp"
-                android:layout_height="173dp"
+                android:layout_width="204dp"
+                android:layout_height="124dp"
                 android:layout_marginStart="@dimen/margin_st"
-                android:layout_marginTop="@dimen/margin_e"
+                android:layout_marginTop="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_tf"
                 android:src="@drawable/logo_3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.418"
                 app:layout_constraintStart_toEndOf="@+id/buttonImagen"
                 app:layout_constraintTop_toBottomOf="@+id/Imagen"
-                app:layout_constraintVertical_bias="0.033" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/buttonImagen"
@@ -327,15 +327,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
-                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_tf"
                 android:layout_marginEnd="@dimen/margin_st"
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/Bottom_special_orders_completar_orden"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="1.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </LinearLayout>

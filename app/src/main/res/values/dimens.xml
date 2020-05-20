@@ -59,6 +59,9 @@
     <dimen name="form_heigth_textView">25dp</dimen>
     <dimen name="form_heigth_editText">45dp</dimen>
 
+    <!--Text size tablet-->
+    <dimen name="text_size_tablet">20sp</dimen>
+    <dimen name="text_size_tablet_tittle">28sp</dimen>
 
 
 
