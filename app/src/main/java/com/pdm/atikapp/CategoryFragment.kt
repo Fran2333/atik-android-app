@@ -1,5 +1,6 @@
 package com.pdm.atikapp
 
+import android.app.Activity
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toolbar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.fragment_category.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * A simple [Fragment] subclass.
@@ -45,16 +45,18 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view: View = inflater.inflate(R.layout.fragment_category, container, false)
 
-        val image = view.findViewById<ImageView>(R.id.category_img)
-        image.setImageResource(R.drawable.ingredientes)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Categoria"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        var lv = view.findViewById<ListView>(R.id.food_list)
-
+        var rv = view.findViewById<RecyclerView>(R.id.food_list)
+        rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         val adapter = CategoryAdapter(context!!, titleArray, descArray, precioArray)
-        lv.adapter = adapter
+        rv.adapter = adapter
 
         return view
     }
