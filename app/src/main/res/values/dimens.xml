@@ -63,6 +63,8 @@
     <dimen name="form_heigth_textView">25dp</dimen>
     <dimen name="form_heigth_editText">45dp</dimen>
 
+    <!--tablets size-->
+    <dimen name="text_content_tablet">20sp</dimen>
 
 
 </resources>

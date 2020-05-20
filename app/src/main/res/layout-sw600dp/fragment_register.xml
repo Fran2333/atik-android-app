@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
+        android:layout_marginTop="@dimen/margin_e"
         android:layout_marginEnd="@dimen/margin_st"
         android:layout_marginBottom="@dimen/margin_st"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,14 +28,17 @@
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_content_tablet" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textName"
         style="@style/form_textview_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:text="@string/textView_register_name"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -45,7 +49,9 @@
     <TextView
         android:id="@+id/textLastName"
         style="@style/form_textview_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:text="@string/textView_register_lastname"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,7 +62,9 @@
     <TextView
         android:id="@+id/textPhone"
         style="@style/form_textview_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:text="@string/textView_register_phone"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,7 +75,8 @@
     <TextView
         android:id="@+id/textMail"
         style="@style/form_textview_style"
-        android:layout_marginTop="@dimen/margin_st"
+        android:layout_marginTop="@dimen/margin_ft"
+        android:textSize="@dimen/text_content_tablet"
         android:text="@string/textView_register_mail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +88,9 @@
     <TextView
         android:id="@+id/textPassword"
         style="@style/form_textview_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:text="@string/textView_register_password"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -90,8 +101,10 @@
     <EditText
         android:id="@+id/editName"
         style="@style/form_edit_text_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
@@ -102,8 +115,10 @@
     <EditText
         android:id="@+id/editLastName"
         style="@style/form_edit_text_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -114,8 +129,10 @@
     <EditText
         android:id="@+id/editPhone"
         style="@style/form_edit_text_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:ems="10"
         android:inputType="phone"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -126,8 +143,10 @@
     <EditText
         android:id="@+id/editMail"
         style="@style/form_edit_text_style"
+        android:layout_marginTop="@dimen/margin_st"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailSubject"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -145,7 +164,7 @@
         android:layout_marginEnd="@dimen/margin_ft"
         android:layout_marginBottom="@dimen/margin_st"
         android:text="@string/textView_register_switch"
-        android:textSize="@dimen/switch_text_size"
+        android:textSize="@dimen/text_size_forms"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -162,6 +181,7 @@
         android:layout_marginTop="@dimen/margin_st"
         android:layout_marginEnd="@dimen/margin_st"
         android:layout_marginBottom="@dimen/margin_st"
+        android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
