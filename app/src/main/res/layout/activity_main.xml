@@ -6,5 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     
-
+<fragment
+    android:id="@+id/fragment_complete_order"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:name="com.pdm.atikapp.FragmentCompleteOrder"/>
 </LinearLayout>

@@ -16,4 +16,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Strings view complete order-->
+    <string name="tittle_textview"><b>Informacion de entrega</b></string>
+    <string name="type_order_textview"><b>Tipo de orden:</b></string>
+    <string name="type_order_btn"><b>Recoger</b></string>
+    <string name="type_order_btn2"><b>A domicilio</b></string>
+    <string name="date_textview"><b>Fecha de entrega:</b></string>
+    <string name="hour_textview"><b>Hora de entrega:</b></string>
+    <string name="phone_textview"><b>Numero de telefono:</b></string>
+    <string name="direction_textview"><b>Direccion de envio:</b></string>
+    <string name="finalizar_btn"><b>Realizar pedido</b></string>
 </resources>
