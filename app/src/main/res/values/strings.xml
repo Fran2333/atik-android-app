@@ -1,7 +1,28 @@
 <resources>
     <string name="app_name">AtikApp</string>
     <string name="btn_login_name">Login</string>
-    <string name="btn_register_name">Registrate</string>
     <string name="btn_confirm_name">Completa tu orden</string>
     <string name="btn_add_name">Agregar a la orden</string>
+
+    <!--Strings view Register-->
+    <string name="textView_register_name"><b>Nombre</b></string>
+    <string name="textView_register_lastname"><b>Apellido</b></string>
+    <string name="textView_register_phone"><b>Telefono</b></string>
+    <string name="textView_register_switch">Recibe alertas de promociones en tu telefono</string>
+    <string name="textView_register_mail"><b>Direccion de correo electronico</b></string>
+    <string name="textView_register_password"><b>Contraseña</b></string>
+    <string name="btn_register_name"><b>Registrate</b></string>
+
+    <!--Strings view special orders-->\
+    <string name="textView_special_orders_escoge_postre"><b>Escoge tu postre:</b></string>
+    <string name="textView_special_orders_escoge_sabor"><b>Escoge el sabor:</b></string>
+    <string name="textView_special_orders_otro"><b>Otro:</b></string>
+    <string name="textView_special_orders_cantidad_porciones"><b>Cantidad de porciones:</b></string>
+    <string name="textView_special_orders_adicionales"><b>Escribe indicaciones adicionales:</b></string>
+    <string name="textView_special_orders_agrega_imagen"><b>Agrega una imagen de referencia:</b></string>
+    <string name="Bottom_special_orders_imagen"><b>Imagen:</b></string>
+    <string name="Bottom_special_orders_completar_orden"><b>Completar tu orden</b></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
