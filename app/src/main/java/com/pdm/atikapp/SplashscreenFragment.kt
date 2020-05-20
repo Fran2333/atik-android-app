@@ -3,6 +3,8 @@ package com.pdm.atikapp
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -12,6 +14,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.fragment.app.FragmentManager
+import androidx.transition.FragmentTransitionSupport
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_splashscreen.*
 
@@ -30,6 +33,7 @@ class SplashscreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val view : View =  inflater.inflate(R.layout.fragment_splashscreen, container, false)
 
+        
         val ttb = AnimationUtils.loadAnimation(this.context, R.anim.zickt)
         val pop = AnimationUtils.loadAnimation(this.context, R.anim.zict);
         val pap = AnimationUtils.loadAnimation(this.context, R.anim.ziit);
@@ -38,12 +42,16 @@ class SplashscreenFragment : Fragment() {
         val sd = view.findViewById(R.id.chef_image) as ImageView
         val ss = view.findViewById(R.id.ingredients_image) as ImageView
 
+
+
         head.startAnimation(ttb)
         sd.startAnimation(pop)
         ss.startAnimation(pap)
 
-
-
+        Handler().postDelayed({
+            startActivity(Intent(this.context, MainActivity::class.java))
+            activity?.finish();
+        },SPLASH_TIME)
 
 
         return view
