@@ -41,7 +41,7 @@
 
     <!-- Bar status dimens-->
     <dimen name="bs_height">20dp</dimen>
-    <dimen name="bs_width">100dp</dimen>
+    <dimen name="bs_width">200dp</dimen>
 
     <!--Bar status dimens tablet -->
     <dimen name="bs_tablet_height">25dp</dimen>
