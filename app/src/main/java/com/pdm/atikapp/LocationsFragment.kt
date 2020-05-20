@@ -33,8 +33,11 @@ class LocationsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as AppCompatActivity).supportActionBar?.title = "Ubicaciones"
         val view: View = inflater.inflate(R.layout.fragment_locations, container, false)
+
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Ubicaciones"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 

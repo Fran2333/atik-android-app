@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".ListElement">
+    android:padding="@dimen/margin_s">
 
     <TextView
         android:id="@+id/header"
@@ -21,23 +21,23 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
         android:layout_marginLeft="@dimen/margin_e"
         android:layout_marginTop="@dimen/margin_e"
-        android:layout_marginBottom="@dimen/margin_e"
         android:layout_marginRight="@dimen/margin_e"
+        android:layout_marginBottom="@dimen/margin_e"
         android:fontFamily="@font/halant"
-        android:textSize="14sp"
-        android:layout_below="@+id/header"/>
+        android:textSize="14sp" />
 
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_gravity="top|end"
-        android:fontFamily="@font/halant_semibold"
-        android:textSize="18sp"
         android:layout_marginTop="@dimen/margin_e"
-        android:layout_alignParentRight="true" />
+        android:fontFamily="@font/halant_semibold"
+        android:textSize="18sp" />
 
 </RelativeLayout>

@@ -39,9 +39,7 @@ class CategoryAdapter(
     }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        print("hello")
         val listView = inflater.inflate(R.layout.list_element, parent, false)
-        // Return a new holder instance
         return ViewHolder(listView)
     }
 

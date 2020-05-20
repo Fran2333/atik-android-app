@@ -44,8 +44,10 @@ class CurrentOrderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as AppCompatActivity).supportActionBar?.title = "Tu orden"
         val view: View = inflater.inflate(R.layout.fragment_current_order, container, false)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Orden Actual"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
         val label: TextView = view.findViewById(R.id.current_order_label)
         label.setText("${titleArray.size.toString()} productos en tu orden");

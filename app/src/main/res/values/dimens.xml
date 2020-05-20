@@ -61,8 +61,8 @@
     <dimen name="form_width">0dp</dimen>
     <dimen name="form_heigth_textView">25dp</dimen>
     <dimen name="form_heigth_editText">45dp</dimen>
-
-
+    <dimen name="margin_sm">8dp</dimen>
+    <dimen name="margin_s">4dp</dimen>
 
 
 </resources>

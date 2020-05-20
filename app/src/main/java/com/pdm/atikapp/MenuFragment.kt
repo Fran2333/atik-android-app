@@ -37,8 +37,10 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as AppCompatActivity).supportActionBar?.title = "Menú"
         val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Menu"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
         var gv = view.findViewById<GridView>(R.id.mainGrid)
 
