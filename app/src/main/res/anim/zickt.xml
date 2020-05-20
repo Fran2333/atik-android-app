@@ -3,7 +3,7 @@
     android:duration="1580"
     android:fillAfter="true"
     android:fillBefore="true"
-    android:startOffset="4000">
+    android:startOffset="2800">
 
     <translate
         android:fromXDelta="0"

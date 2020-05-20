@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.fragment_splashscreen.*
  */
 class SplashscreenFragment : Fragment() {
 
-    private val SPLASH_TIME : Long = 5000
+    private val SPLASH_TIME : Long = 4500
     @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,15 +43,14 @@ class SplashscreenFragment : Fragment() {
         val ss = view.findViewById(R.id.ingredients_image) as ImageView
 
 
-
         head.startAnimation(ttb)
         sd.startAnimation(pop)
         ss.startAnimation(pap)
 
-        Handler().postDelayed({
-            startActivity(Intent(this.context, MainActivity::class.java))
-            activity?.finish();
-        },SPLASH_TIME)
+       Handler().postDelayed({
+           startActivity(Intent(this.context, MainActivity::class.java))
+           activity?.finish();
+      },SPLASH_TIME)
 
 
         return view
