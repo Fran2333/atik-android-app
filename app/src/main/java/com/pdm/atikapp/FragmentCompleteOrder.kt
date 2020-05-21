@@ -15,6 +15,8 @@ class FragmentCompleteOrder : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        this.activity?.setTitle(R.string.view_complete_order_name)
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_complete_order, container, false)
     }
