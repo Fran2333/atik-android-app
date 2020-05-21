@@ -15,6 +15,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        this.activity?.setTitle(R.string.view_register_name)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
