@@ -14,10 +14,5 @@
         android:layout_height="match_parent"
         android:name="com.pdm.atikapp.PromotionFragment"/>
 
-    <fragment
-        android:id="@+id/fragment_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.pdm.atikapp.content_item"/>
 
 </LinearLayout>
