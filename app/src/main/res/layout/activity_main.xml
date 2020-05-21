@@ -4,20 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-    
+
     <fragment
-        android:id="@+id/fragment_splashscreen"
+        android:id="@+id/fragment_principalView"
+        android:name="com.pdm.atikapp.PrincipalViewFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.pdm.atikapp.SplashscreenFragment"/>
-
-
-<fragment
-    android:id="@+id/fragment_principalView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:name="com.pdm.atikapp.PrincipalViewFragment"/>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
