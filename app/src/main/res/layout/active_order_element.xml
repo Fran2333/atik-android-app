@@ -5,42 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="@dimen/margin_st">
 
 
     <TextView
         android:id="@+id/order_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/margin_e"
         android:fontFamily="@font/halant_semibold"
-        android:textSize="18sp" />
+        android:textSize="@dimen/medium_text" />
 
     <TextView
-    android:id="@+id/state"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/order_id"
-    android:fontFamily="@font/halant"
-    android:textSize="16sp" />
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/order_id"
+        android:fontFamily="@font/halant"
+        android:textSize="@dimen/size_content_letter" />
 
     <TextView
         android:id="@+id/items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_e"
         android:fontFamily="@font/halant"
-        android:textSize="12sp"
-        android:textColor="@color/base_color_1"/>
+        android:textColor="@color/base_color_1"
+        android:textSize="@dimen/small_text" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/items"
+        android:layout_alignParentRight="true"
         android:fontFamily="@font/halant"
-        android:textSize="12sp" />
+        android:textSize="@dimen/small_text" />
 
 </RelativeLayout>

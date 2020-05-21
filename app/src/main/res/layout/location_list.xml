@@ -4,9 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
-    android:orientation="vertical"
-    tools:context=".ListElement">
+    android:layout_height="150dp"
+    android:orientation="vertical" >
 
 
     <TextView
@@ -18,7 +17,7 @@
         android:layout_marginRight="@dimen/margin_e"
         android:layout_toEndOf="@+id/locationIcon"
         android:fontFamily="@font/halant_semibold"
-        android:textSize="18sp" />
+        android:textSize="@dimen/medium_text" />
 
     <TextView
         android:id="@+id/text"
@@ -31,15 +30,16 @@
         android:layout_marginBottom="@dimen/margin_st"
         android:layout_toEndOf="@id/locationIcon"
         android:fontFamily="@font/halant"
-        android:textSize="16sp" />
+        android:textSize="@dimen/size_content_letter" />
 
     <ImageView
         android:id="@+id/locationIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:paddingTop="@dimen/margin_st"
         android:layout_marginLeft="@dimen/margin_st"
-        android:layout_marginRight="@dimen/margin_e" />
+        android:layout_marginRight="@dimen/margin_st" />
 
 
 </RelativeLayout>

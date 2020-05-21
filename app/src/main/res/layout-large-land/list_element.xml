@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginEnd="@dimen/margin_tt"
+    android:layout_marginStart="@dimen/margin_tt"
+    android:layout_marginTop="@dimen/margin_st"
     android:padding="@dimen/margin_s">
 
     <TextView
@@ -15,7 +18,7 @@
         android:layout_marginTop="@dimen/margin_e"
         android:layout_marginRight="@dimen/margin_e"
         android:fontFamily="@font/halant_semibold"
-        android:textSize="@dimen/medium_text" />
+        android:textSize="@dimen/size_content_letter" />
 
     <TextView
         android:id="@+id/text"
@@ -38,6 +41,6 @@
         android:layout_gravity="top|end"
         android:layout_marginTop="@dimen/margin_e"
         android:fontFamily="@font/halant_semibold"
-        android:textSize="@dimen/medium_text" />
+        android:textSize="@dimen/size_content_letter" />
 
 </RelativeLayout>

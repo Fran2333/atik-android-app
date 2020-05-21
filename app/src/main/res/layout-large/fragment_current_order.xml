@@ -25,6 +25,8 @@
         android:id="@+id/order_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingStart="@dimen/margin_ft"
+        android:paddingEnd="@dimen/margin_ft"
         android:layout_marginLeft="@dimen/margin_tt"
         android:layout_marginTop="@dimen/margin_tf"
         android:layout_marginRight="@dimen/margin_tt"
@@ -33,14 +35,17 @@
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_order_label" />
+        app:layout_constraintTop_toBottomOf="@+id/current_order_label"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="@dimen/margin_tt"
+        android:layout_marginTop="@dimen/margin_ft"
         android:layout_marginEnd="@dimen/margin_tt"
+        android:layout_marginBottom="@dimen/margin_ft"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +57,9 @@
         android:id="@+id/total_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_ft"
+        android:layout_marginTop="@dimen/margin_ft"
+        android:layout_marginEnd="@dimen/margin_ft"
         android:paddingStart="@dimen/margin_ft"
         android:paddingTop="@dimen/margin_e"
         android:paddingEnd="@dimen/margin_ft"
