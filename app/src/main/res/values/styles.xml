@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/splash_screen_color</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -22,9 +22,11 @@
 
     <!--Splashcreen bar status style-->
     <style name="sc_bar_status_style">
-        <item name="android:color">@color/bone_color</item>
         <item name="android:height">@dimen/bs_height</item>
         <item name="android:width">@dimen/bs_width</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+        <item name="android:indeterminateTint">@color/bone_color</item>
 
     </style>
 
