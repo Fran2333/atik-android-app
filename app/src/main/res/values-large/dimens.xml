@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">64dp</dimen>
+
+    <!--Text dimens-->
+    <dimen name="small_text">16sp</dimen>
+    <dimen name="medium_text">26sp</dimen>
+    <dimen name="size_title_letter1">32sp</dimen>
+    <dimen name="size_title_letter2">40sp</dimen>
+    <dimen name="size_content_letter">24sp</dimen>
+</resources>
