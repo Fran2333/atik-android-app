@@ -58,9 +58,9 @@
             android:layout_height="wrap_content"
             android:paddingBottom="?attr/actionBarSize"
             android:divider="@color/bone_color"
-            android:paddingStart="@dimen/margin_sm"
-            android:paddingTop="@dimen/margin_sm"
-            android:paddingEnd="@dimen/margin_sm"
+            android:paddingStart="@dimen/margin_e"
+            android:paddingTop="@dimen/margin_e"
+            android:paddingEnd="@dimen/margin_e"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
