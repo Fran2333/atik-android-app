@@ -125,6 +125,30 @@
         <item name="android:color">@color/icons_fields_color</item>
     </style>
 
+    <!--Text view style-->
+    <style name="form_textview_style">
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/text_size_forms</item>
+        <item name="android:layout_width">@dimen/form_width</item>
+        <item name="android:layout_height">@dimen/form_heigth_textView</item>
+        <item name="android:layout_marginStart">@dimen/margin_st</item>
+        <item name="android:layout_marginTop">@dimen/margin_e</item>
+        <item name="android:layout_marginEnd">@dimen/margin_st</item>
+        <item name="android:layout_marginBottom">@dimen/margin_st</item>
+    </style>
 
+    <!--Edit text style-->
+    <style name="form_edit_text_style">
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/size_content_letter</item>
+        <item name="android:layout_width">@dimen/form_width</item>
+        <item name="android:layout_height">@dimen/form_heigth_editText</item>
+        <item name="android:layout_marginStart">@dimen/margin_st</item>
+        <item name="android:layout_marginTop">@dimen/margin_e</item>
+        <item name="android:layout_marginEnd">@dimen/margin_st</item>
+        <item name="android:layout_marginBottom">@dimen/margin_st</item>
+    </style>
 
 </resources>
