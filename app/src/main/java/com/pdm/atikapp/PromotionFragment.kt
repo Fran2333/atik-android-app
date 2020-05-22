@@ -26,11 +26,6 @@ class PromotionFragment : Fragment() {
         R.drawable.circulethree
     )
 
-    var descriptionPro = arrayListOf<String>(
-        "Description 1",
-        "Description 2",
-        "Description 3 "
-    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,12 +34,9 @@ class PromotionFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
 
         var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(context!!, imageArray, namePro, descriptionPro)
+        val adapter= PromotionAdapter(context!!, imageArray, namePro)
         gv.adapter = adapter
 
-        im_forward.setOnClickListener{
-
-        }
         gv.numColumns = 1
         gv.horizontalSpacing = 15
         gv.verticalSpacing = 25

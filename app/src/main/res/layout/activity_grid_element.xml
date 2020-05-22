@@ -46,15 +46,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/promotion_img"
-            app:srcCompat="@drawable/ic_expand_more_black_24dp" />
-
-        <TextView
-            android:id="@+id/descPromotion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/promotion_name"/>
+            app:srcCompat="@drawable/ic_expand_more_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

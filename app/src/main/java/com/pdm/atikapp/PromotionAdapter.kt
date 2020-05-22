@@ -14,8 +14,7 @@ import java.security.AccessControlContext
 class PromotionAdapter(
     context: Context,
     private val image: Array<Int>,
-    private val category: ArrayList<String>,
-    private val description: ArrayList<String>
+    private val category: ArrayList<String>
 ): BaseAdapter() {
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -29,22 +28,17 @@ class PromotionAdapter(
         val name: TextView = view.findViewById(R.id.promotion_name)
         name.setText(category[position])
 
-        val desc: TextView = view.findViewById(R.id.descPromotion)
-        desc.setText(description[position])
-
         return view
     }
 
-    override fun getItem(position: Int): Any {
-        return category[position] + description[position]
-    }
+    override fun getItem(position: Int): Any = category[position]
 
     override fun getItemId(position: Int): Long {
         return position.toLong()
     }
 
     override fun getCount(): Int {
-        return category.size + description.size
+        return category.size
     }
 
 
