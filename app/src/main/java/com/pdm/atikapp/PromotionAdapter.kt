@@ -36,7 +36,7 @@ class PromotionAdapter(
     }
 
     override fun getItem(position: Int): Any {
-        return category[position]
+        return category[position] + description[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -44,7 +44,7 @@ class PromotionAdapter(
     }
 
     override fun getCount(): Int {
-        return category.size
+        return category.size + description.size
     }
 
 
