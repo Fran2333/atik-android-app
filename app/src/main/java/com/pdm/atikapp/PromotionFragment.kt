@@ -23,12 +23,12 @@ class PromotionFragment : Fragment() {
     )
 
     var imageArray = arrayOf<Int>(
-        R.drawable.icon,
-        R.drawable.icontwo,
-        R.drawable.iconthree,
-        R.drawable.iconf,
-        R.drawable.iconff,
-        R.drawable.iconst
+        R.drawable.circuleone,
+        R.drawable.circuletwo,
+        R.drawable.circulethree,
+        R.drawable.circulefour,
+        R.drawable.circulefive,
+        R.drawable.circulesixe
     )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
