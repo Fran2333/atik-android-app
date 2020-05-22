@@ -1,6 +1,7 @@
 package com.pdm.atikapp
 
 import android.annotation.SuppressLint
+import android.content.ClipDescription
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,8 @@ import java.security.AccessControlContext
 class PromotionAdapter(
     context: Context,
     private val image: Array<Int>,
-    private val category: ArrayList<String>
+    private val category: ArrayList<String>,
+    private val description: ArrayList<String>
 ): BaseAdapter() {
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -26,6 +28,9 @@ class PromotionAdapter(
 
         val name: TextView = view.findViewById(R.id.promotion_name)
         name.setText(category[position])
+
+        val desc: TextView = view.findViewById(R.id.descPromotion)
+        desc.setText(description[position])
 
         return view
     }
@@ -41,6 +46,7 @@ class PromotionAdapter(
     override fun getCount(): Int {
         return category.size
     }
+
 
 
 }

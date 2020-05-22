@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import kotlinx.android.synthetic.main.activity_grid_element.*
 import java.util.ArrayList
 
 /**
@@ -16,19 +17,19 @@ class PromotionFragment : Fragment() {
     var namePro = arrayListOf<String>(
         "Promotion 1",
         "Promotion 2",
-        "Promotion 3",
-        "Promotion 4",
-        "Promotion 5",
-        "Promotion 6"
+        "Promotion 3"
     )
 
     var imageArray = arrayOf<Int>(
-        R.drawable.circuleone,
-        R.drawable.circuletwo,
-        R.drawable.circulethree,
         R.drawable.circulefour,
         R.drawable.circulefive,
-        R.drawable.circulesixe
+        R.drawable.circulethree
+    )
+
+    var descriptionPro = arrayListOf<String>(
+        "Description 1",
+        "Description 2",
+        "Description 3 "
     )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,10 +39,13 @@ class PromotionFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
 
         var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(context!!, imageArray, namePro)
+        val adapter= PromotionAdapter(context!!, imageArray, namePro, descriptionPro)
         gv.adapter = adapter
 
-        gv.numColumns = 2
+        im_forward.setOnClickListener{
+
+        }
+        gv.numColumns = 1
         gv.horizontalSpacing = 15
         gv.verticalSpacing = 25
         gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
