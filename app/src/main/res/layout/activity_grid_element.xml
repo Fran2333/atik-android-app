@@ -18,7 +18,7 @@
         android:layout_margin="@dimen/margin_st"
         android:orientation="vertical">
 
-       <ImageView
+        <ImageView
            android:id="@+id/promotion_img"
            android:layout_width="190dp"
            android:layout_height="190dp"
@@ -36,6 +36,17 @@
             android:textSize="18sp"
             android:layout_below="@+id/promotion_img"
             android:layout_marginTop="@dimen/margin_e"/>
+
+        <ImageView
+            android:id="@+id/im_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/promotion_img"
+            app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
