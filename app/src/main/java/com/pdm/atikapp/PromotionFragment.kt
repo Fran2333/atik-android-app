@@ -38,7 +38,7 @@ class PromotionFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
 
         var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(context!!, this.imageArray, this.namePro)
+        val adapter= PromotionAdapter(context!!, imageArray, namePro)
         gv.adapter = adapter
 
         gv.numColumns = 2

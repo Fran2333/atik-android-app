@@ -1,5 +1,6 @@
 package com.pdm.atikapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,7 @@ import android.widget.TextView
 import java.security.AccessControlContext
 
 class PromotionAdapter(
-    private val context: Context,
+    context: Context,
     private val image: Array<Int>,
     private val category: ArrayList<String>
 ): BaseAdapter() {
@@ -25,7 +26,6 @@ class PromotionAdapter(
 
         val name: TextView = view.findViewById(R.id.promotion_name)
         name.setText(category[position])
-
 
         return view
     }

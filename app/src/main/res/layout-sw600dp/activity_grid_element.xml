@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".grid_element">
+    android:layout_marginLeft="@dimen/margin_st"
+    android:layout_marginRight="@dimen/margin_st"
+    android:layout_marginBottom="@dimen/margin_st"
+    app:cardCornerRadius="@dimen/margin_e"
+    app:cardElevation="@dimen/margin_e">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_margin="@dimen/margin_st"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/promotion_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="@dimen/margin_e"/>
+
+        <TextView
+            android:id="@+id/promotion_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:fontFamily="@font/halant"
+            android:textSize="18sp"
+            android:layout_below="@+id/promotion_img"
+            android:layout_marginTop="@dimen/margin_e"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
