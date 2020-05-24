@@ -4,4 +4,7 @@
     <string name="btn_register_name">Registrate</string>
     <string name="btn_confirm_name">Completa tu orden</string>
     <string name="btn_add_name">Agregar a la orden</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
