@@ -16,7 +16,7 @@ import java.util.*
  */
 class FragmentCompleteOrder : Fragment() {
 
-    var formate = SimpleDateFormat("dd MM, YYYY",Locale.US)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class FragmentCompleteOrder : Fragment() {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_complete_order, container, false)
-
+        var formate = SimpleDateFormat("dd MM, YYYY",Locale.US)
         btn_day.setOnClickListener{
             val now = Calendar.getInstance()
             val datePicker = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
