@@ -47,7 +47,7 @@ class FragmentCompleteOrder : Fragment() {
     val month = now.get(Calendar.MONTH)
     val day = now.get(Calendar.DAY_OF_MONTH)
     val datePicker = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-        textDay.text="Fecha: " + dayOfMonth + " / " + (month +1)+ " / " + year
+        btn_day.text="Fecha: " + dayOfMonth + " / " + (month +1)+ " / " + year
     },day,month,year)
 
     datePicker.show()

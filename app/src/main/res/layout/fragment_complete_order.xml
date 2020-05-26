@@ -69,7 +69,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
-        android:text="@string/type_order_textview"
+        android:text="@string/date_textview"
         android:textSize="@dimen/size_content_letter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
