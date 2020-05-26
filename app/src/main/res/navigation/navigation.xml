@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/principalViewFragment">
+    <fragment
+        android:id="@+id/principalViewFragment"
+        android:name="com.pdm.atikapp.PrincipalViewFragment"
+        android:label="PrincipalViewFragment" >
+        <action
+            android:id="@+id/action_principalViewFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.pdm.atikapp.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.pdm.atikapp.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/activeOrdersFragment"
+        android:name="com.pdm.atikapp.ActiveOrdersFragment"
+        android:label="fragment_active_orders"
+        tools:layout="@layout/fragment_active_orders" >
+        <action
+            android:id="@+id/action_activeOrdersFragment_to_activeOrderDetailFragment"
+            app:destination="@id/activeOrderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeOrderDetailFragment"
+        android:name="com.pdm.atikapp.ActiveOrderDetailFragment"
+        android:label="ActiveOrderDetailFragment" />
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.pdm.atikapp.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations" />
+    <fragment
+        android:id="@+id/currentOrderFragment"
+        android:name="com.pdm.atikapp.CurrentOrderFragment"
+        android:label="fragment_current_order"
+        tools:layout="@layout/fragment_current_order" />
+</navigation>

@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.active_order_element.view.*
 
 class ActiveOrderAdapter (
     private val context: Context,
@@ -36,7 +38,6 @@ class ActiveOrderAdapter (
 
     //4
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        // Get view for row item
         val rowView = inflater.inflate(R.layout.active_order_element, parent, false)
         val order: TextView = rowView.findViewById(R.id.order_id)
         order.setText(name[position])
@@ -47,6 +48,9 @@ class ActiveOrderAdapter (
         val order_date: TextView = rowView.findViewById(R.id.date)
         order_date.setText(date[position])
 
+        rowView.activeOrderElement.setOnClickListener {
+            it.findNavController().navigate(R.id.action_activeOrdersFragment_to_activeOrderDetailFragment)
+        }
 
         return rowView
     }

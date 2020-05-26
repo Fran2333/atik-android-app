@@ -38,6 +38,7 @@ class LocationsFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Ubicaciones"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 

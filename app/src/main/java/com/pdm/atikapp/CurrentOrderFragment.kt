@@ -48,6 +48,7 @@ class CurrentOrderFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Orden Actual"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
 
         val label: TextView = view.findViewById(R.id.current_order_label)
         label.setText("${titleArray.size.toString()} productos en tu orden");

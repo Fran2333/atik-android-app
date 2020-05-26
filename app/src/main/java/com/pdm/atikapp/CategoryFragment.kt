@@ -11,8 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.fragment_category.*
 import kotlinx.android.synthetic.main.fragment_category.view.*
+import kotlinx.android.synthetic.main.fragment_category.view.cat_toolbar
 
 
 /**
@@ -54,6 +57,10 @@ class CategoryFragment : Fragment() {
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
 
         view.cat_toolbar.title = "Categoria"
+        val category_toolbar = view.findViewById<Toolbar>(R.id.category_toolbar)
+        (activity as AppCompatActivity).setSupportActionBar(category_toolbar)
+        category_toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        category_toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
 
         var rv = view.findViewById<RecyclerView>(R.id.food_list)
         rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
