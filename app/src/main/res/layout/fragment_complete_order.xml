@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFF"
     tools:context=".FragmentCompleteOrder">
 
 
@@ -14,252 +15,168 @@
         android:layout_marginStart="@dimen/margin_st"
         android:layout_marginTop="@dimen/margin_st"
         android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="@string/tittle_textview"
         android:fontFamily="@font/halant"
+        android:text="@string/tittle_textview"
         android:textSize="@dimen/size_title_letter3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/btnAtHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:text="@string/type_order_btn2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
+        android:text="@string/type_order_btn2"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCollect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnCollect"
-        app:layout_constraintTop_toTopOf="@+id/btnCollect" />
+        app:layout_constraintTop_toBottomOf="@+id/textType" />
 
     <RadioButton
         android:id="@+id/btnCollect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/type_order_btn"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
+        android:text="@string/type_order_btn"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/textType"
-        app:layout_constraintEnd_toStartOf="@+id/btnAtHome"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textType"
-        app:layout_constraintTop_toTopOf="@+id/textType" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnAtHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textType" />
 
     <TextView
         android:id="@+id/textType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="@string/type_order_textview"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/halant"
+        android:text="@string/type_order_textview"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCollect"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTittle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textTittle" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textType2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/halant"
+        android:text="@string/type_order_textview"
+        android:textSize="@dimen/size_content_letter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCollect"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCollect" />
 
     <Button
         android:id="@+id/btn_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="@string/date_textview"
-        android:fontFamily="@font/halant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:textSize="@dimen/size_content_letter"
-        android:fontFamily="@font/halant"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_day"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_day"
-        app:layout_constraintTop_toTopOf="@+id/btn_day" />
-
-    <View
-        android:id="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="#FFFFFF"
+        android:drawableRight="@drawable/ic_date"
+        android:fontFamily="@font/halant"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_day"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textType2" />
 
     <TextView
         android:id="@+id/textHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:text="@string/hour_textview"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
+        android:text="@string/hour_textview"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/editHour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editHour" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_day" />
+
 
     <EditText
         android:id="@+id/editHour"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="number"
-      android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/size_content_letter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textHour"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editHour"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textHour" />
 
     <TextView
         android:id="@+id/textPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:text="@string/phone_textview"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
+        android:text="@string/phone_textview"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/editPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/editHour" />
 
     <EditText
         android:id="@+id/editPhone"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="number"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textPhone"
-        app:layout_constraintTop_toBottomOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPhone"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textPhone" />
 
     <TextView
         android:id="@+id/textDirection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="@string/direction_textview"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/halant"
+        android:text="@string/direction_textview"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editPhone" />
 
     <EditText
         android:id="@+id/editDirection"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_e"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:fontFamily="@font/halant"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDirection"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textDirection" />
 
     <Button
         android:id="@+id/button2"
