@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="300dp"
-        android:layout_height="@dimen/tv_menu_hdimen_tportrait"
+        android:layout_height="match_parent"
         android:background="@color/color_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="@dimen/tv_promotion_wdimen_tportrait"
-        android:layout_height="409dp"
+        android:layout_height="475dp"
         android:background="@color/color_15"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
