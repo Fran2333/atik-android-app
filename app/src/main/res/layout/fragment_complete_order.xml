@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textTittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -25,34 +25,34 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/btnAtHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_st"
         android:text="@string/type_order_btn2"
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/radioButton4"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCollect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/radioButton4"
-        app:layout_constraintTop_toTopOf="@+id/radioButton4" />
+        app:layout_constraintStart_toEndOf="@+id/btnCollect"
+        app:layout_constraintTop_toTopOf="@+id/btnCollect" />
 
     <RadioButton
-        android:id="@+id/radioButton4"
+        android:id="@+id/btnCollect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/type_order_btn"
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton3"
+        app:layout_constraintBottom_toBottomOf="@+id/textType"
+        app:layout_constraintEnd_toStartOf="@+id/btnAtHome"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/textType"
+        app:layout_constraintTop_toTopOf="@+id/textType" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -63,10 +63,10 @@
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton4"
+        app:layout_constraintEnd_toStartOf="@+id/btnCollect"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textTittle"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton4"
+        app:layout_constraintTop_toBottomOf="@+id/btnCollect"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -128,7 +128,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -136,14 +136,14 @@
         android:text="@string/hour_textview"
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/editHour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        app:layout_constraintTop_toTopOf="@+id/editHour" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editHour"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_e"
@@ -156,7 +156,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/textHour"
         app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -173,11 +173,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editHour"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -185,14 +185,14 @@
         android:text="@string/phone_textview"
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintBottom_toBottomOf="@+id/editPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
+        app:layout_constraintTop_toTopOf="@+id/editPhone" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_e"
@@ -205,7 +205,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textPhone"
         app:layout_constraintTop_toBottomOf="@+id/view3"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -220,11 +220,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editPhone"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textDirection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -242,7 +242,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editDirection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
@@ -258,7 +258,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textDirection"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -275,6 +275,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/editDirection" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
