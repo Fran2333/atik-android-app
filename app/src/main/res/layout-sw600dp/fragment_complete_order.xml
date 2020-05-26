@@ -88,14 +88,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
         android:layout_marginEnd="@dimen/margin_st"
-        android:text=""
-        android:textSize="@dimen/size_title_letter3"
         android:fontFamily="@font/halant"
+        android:textSize="@dimen/size_title_letter3"
         app:layout_constraintBottom_toBottomOf="@+id/btn_day"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_complete_order.*
 import java.text.SimpleDateFormat
@@ -25,22 +27,29 @@ class FragmentCompleteOrder : Fragment() {
         this.activity?.setTitle(R.string.view_complete_order_name)
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_complete_order, container, false)
-        var formate = SimpleDateFormat("dd MM, YYYY",Locale.US)
-        btn_day.setOnClickListener{
-            val now = Calendar.getInstance()
-            val datePicker = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                val selectDate = Calendar.getInstance()
-                selectDate.set(Calendar.YEAR,year)
-                selectDate.set(Calendar.MONTH,month)
-                selectDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
-                val date = formate.format(selectDate.time)
-                Toast.makeText(context,"dia:"+ date,Toast.LENGTH_SHORT).show()
-            },
-                now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH))
-            datePicker.show()
+        val view:View = inflater.inflate(R.layout.fragment_complete_order, container, false)
+        val btnDay = view.findViewById<Button>(R.id.btn_day)
+
+
+        btnDay.setOnClickListener {
+            DatePicker()
+
         }
 
+        return view;
     }
 
+  private fun DatePicker(){
+
+    val now = Calendar.getInstance()
+
+    val year = now.get(Calendar.YEAR)
+    val month = now.get(Calendar.MONTH)
+    val day = now.get(Calendar.DAY_OF_MONTH)
+    val datePicker = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+        textDay.text="Fecha: " + dayOfMonth + " / " + (month +1)+ " / " + year
+    },day,month,year)
+
+    datePicker.show()
+}
 }
