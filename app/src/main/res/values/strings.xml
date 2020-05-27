@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AtikApp</string>
     <string name="view_complete_order_name">Completa tu orden</string>
+    <string name="view_register_name">Registrarse</string>
     <string name="btn_login_name">Login</string>
     <string name="btn_confirm_name">Completa tu orden</string>
     <string name="btn_add_name">Agregar a la orden</string>
@@ -28,4 +29,13 @@
     <string name="phone_textview"><b>Numero de telefono:</b></string>
     <string name="direction_textview"><b>Direccion de envio:</b></string>
     <string name="finalizar_btn"><b>Realizar pedido</b></string>
+    <string name="last_orders">Ultimas 10 ordenes</string>
+    <string name="shipping">Envio</string>
+    <string name="total">Total</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="home">Home</string>
+    <string name="order">Tu orden</string>
+    <string name="locations">Ubicaciones</string>
+    <string name="profile">Perfil</string>
+
 </resources>
