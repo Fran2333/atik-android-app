@@ -39,6 +39,7 @@ class LocationsFragment : Fragment() {
         toolbar.title = "Ubicaciones"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 
