@@ -22,14 +22,24 @@ class Login : Fragment() {
     ): View? {
 
         //val view: View = inflater.inflate(R.layout.fragment_locations, container, false)
-        val binding= DataBindingUtil.inflate<FragmentLoginBinding>(inflater,R.layout.fragment_login, container,false)
+        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
+            inflater,
+            R.layout.fragment_login,
+            container,
+            false
+        )
 
-            binding.button.setOnClickListener { view: View ->
-                view.findNavController().navigate(R.id.action_login_to_principalViewFragment)
+        binding.button.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_login_to_principalViewFragment)
 
-            }
+        }
 
-        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+        binding.textView3.setOnClickListener {
+            it.findNavController().navigate(R.id.action_login_to_registerFragment)
+        }
+
+        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
+            View.GONE
 
 
         // Inflate the layout for this fragment
