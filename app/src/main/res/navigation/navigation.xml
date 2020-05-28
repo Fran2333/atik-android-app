@@ -15,7 +15,7 @@
             app:exitAnim="@android:anim/fade_out" />
         <action
 
-            android:id="@+id/action_principalViewFragment_to_promotionFragment2"
+            android:id="@+id/action_principalViewFragment_to_promotionFragment"
             app:destination="@id/promotionFragment" />
         <action
             android:id="@+id/action_principalViewFragment_to_specialOrdersFragment"
@@ -90,6 +90,9 @@
             app:exitAnim="@anim/fragment_fade_exit"
             app:popEnterAnim="@anim/fragment_fade_enter"
             app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_login_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashscreenFragment2"
@@ -100,9 +103,7 @@
             android:id="@+id/action_splashscreenFragment2_to_login"
             app:destination="@id/login"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" /><![CDATA[
-            app:destination="@id/principalViewFragment" />
-        ]]>
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/personalizeOrder"

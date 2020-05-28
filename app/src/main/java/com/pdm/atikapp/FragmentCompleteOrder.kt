@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_complete_order.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -24,7 +25,12 @@ class FragmentCompleteOrder : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        this.activity?.setTitle(R.string.view_complete_order_name)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Completa tu orden"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
 
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_complete_order, container, false)
