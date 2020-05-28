@@ -50,7 +50,7 @@ class PrincipalAdapter(
                 it.findNavController().navigate(R.id.action_principalViewFragment_to_menuFragment)
             else if (name[position] == "Pedidos especiales")
                 it.findNavController()
-                    .navigate(R.id.action_principalViewFragment_to_personalizeOrder2)
+                    .navigate(R.id.action_principalViewFragment_to_specialOrdersFragment)
             else if (name[position] == "Promociones")
                 it.findNavController()
                     .navigate(R.id.action_principalViewFragment_to_promotionFragment2)

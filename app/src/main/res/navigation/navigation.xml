@@ -15,9 +15,9 @@
 
             android:id="@+id/action_principalViewFragment_to_promotionFragment2"
             app:destination="@id/promotionFragment" />
-
-           <action android:id="@+id/action_principalViewFragment_to_personalizeOrder2"
-            app:destination="@id/personalizeOrder" />
+        <action
+            android:id="@+id/action_principalViewFragment_to_specialOrdersFragment"
+            app:destination="@id/specialOrdersFragment" />
 
     </fragment>
     <fragment
@@ -33,7 +33,11 @@
         android:id="@+id/categoryFragment"
         android:name="com.pdm.atikapp.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_personalizeOrder"
+            app:destination="@id/personalizeOrder" />
+    </fragment>
     <fragment
         android:id="@+id/activeOrdersFragment"
         android:name="com.pdm.atikapp.ActiveOrdersFragment"
@@ -56,17 +60,17 @@
         android:id="@+id/currentOrderFragment"
         android:name="com.pdm.atikapp.CurrentOrderFragment"
         android:label="fragment_current_order"
-        tools:layout="@layout/fragment_current_order" />
+        tools:layout="@layout/fragment_current_order" >
+        <action
+            android:id="@+id/action_currentOrderFragment_to_fragmentCompleteOrder"
+            app:destination="@id/fragmentCompleteOrder" />
+    </fragment>
     <fragment
         android:id="@+id/promotionFragment"
         android:name="com.pdm.atikapp.PromotionFragment"
         android:label="fragment_promotion"
         tools:layout="@layout/fragment_promotion" />
 
-       <fragment android:id="@+id/personalizeOrder"
-        android:name="com.pdm.atikapp.PersonalizeOrder"
-        android:label="fragment_personalize_order"
-        tools:layout="@layout/fragment_personalize_order" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.pdm.atikapp.Account"
@@ -80,6 +84,33 @@
         <action
             android:id="@+id/action_login_to_principalViewFragment"
             app:destination="@id/principalViewFragment" />
+        <action
+            android:id="@+id/action_login_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/personalizeOrder"
+        android:name="com.pdm.atikapp.PersonalizeOrder"
+        android:label="fragment_personalize_order"
+        tools:layout="@layout/fragment_personalize_order" />
+    <fragment
+        android:id="@+id/specialOrdersFragment"
+        android:name="com.pdm.atikapp.SpecialOrdersFragment"
+        android:label="fragment_special_orders"
+        tools:layout="@layout/fragment_special_orders" >
+        <action
+            android:id="@+id/action_specialOrdersFragment_to_fragmentCompleteOrder"
+            app:destination="@id/fragmentCompleteOrder" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.pdm.atikapp.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/fragmentCompleteOrder"
+        android:name="com.pdm.atikapp.FragmentCompleteOrder"
+        android:label="fragment_complete_order"
+        tools:layout="@layout/fragment_complete_order" />
 
 </navigation>

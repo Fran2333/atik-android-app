@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoryAdapter(
@@ -28,18 +29,14 @@ class CategoryAdapter(
         return position.toLong()
     }
 
-    /*override fun getView(viewHolder: ViewHolder, position: Int, convertView: View?, parent: ViewGroup): View {
-        // Get view for row item
-        val rowView = inflater.inflate(R.layout.list_element, parent, false)
-        viewHolder.header.setText(title[position])
-        viewHolder.textView.setText(description[position])
-        viewHolder.info.setText(price[position].toString())
-
-        return rowView
-    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listView = inflater.inflate(R.layout.list_element, parent, false)
+
+        listView.setOnClickListener {
+            it.findNavController().navigate(R.id.action_categoryFragment_to_personalizeOrder)
+        }
+
         return ViewHolder(listView)
     }
 
