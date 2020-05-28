@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/principalViewFragment">
+    app:startDestination="@id/login">
     <fragment
         android:id="@+id/principalViewFragment"
         android:name="com.pdm.atikapp.PrincipalViewFragment"
@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_principalViewFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_principalViewFragment_to_personalizeOrder2"
+            app:destination="@id/personalizeOrder" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -49,4 +52,23 @@
         android:name="com.pdm.atikapp.CurrentOrderFragment"
         android:label="fragment_current_order"
         tools:layout="@layout/fragment_current_order" />
+    <fragment
+        android:id="@+id/personalizeOrder"
+        android:name="com.pdm.atikapp.PersonalizeOrder"
+        android:label="fragment_personalize_order"
+        tools:layout="@layout/fragment_personalize_order" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.pdm.atikapp.Account"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.pdm.atikapp.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_principalViewFragment"
+            app:destination="@id/principalViewFragment" />
+    </fragment>
 </navigation>
