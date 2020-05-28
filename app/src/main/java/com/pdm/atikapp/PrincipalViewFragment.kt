@@ -5,49 +5,59 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.pdm.atikapp.databinding.FragmentPrincipalViewBinding
+import android.widget.GridView
 
-/**
- * A simple [Fragment] subclass.
- */
 class PrincipalViewFragment : Fragment() {
+
+    var nameArray = arrayListOf<String>(
+        "Menu",
+        "Pedidos especiales",
+        "Promociones"
+    )
+
+    var descriptionArrary = arrayListOf<String>(
+        "Realiza tu pedido",
+        "Personaliza tu orden",
+        "Ofertas del dia"
+    )
+
+    var imageArray = arrayOf<Int>(
+        R.raw.food,
+        R.raw.pagelist,
+        R.raw.paperbounce
+    )
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var binding = DataBindingUtil.inflate<FragmentPrincipalViewBinding>(inflater, R.layout.fragment_principal_view,
-            container, false
-        )
+        val view: View = inflater.inflate(R.layout.fragment_principal_view, container, false)
 
         val toolbar = (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.hide()
+        (activity as AppCompatActivity).supportActionBar?.title = "Atik"
 
-        binding.textView2.setOnClickListener {
-            it.findNavController().navigate(R.id.action_principalViewFragment_to_menuFragment)
-        }
+        var gv = view.findViewById<GridView>(R.id.principalGrid)
 
+        val adapter = PrincipalAdapter(context!!, imageArray, nameArray, descriptionArrary)
+        gv.adapter = adapter
 
-        binding.textView3.setOnClickListener{
-            it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment2)
-        }
+        gv.numColumns = 1
+        gv.verticalSpacing = 25
+        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
 
-        binding.textView4.setOnClickListener {
-            it.findNavController().navigate(R.id.action_principalViewFragment_to_personalizeOrder2)
-        }
-
-        return binding.root
+        return view
     }
 
     override fun onResume() {
         super.onResume()
-        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.VISIBLE
+        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
+            View.VISIBLE
     }
 
 }
