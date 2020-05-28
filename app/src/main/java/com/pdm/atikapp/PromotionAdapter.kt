@@ -31,7 +31,7 @@ class PromotionAdapter(
         name.setText(category[position])
 
         val des : TextView = view.findViewById(R.id.tv_description)
-        des.setText(desc[position])
+        des.text = desc[position]
 
         view.im_forward.setOnClickListener{
 

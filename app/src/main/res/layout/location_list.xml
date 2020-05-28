@@ -32,14 +32,16 @@
         android:fontFamily="@font/halant"
         android:textSize="@dimen/size_content_letter" />
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/locationIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerVertical="true"
         android:paddingTop="@dimen/margin_st"
         android:layout_marginLeft="@dimen/margin_st"
-        android:layout_marginRight="@dimen/margin_st" />
+        android:layout_marginRight="@dimen/margin_st"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/ubicacion"/>
 
 
 </RelativeLayout>

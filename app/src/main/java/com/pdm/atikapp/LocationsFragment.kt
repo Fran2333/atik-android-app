@@ -24,10 +24,10 @@ class LocationsFragment : Fragment() {
         "Descripcion 2"
     )
 
-    var imageArray = arrayOf<Int>(
-        R.drawable.ic_signs,
-        R.drawable.ic_signs
-    )
+   // var imageArray = arrayOf<Int>(
+      //  R.drawable.ic_signs,
+      //  R.drawable.ic_signs
+    //)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +43,7 @@ class LocationsFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 
-        val adapter = LocationAdapter(context!!, titleArray, descArray, imageArray)
+        val adapter = LocationAdapter(context!!, titleArray, descArray)//, imageArray)
         lv.adapter = adapter
 
         return view

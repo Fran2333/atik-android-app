@@ -13,8 +13,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
 import androidx.transition.FragmentTransitionSupport
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_splashscreen.*
 
@@ -41,7 +44,7 @@ class SplashscreenFragment : Fragment() {
         val sd = view.findViewById(R.id.chef_image) as ImageView
         val ss = view.findViewById(R.id.ingredients_image) as ImageView
 
-
+        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
         head.startAnimation(ttb)
         sd.startAnimation(pop)
         ss.startAnimation(pap)
@@ -51,7 +54,7 @@ class SplashscreenFragment : Fragment() {
            activity?.finish();
       },SPLASH_TIME)
 
-
+        view.findNavController().navigate(R.id.action_splashscreenFragment2_to_login)
         return view
     }
 

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 class LocationAdapter (
     private val context: Context,
     private val title: ArrayList<String>,
-    private val location: ArrayList<String>,
-    private val image: Array<Int>
+    private val location: ArrayList<String>
+    //private val image: Array<Int>
     ) : BaseAdapter() {
 
         private val inflater: LayoutInflater =
@@ -45,8 +45,8 @@ class LocationAdapter (
             header.setText(title[position])
             val textView: TextView = rowView.findViewById(R.id.text)
             textView.setText(location[position])
-            val icon: ImageView = rowView.findViewById(R.id.locationIcon)
-            icon.setImageResource(image[position])
+            //val icon: ImageView = rowView.findViewById(R.id.locationIcon)
+           // icon.setImageResource(image[position])
 
             return rowView
         }

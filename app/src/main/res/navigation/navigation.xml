@@ -10,7 +10,9 @@
         android:label="PrincipalViewFragment" >
         <action
             android:id="@+id/action_principalViewFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
+            app:destination="@id/menuFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <action
 
             android:id="@+id/action_principalViewFragment_to_promotionFragment2"
@@ -79,7 +81,20 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_login_to_principalViewFragment"
-            app:destination="@id/principalViewFragment" />
+            app:destination="@id/principalViewFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashscreenFragment2"
+        android:name="com.pdm.atikapp.SplashscreenFragment"
+        android:label="SplashscreenFragment"
+        tools:layout="@layout/fragment_splashscreen">
+        <action
+            android:id="@+id/action_splashscreenFragment2_to_login"
+            app:destination="@id/login" />
     </fragment>
 
 </navigation>

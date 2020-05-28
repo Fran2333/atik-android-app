@@ -20,7 +20,6 @@
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation"
             android:layout_width="@dimen/iv_wdimen_tportrait"
-            app:lottie_colorFilter="@color/base_color_1"
             android:layout_height="@dimen/iv_hdimen_tportrait"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
