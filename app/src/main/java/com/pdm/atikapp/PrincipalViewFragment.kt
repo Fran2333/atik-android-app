@@ -33,6 +33,11 @@ class PrincipalViewFragment : Fragment() {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_menuFragment)
         }
 
+
+        binding.textView3.setOnClickListener{
+            it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment2)
+        }
+
         binding.textView4.setOnClickListener {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_personalizeOrder2)
         }

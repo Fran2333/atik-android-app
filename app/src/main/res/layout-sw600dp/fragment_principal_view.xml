@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
-
+    tools:context=".PrincipalViewFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -64,7 +65,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView3"
             android:layout_width="@dimen/iv_wdimen_tportrait"
             android:layout_height="@dimen/iv_hdimen_tportrait"
@@ -72,7 +73,8 @@
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_restaurant_menu_black_24dp" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/food" />
 
         <TextView
             android:id="@+id/textView13"
@@ -104,7 +106,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:layout_constraintVertical_bias="1.0" />
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView5"
             android:layout_width="@dimen/iv_wdimen_tportrait"
             android:layout_height="@dimen/iv_hdimen_tportrait"
@@ -113,9 +115,10 @@
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.25"
-            app:srcCompat="@drawable/ic_book_black_24dp" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/pagelist"/>
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView6"
             style="@style/iv_ppview_style"
             android:layout_width="@dimen/iv_wdimen_tportrait"
@@ -125,7 +128,8 @@
             app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.25"
-            app:srcCompat="@drawable/ic_description_black_24dp" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/paperbounce"/>
 
         <TextView
             android:id="@+id/textView14"

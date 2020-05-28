@@ -47,6 +47,8 @@ class MenuAdapter(
             it.findNavController().navigate(R.id.action_menuFragment_to_categoryFragment)
         }
 
+
+
         return view
 
         }

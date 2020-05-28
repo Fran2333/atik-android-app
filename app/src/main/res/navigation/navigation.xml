@@ -12,8 +12,13 @@
             android:id="@+id/action_principalViewFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
         <action
-            android:id="@+id/action_principalViewFragment_to_personalizeOrder2"
+
+            android:id="@+id/action_principalViewFragment_to_promotionFragment2"
+            app:destination="@id/promotionFragment" />
+
+           <action android:id="@+id/action_principalViewFragment_to_personalizeOrder2"
             app:destination="@id/personalizeOrder" />
+
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -53,7 +58,12 @@
         android:label="fragment_current_order"
         tools:layout="@layout/fragment_current_order" />
     <fragment
-        android:id="@+id/personalizeOrder"
+        android:id="@+id/promotionFragment"
+        android:name="com.pdm.atikapp.PromotionFragment"
+        android:label="fragment_promotion"
+        tools:layout="@layout/fragment_promotion" />
+
+       <fragment android:id="@+id/personalizeOrder"
         android:name="com.pdm.atikapp.PersonalizeOrder"
         android:label="fragment_personalize_order"
         tools:layout="@layout/fragment_personalize_order" />
@@ -71,4 +81,5 @@
             android:id="@+id/action_login_to_principalViewFragment"
             app:destination="@id/principalViewFragment" />
     </fragment>
+
 </navigation>
