@@ -68,7 +68,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView3"
             android:layout_width="@dimen/iv_wdimen_tportrait"
             android:layout_height="@dimen/iv_hdimen_tportrait"
@@ -77,19 +77,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3"
-            app:srcCompat="@drawable/ic_restaurant_menu_black_24dp" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/food" />
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView5"
-            android:layout_width="@dimen/iv_wdimen_tportrait"
-            android:layout_height="@dimen/iv_hdimen_tportrait"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.35000002"
-            app:srcCompat="@drawable/ic_book_black_24dp" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/pagelist" />
 
         <TextView
             android:id="@+id/textView12"
@@ -123,17 +125,18 @@
             app:layout_constraintTop_toTopOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.996" />
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView6"
-            android:layout_width="@dimen/iv_wdimen_tportrait"
-            android:layout_height="@dimen/iv_hdimen_tportrait"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView3"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/textView3"
             app:layout_constraintVertical_bias="0.35000002"
-            app:srcCompat="@drawable/ic_description_black_24dp" />
+            app:lottie_autoPlay="true"
+           app:lottie_rawRes="@raw/paperbounce" />
 
         <TextView
             android:id="@+id/textView14"

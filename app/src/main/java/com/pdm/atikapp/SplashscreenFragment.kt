@@ -32,7 +32,6 @@ class SplashscreenFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view : View =  inflater.inflate(R.layout.fragment_splashscreen, container, false)
-
         
         val ttb = AnimationUtils.loadAnimation(this.context, R.anim.zickt)
         val pop = AnimationUtils.loadAnimation(this.context, R.anim.zict);

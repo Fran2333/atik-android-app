@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_principalViewFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_principalViewFragment_to_promotionFragment2"
+            app:destination="@id/promotionFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -49,4 +52,9 @@
         android:name="com.pdm.atikapp.CurrentOrderFragment"
         android:label="fragment_current_order"
         tools:layout="@layout/fragment_current_order" />
+    <fragment
+        android:id="@+id/promotionFragment"
+        android:name="com.pdm.atikapp.PromotionFragment"
+        android:label="fragment_promotion"
+        tools:layout="@layout/fragment_promotion" />
 </navigation>
