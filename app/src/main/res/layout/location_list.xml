@@ -41,6 +41,7 @@
         android:layout_marginLeft="@dimen/margin_st"
         android:layout_marginRight="@dimen/margin_st"
         app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:lottie_rawRes="@raw/ubicacion"/>
 
 

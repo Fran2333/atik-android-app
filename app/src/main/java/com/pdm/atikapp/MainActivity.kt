@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setupViews()
 
      val orientation = resources.getBoolean(R.bool.portrait_only)
+        var orie = resources.configuration.orientation
 
         if(orientation){
            this.requestedOrientation.and(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)

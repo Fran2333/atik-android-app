@@ -53,7 +53,7 @@ class PrincipalAdapter(
                     .navigate(R.id.action_principalViewFragment_to_specialOrdersFragment)
             else if (name[position] == "Promociones")
                 it.findNavController()
-                    .navigate(R.id.action_principalViewFragment_to_promotionFragment2)
+                    .navigate(R.id.action_principalViewFragment_to_promotionFragment)
         }
 
         return view
