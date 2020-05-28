@@ -94,7 +94,9 @@
         tools:layout="@layout/fragment_splashscreen">
         <action
             android:id="@+id/action_splashscreenFragment2_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 
 </navigation>

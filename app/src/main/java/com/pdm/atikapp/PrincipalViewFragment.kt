@@ -41,7 +41,7 @@ class PrincipalViewFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.title = "Atik"
-
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         var gv = view.findViewById<GridView>(R.id.principalGrid)
 
         val adapter = PrincipalAdapter(context!!, imageArray, nameArray, descriptionArrary)

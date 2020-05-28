@@ -51,10 +51,10 @@ class SplashscreenFragment : Fragment() {
 
        Handler().postDelayed({
            startActivity(Intent(this.context, MainActivity::class.java))
-           activity?.finish();
+           activity?.finish()
       },SPLASH_TIME)
 
-        view.findNavController().navigate(R.id.action_splashscreenFragment2_to_login)
+
         return view
     }
 
