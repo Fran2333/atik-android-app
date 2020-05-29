@@ -181,31 +181,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider2"
         app:layout_constraintVertical_bias="0.13999999" />
+
     <Button
         android:id="@+id/addDessert"
         android:layout_width="179dp"
         android:layout_height="44dp"
+        android:background="@color/color_12"
         android:text="Agregar a la orden"
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/quantity"
         app:layout_constraintStart_toStartOf="@+id/quantity"
         app:layout_constraintTop_toBottomOf="@+id/quantity"
         app:layout_constraintVertical_bias="0.55" />
+
     <Button
         android:id="@+id/more"
         android:layout_width="48dp"
         android:layout_height="43dp"
-        android:text="+"
+        android:background="@color/color_12"
+        android:text="-"
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toTopOf="@+id/addDessert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/addDessert"
         app:layout_constraintTop_toBottomOf="@+id/quantity" />
+
     <Button
         android:id="@+id/less"
         android:layout_width="48dp"
         android:layout_height="43dp"
-        android:text="-"
+        android:background="@color/color_12"
+        android:text="+"
+        android:textColor="#FFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/more"
         app:layout_constraintEnd_toEndOf="parent"

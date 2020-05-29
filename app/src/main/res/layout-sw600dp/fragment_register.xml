@@ -181,6 +181,8 @@
         android:layout_marginTop="@dimen/margin_st"
         android:layout_marginEnd="@dimen/margin_st"
         android:layout_marginBottom="@dimen/margin_st"
+        android:background="@color/color_12"
+        android:textColor="#FFFF"
         android:textSize="@dimen/text_content_tablet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

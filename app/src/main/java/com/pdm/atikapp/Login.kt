@@ -21,8 +21,6 @@ class Login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-
         //val view: View = inflater.inflate(R.layout.fragment_locations, container, false)
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
             inflater,
