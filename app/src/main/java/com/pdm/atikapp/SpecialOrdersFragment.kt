@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.navigation.findNavController
@@ -30,7 +31,12 @@ class SpecialOrdersFragment : Fragment() {
 
     ): View? {
 
-        this.activity?.setTitle(R.string.view_special_orders_name)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Pedidos especiales"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_special_orders, container, false)
         val ImgBtn = view.findViewById<Button>(R.id.buttonImagen)

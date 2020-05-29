@@ -1,5 +1,8 @@
 package com.pdm.atikapp
 
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,49 +12,47 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.widget.GridView
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import com.airbnb.lottie.LottieAnimationView
+import com.pdm.atikapp.databinding.FragmentPrincipalViewBinding
+import kotlinx.android.synthetic.main.fragment_principal_view.*
+import kotlinx.android.synthetic.main.fragment_principal_view.view.*
+import kotlinx.android.synthetic.main.fragment_principal_view.view.promotionAnimation
 
 class PrincipalViewFragment : Fragment() {
-
-    var nameArray = arrayListOf<String>(
-        "Menu",
-        "Pedidos especiales",
-        "Promociones"
-    )
-
-    var descriptionArrary = arrayListOf<String>(
-        "Realiza tu pedido",
-        "Personaliza tu orden",
-        "Ofertas del dia"
-    )
-
-    var imageArray = arrayOf<Int>(
-        R.raw.food,
-        R.raw.pagelist,
-        R.raw.paperbounce
-    )
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_principal_view, container, false)
-
+        val binding = DataBindingUtil.inflate<FragmentPrincipalViewBinding>(inflater, R.layout.fragment_principal_view, container, false)
         val toolbar = (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.title = "Atik"
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        var gv = view.findViewById<GridView>(R.id.principalGrid)
 
-        val adapter = PrincipalAdapter(context!!, imageArray, nameArray, descriptionArrary)
-        gv.adapter = adapter
 
-        gv.numColumns = 1
-        gv.verticalSpacing = 25
-        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
 
-        return view
+        binding.menuCard.setOnClickListener {
+            it.findNavController().navigate(R.id.action_principalViewFragment_to_menuFragment)
+
+
+        }
+
+        binding.specialCard.setOnClickListener {
+            it.findNavController().navigate(R.id.action_principalViewFragment_to_specialOrdersFragment)
+        }
+
+        binding.promotionCard.setOnClickListener {
+            it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment)
+        }
+
+
+
+
+        return binding.root
     }
 
     override fun onResume() {

@@ -16,10 +16,14 @@
         <action
 
             android:id="@+id/action_principalViewFragment_to_promotionFragment"
-            app:destination="@id/promotionFragment" />
+            app:destination="@id/promotionFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_principalViewFragment_to_specialOrdersFragment"
-            app:destination="@id/specialOrdersFragment" />
+            app:destination="@id/specialOrdersFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
 
     </fragment>
     <fragment
@@ -29,7 +33,9 @@
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
@@ -38,7 +44,9 @@
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_categoryFragment_to_personalizeOrder"
-            app:destination="@id/personalizeOrder" />
+            app:destination="@id/personalizeOrder"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/activeOrdersFragment"
@@ -65,7 +73,9 @@
         tools:layout="@layout/fragment_current_order" >
         <action
             android:id="@+id/action_currentOrderFragment_to_fragmentCompleteOrder"
-            app:destination="@id/fragmentCompleteOrder" />
+            app:destination="@id/fragmentCompleteOrder"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/promotionFragment"
@@ -103,9 +113,7 @@
             android:id="@+id/action_splashscreenFragment2_to_login"
             app:destination="@id/login"
             app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" /><![CDATA[
-            app:destination="@id/principalViewFragment" />
-        ]]>
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/personalizeOrder"
@@ -119,7 +127,9 @@
         tools:layout="@layout/fragment_special_orders" >
         <action
             android:id="@+id/action_specialOrdersFragment_to_fragmentCompleteOrder"
-            app:destination="@id/fragmentCompleteOrder" />
+            app:destination="@id/fragmentCompleteOrder"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
