@@ -24,7 +24,7 @@
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_escoge_postre"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -55,7 +55,7 @@
                     android:layout_margin="7dp"
                     android:fontFamily="@font/halant"
                     android:text="Postre 1"
-                    android:textSize="@dimen/text_size_tablet" />
+                    android:textSize="@dimen/size_content_letter" />
 
                 <RadioButton
                     android:id="@+id/Postre2"
@@ -64,7 +64,7 @@
                     android:layout_margin="7dp"
                     android:fontFamily="@font/halant"
                     android:text="Postre 2"
-                    android:textSize="@dimen/text_size_tablet" />
+                    android:textSize="@dimen/size_content_letter" />
 
                 <RadioButton
                     android:id="@+id/Postre3"
@@ -73,7 +73,7 @@
                     android:layout_margin="7dp"
                     android:fontFamily="@font/halant"
                     android:text="Postre 3"
-                    android:textSize="@dimen/text_size_tablet" />
+                    android:textSize="@dimen/size_content_letter" />
             </RadioGroup>
 
             <TextView
@@ -86,7 +86,7 @@
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_escoge_sabor"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:fontFamily="@font/halant"
-                    android:textSize="@dimen/text_size_tablet"
+                    android:textSize="@dimen/size_content_letter"
                     android:text="sabor 1" />
 
                 <RadioButton
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                 android:fontFamily="@font/halant"
-                android:textSize="@dimen/text_size_tablet"
+                    android:textSize="@dimen/size_content_letter"
                     android:text="sabor 2" />
 
                 <RadioButton
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:fontFamily="@font/halant"
-                    android:textSize="@dimen/text_size_tablet"
+                    android:textSize="@dimen/size_content_letter"
                     android:text="sabor 3" />
             </RadioGroup>
 
@@ -148,7 +148,7 @@
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_otro"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -159,7 +159,7 @@
             <EditText
                 android:id="@+id/editTextOtro"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginTop="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_st"
@@ -168,7 +168,7 @@
                 android:fontFamily="@font/halant"
                 android:inputType="text"
                 android:text=""
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -187,7 +187,7 @@
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_cantidad_porciones"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -198,14 +198,14 @@
             <EditText
                 android:id="@+id/editTextCantidad"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginTop="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_st"
                 android:layout_marginBottom="@dimen/margin_st"
                 android:ems="10"
                 android:inputType="number"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -223,7 +223,7 @@
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_adicionales"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -234,7 +234,7 @@
             <EditText
                 android:id="@+id/editTextIndicaciones"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginTop="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_st"
@@ -243,7 +243,7 @@
                 android:fontFamily="@font/halant"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -252,10 +252,10 @@
 
             <ImageView
                 android:id="@+id/imgPhoto"
-                android:layout_width="303dp"
-                android:layout_height="169dp"
+                android:layout_width="344dp"
+                android:layout_height="229dp"
                 android:layout_marginStart="@dimen/margin_st"
-                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_ft"
                 android:layout_marginEnd="@dimen/margin_tf"
                 android:src="@drawable/logo_3"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -275,7 +275,7 @@
                 android:fontFamily="@font/halant"
                 android:text="@string/Bottom_special_orders_imagen"
                 app:layout_constraintBottom_toBottomOf="@+id/imgPhoto"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -286,10 +286,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="@dimen/margin_e"
+                android:layout_marginTop="@dimen/margin_st"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_agrega_imagen"
-                android:textSize="@dimen/text_size_tablet"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -302,12 +302,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
-                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_tt"
                 android:layout_marginEnd="@dimen/margin_st"
                 android:layout_marginBottom="@dimen/margin_st"
                 android:fontFamily="@font/halant"
-                android:textSize="@dimen/text_size_tablet"
                 android:text="@string/Bottom_special_orders_completar_orden"
+                android:textSize="@dimen/size_content_letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
