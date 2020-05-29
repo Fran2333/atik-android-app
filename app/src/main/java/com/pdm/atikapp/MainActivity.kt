@@ -1,35 +1,36 @@
 package com.pdm.atikapp
 
+import android.content.Context
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.channels.ActorScope
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupViews()
-
-     val orientation = resources.getBoolean(R.bool.portrait_only)
-
-        if(orientation){
-           this.requestedOrientation.and(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-        }else{
-            this.requestedOrientation.and(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
-        }
-    }
-
-    fun setupViews()
-    {
         var navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
+
+        val orientation = resources.configuration.orientation
+
+        fun isLargeScreen(context: Context): Boolean {
+            return ((context.getResources().getConfiguration().screenLayout
+                    and Configuration.SCREENLAYOUT_SIZE_MASK)
+                    >= Configuration.SCREENLAYOUT_SIZE_LARGE)
+        }
+
+        if (orientation != Configuration.ORIENTATION_PORTRAIT) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        } else if (isLargeScreen(getApplicationContext())) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR)
+        }
     }
-
-
 }
