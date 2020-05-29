@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_current_order.*
+import kotlinx.android.synthetic.main.fragment_current_order.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -48,6 +51,8 @@ class CurrentOrderFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Orden Actual"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val label: TextView = view.findViewById(R.id.current_order_label)
         label.setText("${titleArray.size.toString()} productos en tu orden");
@@ -65,6 +70,12 @@ class CurrentOrderFragment : Fragment() {
 
         var tp = view.findViewById<TextView>(R.id.total)
         tp.setText(total.toString())
+
+        val completeBtn = view.findViewById<Button>(R.id.complete_btn)
+
+        completeBtn.setOnClickListener {
+            it.findNavController().navigate(R.id.action_currentOrderFragment_to_fragmentCompleteOrder)
+        }
 
         return view
     }

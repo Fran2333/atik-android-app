@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bone_color"
+    android:background="#FFFF"
     tools:context=".CurrentOrderFragment">
 
     <TextView
@@ -142,11 +142,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_tt"
-        android:background="@color/color_1"
+        android:background="@color/color_12"
         android:fontFamily="@font/halant_semibold"
         android:padding="@dimen/margin_e"
         android:text="@string/btn_confirm_name"
-        android:textColor="@color/base_color_1"
+        android:textColor="#FFFF"
         android:textSize="@dimen/size_content_letter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

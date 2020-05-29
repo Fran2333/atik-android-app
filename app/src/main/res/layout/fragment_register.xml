@@ -162,6 +162,8 @@
         android:layout_marginTop="@dimen/margin_st"
         android:layout_marginEnd="@dimen/margin_st"
         android:layout_marginBottom="@dimen/margin_st"
+        android:background="@color/color_12"
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

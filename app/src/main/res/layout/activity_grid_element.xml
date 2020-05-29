@@ -12,8 +12,9 @@
     app:cardElevation="@dimen/margin_e">
 
     <RelativeLayout
+        android:id="@+id/parent"
         android:layout_width="wrap_content"
-        android:layout_height="270dp"
+        android:layout_height="400dp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_margin="@dimen/margin_st"
         android:orientation="vertical">
@@ -37,17 +38,49 @@
             android:layout_below="@+id/promotion_img"
             android:layout_marginTop="@dimen/margin_e"/>
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/im_forward"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="320dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/promotion_img"
-            app:srcCompat="@drawable/ic_expand_more_black_24dp"
-            tools:ignore="VectorDrawableCompat" />
+            app:lottie_rawRes="@raw/plusicon"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@id/promotion_name"
+            android:id="@+id/expandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_rawRes="@raw/sbutton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

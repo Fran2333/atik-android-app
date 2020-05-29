@@ -64,8 +64,8 @@
     <dimen name="tv_promotion_hdimen_tportrait">409dp</dimen>
     <dimen name="tv_order_wdimen_tportrait">301dp</dimen>
     <dimen name="tv_order_hdimen_tportrait">416dp</dimen>
-    <dimen name="iv_wdimen_tportrait">120dp</dimen>
-    <dimen name="iv_hdimen_tportrait">120dp</dimen>
+    <dimen name="iv_wdimen_tportrait">200dp</dimen>
+    <dimen name="iv_hdimen_tportrait">200dp</dimen>
     <dimen name="title_text_content_dimen_ppview">32sp</dimen>
     <dimen name ="content_text_content_dimen_ppview">24sp</dimen>
 

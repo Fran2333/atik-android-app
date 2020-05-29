@@ -8,20 +8,6 @@
     tools:context=".FragmentCompleteOrder">
 
 
-    <TextView
-        android:id="@+id/textTittle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_st"
-        android:layout_marginEnd="@dimen/margin_st"
-        android:fontFamily="@font/halant"
-        android:text="@string/tittle_textview"
-        android:textSize="@dimen/size_title_letter3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <RadioButton
         android:id="@+id/btnAtHome"
         android:layout_width="wrap_content"
@@ -53,14 +39,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/halant"
         android:text="@string/type_order_textview"
         android:textSize="@dimen/size_content_letter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTittle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textType2"
@@ -183,11 +169,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginTop="@dimen/margin_ft"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
+        android:background="@color/color_12"
         android:fontFamily="@font/halant"
         android:text="@string/finalizar_btn"
+        android:textColor="#FFFF"
         android:textSize="@dimen/size_content_letter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

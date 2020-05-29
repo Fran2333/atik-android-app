@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_grid_element.*
 import java.util.ArrayList
 
@@ -26,15 +28,29 @@ class PromotionFragment : Fragment() {
         R.drawable.circulethree
     )
 
+    var description = arrayListOf<String>(
+        "Description 1",
+         "Description 2",
+        "Description3"
+  )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title="Promotion"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
+        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+
 
         var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(context!!, imageArray, namePro)
+        val adapter= PromotionAdapter(context!!, imageArray, namePro, description)
         gv.adapter = adapter
 
         gv.numColumns = 1

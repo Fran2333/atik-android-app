@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.pdm.atikapp.databinding.FragmentMenuBinding
+import kotlinx.android.synthetic.main.grid_element.view.*
 
 class MenuAdapter(
     private val context: Context,
@@ -38,6 +42,12 @@ class MenuAdapter(
         img.setImageResource(image[position])
         val name: TextView = view.findViewById(R.id.category_name)
         name.setText(category[position])
+
+        view.card.setOnClickListener {
+            it.findNavController().navigate(R.id.action_menuFragment_to_categoryFragment)
+        }
+
+
 
         return view
 

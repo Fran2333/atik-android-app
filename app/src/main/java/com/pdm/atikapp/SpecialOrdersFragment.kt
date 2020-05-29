@@ -13,14 +13,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
+import androidx.navigation.findNavController
 import  kotlinx.android.synthetic.main.fragment_special_orders.*
 
 
 class SpecialOrdersFragment : Fragment() {
 
-      val REQUEST_GALLERY = 1001
+    val REQUEST_GALLERY = 1001
 
 
     override fun onCreateView(
@@ -29,14 +31,23 @@ class SpecialOrdersFragment : Fragment() {
 
     ): View? {
 
-
-        this.activity?.setTitle(R.string.view_special_orders_name)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        toolbar.title = "Pedidos especiales"
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_special_orders, container, false)
         val ImgBtn = view.findViewById<Button>(R.id.buttonImagen)
-       ImgBtn.setOnClickListener() {
+        val completeBtn = view.findViewById<Button>(R.id.buttonCompletar)
+        ImgBtn.setOnClickListener() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(context!!,Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                if (checkSelfPermission(
+                        context!!,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    ) == PackageManager.PERMISSION_DENIED
+                ) {
                     val permissionRecords = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
                     requestPermissions(permissionRecords, REQUEST_GALLERY)
                 } else {
@@ -46,7 +57,12 @@ class SpecialOrdersFragment : Fragment() {
                 showGallery()
             }
         }
-return view;
+
+        completeBtn.setOnClickListener {
+            it.findNavController().navigate(R.id.action_specialOrdersFragment_to_fragmentCompleteOrder)
+        }
+
+        return view;
     }
 
 
@@ -56,25 +72,26 @@ return view;
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when(requestCode){
-            REQUEST_GALLERY ->{
-                if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+        when (requestCode) {
+            REQUEST_GALLERY -> {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     showGallery()
                 else
-                    Toast.makeText(context,"No puedes acceder a tus imagenes",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "No puedes acceder a tus imagenes", Toast.LENGTH_SHORT)
+                        .show()
             }
         }
     }
 
-    private fun showGallery(){
-      val intentGallery =  Intent(Intent.ACTION_PICK)
-      intentGallery.type = "image/*"
-      startActivityForResult(intentGallery,REQUEST_GALLERY)
-  }
+    private fun showGallery() {
+        val intentGallery = Intent(Intent.ACTION_PICK)
+        intentGallery.type = "image/*"
+        startActivityForResult(intentGallery, REQUEST_GALLERY)
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode ==  Activity.RESULT_OK && requestCode == REQUEST_GALLERY){
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_GALLERY) {
             imgPhoto.setImageURI(data?.data)
         }
     }

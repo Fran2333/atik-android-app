@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bone_color"
+    android:background="#FFFF"
     tools:context=".CurrentOrderFragment">
 
 
@@ -131,15 +131,15 @@
 
     <Button
         android:id="@+id/complete_btn"
-        android:padding="@dimen/margin_st"
-        android:textSize="@dimen/size_content_letter"
-        android:fontFamily="@font/halant_semibold"
-        android:background="@color/color_19"
-        android:textColor="@color/base_color_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_tt"
+        android:background="@color/color_12"
+        android:fontFamily="@font/halant_semibold"
+        android:padding="@dimen/margin_st"
         android:text="@string/btn_confirm_name"
+        android:textColor="#FFFF"
+        android:textSize="@dimen/size_content_letter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"

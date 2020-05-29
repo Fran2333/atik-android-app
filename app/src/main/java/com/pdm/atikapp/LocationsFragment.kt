@@ -24,10 +24,10 @@ class LocationsFragment : Fragment() {
         "Descripcion 2"
     )
 
-    var imageArray = arrayOf<Int>(
-        R.drawable.ic_signs,
-        R.drawable.ic_signs
-    )
+   // var imageArray = arrayOf<Int>(
+      //  R.drawable.ic_signs,
+      //  R.drawable.ic_signs
+    //)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,10 +38,12 @@ class LocationsFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Ubicaciones"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 
-        val adapter = LocationAdapter(context!!, titleArray, descArray, imageArray)
+        val adapter = LocationAdapter(context!!, titleArray, descArray)//, imageArray)
         lv.adapter = adapter
 
         return view

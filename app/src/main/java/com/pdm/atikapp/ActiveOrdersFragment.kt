@@ -44,6 +44,8 @@ class ActiveOrdersFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Ordenes Activas"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         var lv = view.findViewById<ListView>(R.id.active_orders_list)
 

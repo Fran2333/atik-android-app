@@ -1,172 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".PrincipalViewFragment">
 
-
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="407dp"
-        android:background="@color/color_8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        android:background="#FFFF">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="205dp"
-        android:layout_height="365dp"
-        android:background="@color/color_15"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="207dp"
-        android:layout_height="365dp"
-        android:background="@color/color_11"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/principalViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView10"
-        style="@style/title_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:text="Menu"
-        android:textAllCaps="true"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menuCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/margin_e"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView11"
-        style="@style/content_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:layout_marginTop="@dimen/margin_e"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="Realiza tu pedido"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="@dimen/margin_st"
+                        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="@dimen/iv_wdimen_tportrait"
-        android:layout_height="@dimen/iv_hdimen_tportrait"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        app:srcCompat="@drawable/ic_restaurant_menu_black_24dp" />
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/food"
+                            android:layout_width="@dimen/iv_wdimen_tportrait"
+                            android:layout_height="@dimen/iv_hdimen_tportrait"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:paddingBottom="@dimen/margin_st"
+                            app:lottie_autoPlay="true"
+                            app:lottie_rawRes="@raw/food" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="@dimen/iv_wdimen_tportrait"
-        android:layout_height="@dimen/iv_hdimen_tportrait"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/ic_book_black_24dp" />
+                        <TextView
+                            android:id="@+id/menu"
+                            style="@style/title_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/food"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:fontFamily="@font/halant_semibold"
+                            android:text="Menu"
+                            android:textAllCaps="true" />
 
-    <TextView
-        android:id="@+id/textView12"
-        style="@style/title_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_ft"
-        android:fontFamily="@font/halant_semibold"
-        android:text="Pedidos"
-        android:textAllCaps="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0" />
+                        <TextView
+                            android:id="@+id/descriptionMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/menu"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:layout_marginBottom="@dimen/margin_st"
+                            android:fontFamily="@font/halant"
+                            android:text="Realiza tu orden" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="163dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="@dimen/margin_st"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:fontFamily="@font/halant"
-        android:text="Personaliza tu orden"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.996" />
+                    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="@dimen/iv_wdimen_tportrait"
-        android:layout_height="@dimen/iv_hdimen_tportrait"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.35000002"
-        app:srcCompat="@drawable/ic_description_black_24dp" />
+                </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:layout_marginBottom="@dimen/margin_ft"
-        android:fontFamily="@font/halant_semibold"
-        android:text="Promociones"
-        android:textAllCaps="true"
-        android:textColor="@color/color_11"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="1.0" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/specialCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:cardElevation="@dimen/margin_e"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/menuCard">
 
-    <TextView
-        android:id="@+id/textView15"
-        style="@style/content_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_e"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:text="Ofertas del dia"
-        android:textColor="@color/color_11"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="1.0" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="@dimen/margin_st"
+                        android:orientation="vertical">
 
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/specialAnimation"
+                            android:layout_width="@dimen/iv_wdimen_tportrait"
+                            android:layout_height="@dimen/iv_wdimen_tportrait"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:paddingBottom="@dimen/margin_st"
+                            app:lottie_autoPlay="true"
+                            app:lottie_rawRes="@raw/documentfile"  />
 
+                        <TextView
+                            android:id="@+id/specialOrder"
+                            style="@style/title_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/specialAnimation"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:fontFamily="@font/halant_semibold"
+                            android:text="Pedidos especiales"
+                            android:textAllCaps="true" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/descriptionSpecial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/specialOrder"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:layout_marginBottom="@dimen/margin_st"
+                            android:fontFamily="@font/halant"
+                            android:text="Personaliza tu orden" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/promotionCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/margin_e"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/specialCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="@dimen/margin_st"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/promotionAnimation"
+                            android:layout_width="@dimen/iv_wdimen_tportrait"
+                            android:layout_height="@dimen/iv_hdimen_tportrait"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:paddingBottom="@dimen/margin_st"
+                            app:lottie_autoPlay="true"
+                            app:lottie_rawRes="@raw/paperbounce" />
+
+                        <TextView
+                            android:id="@+id/promotion"
+                            style="@style/title_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/promotionAnimation"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:fontFamily="@font/halant_semibold"
+                            android:text="Promociones"
+                            android:textAllCaps="true" />
+
+                        <TextView
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/promotion"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/margin_st"
+                            android:layout_marginBottom="@dimen/margin_st"
+                            android:fontFamily="@font/halant"
+                            android:text="Ofertas especiales" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

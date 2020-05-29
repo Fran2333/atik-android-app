@@ -33,7 +33,7 @@
 
             <RadioGroup
                 android:id="@+id/groupPostre"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginTop="@dimen/margin_st"
@@ -52,21 +52,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="7dp"
-                    android:text="Postre1" />
+                    android:text="Postre 1" />
 
                 <RadioButton
                     android:id="@+id/Postre2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="7dp"
-                    android:text="Postre2" />
+                    android:text="Postre 2" />
 
                 <RadioButton
                     android:id="@+id/Postre3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="7dp"
-                    android:text="Postre3" />
+                    android:text="Postre 3" />
             </RadioGroup>
 
             <TextView
@@ -89,7 +89,7 @@
 
             <RadioGroup
                 android:id="@+id/groupSabor"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginTop="@dimen/margin_st"
@@ -108,21 +108,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="sabor1" />
+                    android:text="sabor 1" />
 
                 <RadioButton
                     android:id="@+id/sabor2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="sabor2" />
+                    android:text="sabor 2" />
 
                 <RadioButton
                     android:id="@+id/sabor3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="sabor3" />
+                    android:text="sabor 3" />
             </RadioGroup>
 
             <TextView
@@ -258,8 +258,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_st"
+                android:background="@color/color_12"
                 android:fontFamily="@font/halant"
                 android:text="@string/Bottom_special_orders_imagen"
+                android:textColor="#FFFF"
                 app:layout_constraintBottom_toBottomOf="@+id/imgPhoto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -270,6 +272,7 @@
                 android:id="@+id/Imagen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="@dimen/margin_e"
                 android:fontFamily="@font/halant"
                 android:text="@string/textView_special_orders_agrega_imagen"
@@ -289,8 +292,10 @@
                 android:layout_marginTop="@dimen/margin_st"
                 android:layout_marginEnd="@dimen/margin_st"
                 android:layout_marginBottom="@dimen/margin_st"
+                android:background="@color/color_12"
                 android:fontFamily="@font/halant"
                 android:text="@string/Bottom_special_orders_completar_orden"
+                android:textColor="#FFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
