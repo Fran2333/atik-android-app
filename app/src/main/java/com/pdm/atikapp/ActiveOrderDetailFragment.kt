@@ -45,9 +45,9 @@ class ActiveOrderDetailFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Orden Activa"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
-
+        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
         val label: TextView = view.findViewById(R.id.current_order_label)
-        label.setText("${titleArray.size.toString()} productos en tu orden");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 

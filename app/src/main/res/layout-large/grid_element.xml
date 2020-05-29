@@ -7,7 +7,8 @@
     android:layout_marginRight="@dimen/margin_st"
     android:layout_marginBottom="@dimen/margin_st"
     app:cardCornerRadius="@dimen/margin_e"
-    app:cardElevation="@dimen/margin_e">
+    app:cardElevation="@dimen/margin_e"
+    android:id="@+id/card">
 
     <RelativeLayout
         android:layout_width="wrap_content"

@@ -1,5 +1,8 @@
 package com.pdm.atikapp
 
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,22 +14,31 @@ import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
+import com.airbnb.lottie.LottieAnimationView
 import com.pdm.atikapp.databinding.FragmentPrincipalViewBinding
+import kotlinx.android.synthetic.main.fragment_principal_view.*
+import kotlinx.android.synthetic.main.fragment_principal_view.view.*
+import kotlinx.android.synthetic.main.fragment_principal_view.view.promotionAnimation
 
 class PrincipalViewFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentPrincipalViewBinding>(inflater, R.layout.fragment_principal_view, container, false)
-
         val toolbar = (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.title = "Atik"
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
+
+
         binding.menuCard.setOnClickListener {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_menuFragment)
+
+
         }
 
         binding.specialCard.setOnClickListener {
@@ -36,6 +48,8 @@ class PrincipalViewFragment : Fragment() {
         binding.promotionCard.setOnClickListener {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment)
         }
+
+
 
 
         return binding.root

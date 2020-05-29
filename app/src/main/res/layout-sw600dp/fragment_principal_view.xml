@@ -7,7 +7,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFF">
+        android:background="#FFFF"
+        android:padding="@dimen/margin_st">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -16,13 +17,16 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/principalViewLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_e">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/menuCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardElevation="@dimen/margin_e"
+                    app:cardCornerRadius="@dimen/margin_e"
+                    android:outlineAmbientShadowColor="#0000"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -36,11 +40,12 @@
 
                         <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/food"
-                            android:layout_width="@dimen/iv_wdimen_tportrait"
-                            android:layout_height="@dimen/iv_hdimen_tportrait"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:paddingBottom="@dimen/margin_st"
+                            android:paddingLeft="@dimen/margin_ft"
                             app:lottie_autoPlay="true"
                             app:lottie_rawRes="@raw/food" />
 
@@ -76,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:cardElevation="@dimen/margin_e"
+                    app:cardCornerRadius="@dimen/margin_e"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/menuCard">
@@ -89,13 +95,15 @@
 
                         <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/specialAnimation"
-                            android:layout_width="@dimen/iv_wdimen_tportrait"
-                            android:layout_height="@dimen/iv_wdimen_tportrait"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginHorizontal="@dimen/margin_ft"
+                            android:layout_marginLeft="@dimen/margin_ft"
+                            android:paddingLeft="@dimen/margin_ft"
                             android:paddingBottom="@dimen/margin_st"
                             app:lottie_autoPlay="true"
-                            app:lottie_rawRes="@raw/documentfile"  />
+                            app:lottie_rawRes="@raw/documentfile" />
 
                         <TextView
                             android:id="@+id/specialOrder"
@@ -128,7 +136,8 @@
                     android:id="@+id/promotionCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardElevation="@dimen/margin_e"
+                    app:cardElevation="@dimen/margin_st"
+                    app:cardCornerRadius="@dimen/margin_st"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -143,8 +152,8 @@
 
                         <com.airbnb.lottie.LottieAnimationView
                             android:id="@+id/promotionAnimation"
-                            android:layout_width="@dimen/iv_wdimen_tportrait"
-                            android:layout_height="@dimen/iv_hdimen_tportrait"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:paddingBottom="@dimen/margin_st"
@@ -175,7 +184,6 @@
                             android:text="Ofertas especiales" />
 
                     </RelativeLayout>
-
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
