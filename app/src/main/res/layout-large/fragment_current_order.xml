@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF"
+    tools:context=".CurrentOrderFragment">
+
+    <TextView
+        android:id="@+id/current_order_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tf"
+        android:fontFamily="@font/halant_semibold"
+        android:textAlignment="textStart"
+        android:textColor="#B5B5B5"
+        android:textSize="@dimen/size_content_letter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/order_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="@dimen/margin_ft"
+        android:paddingEnd="@dimen/margin_ft"
+        android:layout_marginLeft="@dimen/margin_tt"
+        android:layout_marginTop="@dimen/margin_tf"
+        android:layout_marginRight="@dimen/margin_tt"
+        android:layout_marginBottom="@dimen/margin_tt"
+        android:divider="@color/icons_fields_color"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_order_label"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_tt"
+        android:layout_marginTop="@dimen/margin_ft"
+        android:layout_marginEnd="@dimen/margin_tt"
+        android:layout_marginBottom="@dimen/margin_ft"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_order_label" />
+
+
+    <RelativeLayout
+        android:id="@+id/total_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_ft"
+        android:layout_marginTop="@dimen/margin_ft"
+        android:layout_marginEnd="@dimen/margin_ft"
+        android:paddingStart="@dimen/margin_ft"
+        android:paddingTop="@dimen/margin_e"
+        android:paddingEnd="@dimen/margin_ft"
+        android:paddingBottom="@dimen/margin_ft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <TextView
+            android:id="@+id/subtotal_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:fontFamily="@font/halant"
+            android:text="@string/subtotal"
+            android:textSize="@dimen/size_content_letter" />
+
+        <TextView
+            android:id="@+id/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:layout_toEndOf="@id/subtotal_label"
+            android:fontFamily="@font/halant"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/size_content_letter" />
+
+        <TextView
+            android:id="@+id/shipping_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtotal_label"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:fontFamily="@font/halant"
+            android:text="@string/shipping"
+            android:textSize="@dimen/size_content_letter" />
+
+        <TextView
+            android:id="@+id/shipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtotal"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:layout_toEndOf="@id/shipping_label"
+            android:fontFamily="@font/halant"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/size_content_letter" />
+
+        <TextView
+            android:id="@+id/total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shipping_label"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:fontFamily="@font/halant_semibold"
+            android:text="@string/total"
+            android:textSize="@dimen/medium_text" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shipping"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_e"
+            android:layout_toEndOf="@id/total_label"
+            android:fontFamily="@font/halant_semibold"
+            android:textAlignment="viewEnd"
+            android:textSize="@dimen/medium_text" />
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/complete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tt"
+        android:background="@color/color_12"
+        android:fontFamily="@font/halant_semibold"
+        android:padding="@dimen/margin_e"
+        android:text="@string/btn_confirm_name"
+        android:textColor="#FFFF"
+        android:textSize="@dimen/size_content_letter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_order"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

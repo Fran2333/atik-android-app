@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SpecialOrdersFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/EscogePostre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_escoge_postre"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/groupPostre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.046">
+
+                <RadioButton
+                    android:id="@+id/Postre1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:fontFamily="@font/halant"
+                    android:text="Postre 1"
+                    android:textSize="@dimen/size_content_letter" />
+
+                <RadioButton
+                    android:id="@+id/Postre2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:fontFamily="@font/halant"
+                    android:text="Postre 2"
+                    android:textSize="@dimen/size_content_letter" />
+
+                <RadioButton
+                    android:id="@+id/Postre3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:fontFamily="@font/halant"
+                    android:text="Postre 3"
+                    android:textSize="@dimen/size_content_letter" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/EscogeSabor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_escoge_sabor"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupPostre"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RadioGroup
+                android:id="@+id/groupSabor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.186">
+
+                <RadioButton
+                    android:id="@+id/sabor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/halant"
+                    android:textSize="@dimen/size_content_letter"
+                    android:text="sabor 1" />
+
+                <RadioButton
+                    android:id="@+id/sabor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                android:fontFamily="@font/halant"
+                    android:textSize="@dimen/size_content_letter"
+                    android:text="sabor 2" />
+
+                <RadioButton
+                    android:id="@+id/sabor3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/halant"
+                    android:textSize="@dimen/size_content_letter"
+                    android:text="sabor 3" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/Otro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_otro"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/groupSabor"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/editTextOtro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:ems="10"
+                android:fontFamily="@font/halant"
+                android:inputType="text"
+                android:text=""
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Otro"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <TextView
+                android:id="@+id/CantidadPorciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_tf"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_cantidad_porciones"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextOtro"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/editTextCantidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:ems="10"
+                android:inputType="number"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CantidadPorciones"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/IndicacionesAdicionales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_adicionales"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCantidad"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/editTextIndicaciones"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:ems="10"
+                android:fontFamily="@font/halant"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IndicacionesAdicionales"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imgPhoto"
+                android:layout_width="344dp"
+                android:layout_height="229dp"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_ft"
+                android:layout_marginEnd="@dimen/margin_tf"
+                android:src="@drawable/logo_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.418"
+                app:layout_constraintStart_toEndOf="@+id/buttonImagen"
+                app:layout_constraintTop_toBottomOf="@+id/Imagen"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <Button
+                android:id="@+id/buttonImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:background="@color/color_12"
+                android:fontFamily="@font/halant"
+                android:text="@string/Bottom_special_orders_imagen"
+                android:textColor="#FFFF"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="@+id/imgPhoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgPhoto" />
+
+            <TextView
+                android:id="@+id/Imagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_st"
+                android:fontFamily="@font/halant"
+                android:text="@string/textView_special_orders_agrega_imagen"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextIndicaciones"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/buttonCompletar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_st"
+                android:layout_marginTop="@dimen/margin_tt"
+                android:layout_marginEnd="@dimen/margin_st"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:background="@color/color_12"
+                android:fontFamily="@font/halant"
+                android:text="@string/Bottom_special_orders_completar_orden"
+                android:textColor="#FFFF"
+                android:textSize="@dimen/size_content_letter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgPhoto"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/activeOrderElement"
+    android:padding="@dimen/margin_st">
+
+
+    <TextView
+        android:id="@+id/order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_e"
+        android:fontFamily="@font/halant_semibold"
+        android:textSize="@dimen/medium_text" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/order_id"
+        android:fontFamily="@font/halant"
+        android:textSize="@dimen/size_content_letter" />
+
+    <TextView
+        android:id="@+id/items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_e"
+        android:fontFamily="@font/halant"
+        android:textColor="@color/base_color_1"
+        android:textSize="@dimen/small_text" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/items"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/halant"
+        android:textSize="@dimen/small_text" />
+
+</RelativeLayout>

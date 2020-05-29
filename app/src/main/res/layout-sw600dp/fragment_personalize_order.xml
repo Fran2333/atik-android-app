@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalizeOrder">
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_st"
+        android:layout_marginEnd="@dimen/margin_st"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3333" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_st"
+        android:layout_marginEnd="@dimen/margin_st"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6666" />
+
+    <TextView
+        android:id="@+id/dessertName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postre n"
+        android:textSize="@dimen/size_title_letter1"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/dessertDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Descripcion del postre"
+        android:textSize="@dimen/size_title_letter3"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dessertName"
+        app:layout_constraintTop_toBottomOf="@+id/dessertName"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/opcRad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escoge 1:"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+    <RadioGroup
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opcRad"
+        app:layout_constraintTop_toBottomOf="@+id/opcRad"
+        app:layout_constraintVertical_bias="0.20">
+
+        <RadioButton
+            android:id="@+id/opcRad1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="4dp"
+            android:text="Opcion 1"
+            android:textSize="@dimen/size_title_letter3" />
+
+        <RadioButton
+            android:id="@+id/opcRad2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opcion 2"
+            android:textSize="@dimen/size_title_letter3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/dollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textSize="@dimen/size_title_letter2"
+        app:layout_constraintBottom_toBottomOf="@+id/dessertName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dessertName" />
+
+    <TextView
+        android:id="@+id/dessertPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- -"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dollarSign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/dollarSign"
+        app:layout_constraintTop_toTopOf="@+id/dollarSign" />
+
+    <TextView
+        android:id="@+id/opcCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escoge"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:layout_constraintVertical_bias="0.24000001" />
+
+    <CheckBox
+        android:id="@+id/opcCheck1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opcion 1"
+        android:textSize="@dimen/size_title_letter3"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opcCheck"
+        app:layout_constraintTop_toBottomOf="@+id/opcCheck"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <CheckBox
+        android:id="@+id/opcCheck2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opcion 2"
+        android:textSize="@dimen/size_title_letter3"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opcCheck"
+        app:layout_constraintTop_toBottomOf="@+id/opcCheck1"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <CheckBox
+        android:id="@+id/opcCheck3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opcion 3"
+        android:textSize="@dimen/size_title_letter3"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opcCheck2"
+        app:layout_constraintTop_toBottomOf="@+id/opcCheck2"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+
+    <CheckBox
+        android:id="@+id/opcCheck4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opcion 4"
+        android:textSize="@dimen/size_title_letter3"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opcCheck3"
+        app:layout_constraintTop_toBottomOf="@+id/opcCheck3"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <Button
+        android:id="@+id/addDessert"
+        android:layout_width="291dp"
+        android:layout_height="67dp"
+        android:background="@color/color_12"
+        android:text="Agregar a la orden"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/more"
+        android:layout_width="60dp"
+        android:layout_height="64dp"
+        android:background="@color/color_12"
+        android:text="-"
+        android:textColor="#FFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/addDessert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/addDessert"
+        app:layout_constraintTop_toBottomOf="@+id/quantity" />
+
+    <Button
+        android:id="@+id/less"
+        android:layout_width="62dp"
+        android:layout_height="68dp"
+        android:background="@color/color_12"
+        android:text="+"
+        android:textColor="#FFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="@+id/more"
+        app:layout_constraintTop_toTopOf="@+id/more"
+        app:layout_constraintVertical_bias="0.708" />
+    <TextView
+        android:id="@+id/quantityDesserts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/less"
+        app:layout_constraintEnd_toStartOf="@+id/less"
+        app:layout_constraintStart_toEndOf="@+id/more"
+        app:layout_constraintTop_toTopOf="@+id/less" />
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/splash_screen_color</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -13,25 +13,57 @@
         <item name="android:background">@color/splash_screen_color</item>
         <item name="android:color">@color/bone_color</item>
     </style>
-    
+
     <!--Splashcreen content style-->
     <style name="sc_content_style">
         <item name="android:height">@dimen/photo_height</item>
         <item name="android:width">@dimen/photo_width</item>
     </style>
-    
+
     <!--Splashcreen bar status style-->
     <style name="sc_bar_status_style">
-        <item name="android:color">@color/bone_color</item>
         <item name="android:height">@dimen/bs_height</item>
         <item name="android:width">@dimen/bs_width</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+        <item name="android:indeterminateTint">@color/bone_color</item>
 
     </style>
 
     <!--Principal view style-->
     <style name="pv_style">
     </style>
-    
+
+    <!--Title principal view style-->
+    <style name="title_ppview_style">
+        <item name="android:textSize">@dimen/title_text_content_dimen_ppview</item>
+        <item name="android:fontFamily">@font/halant_semibold</item>
+    </style>
+
+    <!--Content principal view style-->
+    <style name="content_ppview_style">
+        <item name="android:textSize">@dimen/content_text_content_dimen_ppview</item>
+        <item name="android:fontFamily">@font/halant</item>
+    </style>
+
+    <!--Title principal view style// landscape-->
+    <style name="title_ppview_landscape_style">
+        <item name="android:textSize">@dimen/title_text_content_dimen_landscape_ppview</item>
+        <item name="android:fontFamily">@font/halant_semibold</item>
+    </style>
+
+    <!--Content principal view style// landscape-->
+    <style name="content_ppview_landscape_style">
+        <item name="android:textSize">@dimen/content_text_content_dimen_landscape_ppview</item>
+        <item name="android:fontFamily">@font/halant</item>
+    </style>
+
+    <!--Image principal view style-->
+    <style name="iv_ppview_style">
+        <item name="android:width">@dimen/iv_wdimen_tportrait</item>
+        <item name="android:height">@dimen/iv_hdimen_tportrait</item>
+    </style>
+
     <!-- Button Register style-->
     <style name="btn_register_style">
         <item name="android:background">@color/bone_color</item>
@@ -95,6 +127,39 @@
         <item name="android:color">@color/icons_fields_color</item>
     </style>
 
+    <!--Text view style-->
+    <style name="form_textview_style">
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/text_size_forms</item>
+        <item name="android:layout_width">@dimen/form_width</item>
+        <item name="android:layout_height">@dimen/form_heigth_textView</item>
+        <item name="android:layout_marginStart">@dimen/margin_st</item>
+        <item name="android:layout_marginTop">@dimen/margin_e</item>
+        <item name="android:layout_marginEnd">@dimen/margin_st</item>
+        <item name="android:layout_marginBottom">@dimen/margin_st</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Edit text style-->
+    <style name="form_edit_text_style">
+        <item name="android:fontFamily">@font/halant</item>
+        <item name="android:color">@color/bone_color</item>
+        <item name="android:textSize">@dimen/size_content_letter</item>
+        <item name="android:layout_width">@dimen/form_width</item>
+        <item name="android:layout_height">@dimen/form_heigth_editText</item>
+        <item name="android:layout_marginStart">@dimen/margin_st</item>
+        <item name="android:layout_marginTop">@dimen/margin_e</item>
+        <item name="android:layout_marginEnd">@dimen/margin_st</item>
+        <item name="android:layout_marginBottom">@dimen/margin_st</item>
+    </style>
 
 
 </resources>

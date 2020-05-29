@@ -2,6 +2,7 @@
 <resources>
 
     <!--Margins-->
+    <dimen name="margin_s">4dp</dimen>
     <dimen name="margin_e">8dp</dimen>
     <dimen name="margin_st">16dp</dimen>
     <dimen name="margin_tf">24dp</dimen>
@@ -9,21 +10,29 @@
     <dimen name="margin_ft">40dp</dimen>
 
     <!--Letter size-->
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="medium_text">18sp</dimen>
     <dimen name="size_title_letter1">24sp</dimen>
     <dimen name="size_title_letter2">32sp</dimen>
+    <dimen name="size_title_letter3">20sp</dimen>
     <dimen name="size_content_letter">16sp</dimen>
-    
+
     <!--Splashcreen dimens-->
     <dimen name="photo_height">75dp</dimen>
     <dimen name="photo_width">75dp</dimen>
 
+    <!--Splashcreen dimens tablet-->
+    <dimen name="photo_theight">100dp</dimen>
+    <dimen name="photo_twidth">100dp</dimen>
+
     <!--Principal view dimens-->
+
     <dimen name="icon_menu_height"></dimen>
     <dimen name="promotions_height"></dimen>
     <dimen name="orders_height"></dimen>
     <dimen name="icon_menu_width"></dimen>
     <dimen name="promotions_width"></dimen>
-    <dimen name="orders_width"></dimen>
+    <dimen name="orders_width"></dimen>-->
 
     <!-- Button Register/Login dimens-->
     <dimen name="btn_register_login_height">40dp</dimen>
@@ -37,6 +46,51 @@
 
     <!-- Bar status dimens-->
     <dimen name="bs_height">20dp</dimen>
-    <dimen name="bs_width">100dp</dimen>
+    <dimen name="bs_width">200dp</dimen>
 
+    <!--Bar status dimens tablet -->
+    <dimen name="bs_tablet_height">25dp</dimen>
+    <dimen name="bs_tablet_width">280dp</dimen>
+
+    <!--Bar status landscape dimens table-->
+    <dimen name="bs_tablet_landscape_height">25dp</dimen>
+    <dimen name="bs_tablet_landscape_width">270dp</dimen>
+
+
+    <!-- Tablet portrait dimens//principal view-->
+    <dimen name="tv_menu_wdimen_tportrait">300dp</dimen>
+    <dimen name="tv_menu_hdimen_tportrait">832dp</dimen>
+    <dimen name="tv_promotion_wdimen_tportrait">301dp</dimen>
+    <dimen name="tv_promotion_hdimen_tportrait">409dp</dimen>
+    <dimen name="tv_order_wdimen_tportrait">301dp</dimen>
+    <dimen name="tv_order_hdimen_tportrait">416dp</dimen>
+    <dimen name="iv_wdimen_tportrait">200dp</dimen>
+    <dimen name="iv_hdimen_tportrait">200dp</dimen>
+    <dimen name="title_text_content_dimen_ppview">32sp</dimen>
+    <dimen name ="content_text_content_dimen_ppview">24sp</dimen>
+
+    <!-- Tablet landscape dimens// principal view-->
+    <dimen name="title_text_content_dimen_landscape_ppview">28sp</dimen>
+    <dimen name="content_text_content_dimen_landscape_ppview">20sp</dimen>
+    <dimen name="tv_menu_wdimen_landscape">482dp</dimen>
+    <dimen name="tv_menu_hdimen_landscape">600dp</dimen>
+    <dimen name="tv_pp_wdimen_landscape">480dp</dimen>
+    <dimen name="tv_pp_hdimen_landscape">300dp</dimen>
+
+    <!--register dimens-->
+    <dimen name="switch_text_size">12sp</dimen>
+    <dimen name="text_size_forms">16sp</dimen>
+    <dimen name="form_width">0dp</dimen>
+    <dimen name="form_heigth_textView">25dp</dimen>
+    <dimen name="form_heigth_editText">45dp</dimen>
+
+    <!--Text size tablet-->
+    <dimen name="text_size_tablet">20sp</dimen>
+    <dimen name="text_size_tablet_tittle">28sp</dimen>
+
+    <!--tablets size-->
+    <dimen name="text_content_tablet">20sp</dimen>
+
+    <!--toolbar dimens-->
+    <dimen name="toolbar_height">56dp</dimen>
 </resources>
