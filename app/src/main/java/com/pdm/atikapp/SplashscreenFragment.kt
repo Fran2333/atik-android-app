@@ -15,7 +15,9 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.transition.FragmentTransitionSupport
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -49,10 +51,16 @@ class SplashscreenFragment : Fragment() {
         sd.startAnimation(pop)
         ss.startAnimation(pap)
 
-       Handler().postDelayed({
+        Handler().postDelayed({
            startActivity(Intent(this.context, MainActivity::class.java))
-           activity?.finish()
-      },SPLASH_TIME)
+            activity!!.finish()
+            activity!!.isDestroyed
+            findNavController().navigate(R.id.action_splashscreenFragment2_to_login,
+                null,
+                NavOptions.Builder()
+                    .setPopUpTo(R.id.splashscreenFragment2,true).build())
+     },SPLASH_TIME)
+
 
 
         return view
