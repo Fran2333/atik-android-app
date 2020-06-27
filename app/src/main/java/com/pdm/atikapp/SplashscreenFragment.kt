@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
@@ -22,6 +23,11 @@ import androidx.transition.FragmentTransitionSupport
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_splashscreen.*
+import java.util.*
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
+import kotlin.concurrent.timerTask
 
 
 /**
@@ -47,19 +53,14 @@ class SplashscreenFragment : Fragment() {
         val ss = view.findViewById(R.id.ingredients_image) as ImageView
 
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         head.startAnimation(ttb)
         sd.startAnimation(pop)
         ss.startAnimation(pap)
 
-        Handler().postDelayed({
-           startActivity(Intent(this.context, MainActivity::class.java))
-            activity!!.finish()
 
-            findNavController().navigate(R.id.action_splashscreenFragment2_to_login,
-                null,
-                NavOptions.Builder()
-                    .setPopUpTo(R.id.splashscreenFragment2,true).build())
-     },SPLASH_TIME)
+     
 
 
 
@@ -68,3 +69,5 @@ class SplashscreenFragment : Fragment() {
 
 
 }
+
+

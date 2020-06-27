@@ -20,6 +20,10 @@
         <item name="android:width">@dimen/photo_width</item>
     </style>
 
+    <style name="SplashScreenTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
+
     <!--Splashcreen bar status style-->
     <style name="sc_bar_status_style">
         <item name="android:height">@dimen/bs_height</item>
