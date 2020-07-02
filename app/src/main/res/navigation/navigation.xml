@@ -103,9 +103,6 @@
         <action
             android:id="@+id/action_login_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_login_to_adminFragment"
-            app:destination="@id/adminFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashscreenFragment2"
@@ -144,20 +141,4 @@
         android:name="com.pdm.atikapp.FragmentCompleteOrder"
         android:label="fragment_complete_order"
         tools:layout="@layout/fragment_complete_order" />
-    <fragment
-        android:id="@+id/adminFragment"
-        android:name="com.pdm.atikapp.AdminFragment"
-        android:label="fragment_admin"
-        tools:layout="@layout/fragment_admin" >
-        <action
-            android:id="@+id/action_adminFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
-        <action
-            android:id="@+id/action_adminFragment_to_promotionFragment"
-            app:destination="@id/promotionFragment" />
-        <action
-            android:id="@+id/action_adminFragment_to_activeOrdersFragment"
-            app:destination="@id/activeOrdersFragment" />
-    </fragment>
-
 </navigation>
