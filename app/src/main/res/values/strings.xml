@@ -48,5 +48,8 @@
     <string name="order">Tu orden</string>
     <string name="locations">Ubicaciones</string>
     <string name="profile">Perfil</string>
+    <string name="ubicaciones">Ubicaciones</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="productos">Productos</string>
 
 </resources>
