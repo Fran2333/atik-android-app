@@ -27,12 +27,7 @@
 
     <!--Principal view dimens-->
 
-    <dimen name="icon_menu_height"></dimen>
-    <dimen name="promotions_height"></dimen>
-    <dimen name="orders_height"></dimen>
-    <dimen name="icon_menu_width"></dimen>
-    <dimen name="promotions_width"></dimen>
-    <dimen name="orders_width"></dimen>-->
+
 
     <!-- Button Register/Login dimens-->
     <dimen name="btn_register_login_height">40dp</dimen>
@@ -93,4 +88,7 @@
 
     <!--toolbar dimens-->
     <dimen name="toolbar_height">56dp</dimen>
+
+    <!--Spinner dimens-->
+    <dimen name="spinner_width">300dp</dimen>
 </resources>
