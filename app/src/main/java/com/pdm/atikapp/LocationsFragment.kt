@@ -4,10 +4,17 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.inflate
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.databinding.DataBindingUtil.inflate
+import androidx.lifecycle.ViewModelProviders
+import com.pdm.atikapp.databinding.FragmentActiveOrdersBinding.inflate
+import com.pdm.atikapp.databinding.FragmentLoginBinding.inflate
+import com.pdm.atikapp.databinding.FragmentRegisterBinding.inflate
+import com.pdm.atikapp.overview.OverViewModelLocation
 
 
 /**
@@ -29,11 +36,18 @@ class LocationsFragment : Fragment() {
       //  R.drawable.ic_signs
     //)
 
+    private val viewModel : OverViewModelLocation by lazy {
+        ViewModelProviders.of(this).get(OverViewModelLocation::class.java)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_locations, container, false)
+        //val binding = LocationsFragment.inflate(inflater)
+
+
 
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         toolbar.title = "Ubicaciones"
@@ -45,6 +59,8 @@ class LocationsFragment : Fragment() {
 
         val adapter = LocationAdapter(context!!, titleArray, descArray)//, imageArray)
         lv.adapter = adapter
+
+
 
         return view
     }
