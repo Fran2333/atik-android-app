@@ -135,5 +135,4 @@
         android:name="com.pdm.atikapp.FragmentCompleteOrder"
         android:label="fragment_complete_order"
         tools:layout="@layout/fragment_complete_order" />
-
 </navigation>

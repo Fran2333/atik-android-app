@@ -49,5 +49,8 @@
     <string name="locations">Ubicaciones</string>
     <string name="profile">Perfil</string>
     <string name="spinner_title_text">Ubicación</string>
+    <string name="ubicaciones">Ubicaciones</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="productos">Productos</string>
 
 </resources>
