@@ -2,6 +2,7 @@ package com.pdm.atikapp.overview
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.pdm.atikapp.network.AtikApi
 import com.pdm.atikapp.network.LocationProperty
 import com.pdm.atikapp.network.ProductProperty
@@ -11,7 +12,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class OverViewModelProduct {
+class OverViewModelProduct : ViewModel(){
     private val _respone = MutableLiveData<List<ProductProperty>>()
 
     val response : LiveData<List<ProductProperty>>

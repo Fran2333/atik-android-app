@@ -52,5 +52,13 @@
     <string name="ubicaciones">Ubicaciones</string>
     <string name="pedidos">Pedidos</string>
     <string name="productos">Productos</string>
+    <string name="display_name_location">%s</string>
+    <string name="display_description_location">%s</string>
+    <string name="display_name_user">%s</string>
+    <string name="display_lastname_user">%s</string>
+    <string name="display_phoneNumber_user">%s</string>
+    <string name="display_email_user">%s</string>
+    <string name="display_promotion_name">%s</string>
+    <string name="display_promotion_discount">%s</string>
 
 </resources>
