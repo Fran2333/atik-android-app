@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
@@ -45,15 +46,10 @@ class MenuFragment : Fragment() {
         toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
 
-        var gv = view.findViewById<GridView>(R.id.mainGrid)
+        var gv = view.findViewById<RecyclerView>(R.id.mainGrid)
 
-        val adapter = MenuAdapter(context!!, imageArray, nameArray)
+        val adapter = MenuAdapter()
         gv.adapter = adapter
-
-        gv.numColumns = 2
-        gv.horizontalSpacing = 15
-        gv.verticalSpacing = 25
-        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
 
         return view
     }

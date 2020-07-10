@@ -9,48 +9,46 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.pdm.atikapp.databinding.FragmentMenuBinding
+import com.pdm.atikapp.databinding.GridElementBinding
+import com.pdm.atikapp.network.Category
 import kotlinx.android.synthetic.main.grid_element.view.*
 
 class MenuAdapter(
-    private val context: Context,
-    private val image: Array<Int>,
-    private val category: ArrayList<String>
-): BaseAdapter() {
-    private val inflater: LayoutInflater =
-        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+) : ListAdapter<Category, MenuAdapter.MenuViewHolder>(DiffCallback){
 
-    //1
-    override fun getCount(): Int {
-        return category.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuAdapter.MenuViewHolder {
+        return MenuViewHolder(GridElementBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    //2
-    override fun getItem(position: Int): Any {
-        return category[position]
+    override fun onBindViewHolder(holder: MenuAdapter.MenuViewHolder, position: Int) {
+        val category = getItem(position)
+
+        holder.bind(category)
     }
 
-    //3
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
-
-    override fun getView(position:Int, convertView: View?, parent: ViewGroup?):View{
-        val view = inflater.inflate(R.layout.grid_element,null)
-
-        val img: ImageView = view.findViewById(R.id.category_img)
-        img.setImageResource(image[position])
-        val name: TextView = view.findViewById(R.id.category_name)
-        name.setText(category[position])
-
-        view.card.setOnClickListener {
-            it.findNavController().navigate(R.id.action_menuFragment_to_categoryFragment)
+    companion object DiffCallback: DiffUtil.ItemCallback<Category>(){
+        override fun areItemsTheSame(oldItem: Category, newItem: Category): Boolean {
+            return oldItem === newItem
         }
 
-
-
-        return view
-
+        override fun areContentsTheSame(oldItem: Category, newItem: Category): Boolean {
+            return oldItem.id == newItem.id
         }
     }
 
+    class MenuViewHolder(
+        private var binding: GridElementBinding
+    ): RecyclerView.ViewHolder(binding.root){
+
+        fun bind(category: Category){
+            binding.category = category
+            binding.executePendingBindings()
+        }
+
+    }
+
+}

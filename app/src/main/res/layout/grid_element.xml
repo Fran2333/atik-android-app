@@ -1,42 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/card"
-    android:layout_marginLeft="@dimen/margin_st"
-    android:layout_marginRight="@dimen/margin_st"
-    android:layout_marginBottom="@dimen/margin_st"
-    app:cardCornerRadius="@dimen/margin_e"
-    app:cardElevation="@dimen/margin_e">
+    xmlns:tools="http://schemas.android.com/tools" >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="175dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_margin="@dimen/margin_st"
-        android:orientation="vertical">
+    <data>
 
-        <ImageView
-            android:id="@+id/category_img"
+        <variable
+            name="category"
+            type="com.pdm.atikapp.network.Category" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_st"
+        android:layout_marginRight="@dimen/margin_st"
+        android:layout_marginBottom="@dimen/margin_st"
+        app:cardCornerRadius="@dimen/margin_e"
+        app:cardElevation="@dimen/margin_e">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:paddingBottom="@dimen/margin_e"/>
+            android:layout_height="175dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="@dimen/margin_st"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/category_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:fontFamily="@font/halant"
-            android:textSize="@dimen/medium_text"
-            android:layout_below="@id/category_img"
-            android:layout_marginTop="@dimen/margin_e"/>
+            <ImageView
+                android:id="@+id/category_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="@dimen/margin_e"
+                app:imageUrl="@{category.imageUrl}" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_img"
+                android:layout_marginTop="@dimen/margin_e"
+                android:fontFamily="@font/halant"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="@dimen/medium_text"
+                android:text="@{category.name}"/>
 
-</androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
+    </androidx.cardview.widget.CardView>
+</layout>
