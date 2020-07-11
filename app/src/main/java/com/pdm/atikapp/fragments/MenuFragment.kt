@@ -6,15 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.MenuAdapter
 import com.pdm.atikapp.R
+import com.pdm.atikapp.databinding.FragmentMenuBinding
+import com.pdm.atikapp.entity.categories
+import com.pdm.atikapp.viewModels.ProductosViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class MenuFragment : Fragment() {
+    private val ProductModel: ProductosViewModel by activityViewModels()
 
     var nameArray = arrayListOf<String>(
         "Categoria 1",
@@ -38,29 +46,59 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
-            R.id.toolbar
-        )
-        toolbar.title = "Menu"
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
-        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+        super.onCreateView(inflater, container, savedInstanceState)
+        var result: Boolean = true
 
-        var gv = view.findViewById<GridView>(R.id.mainGrid)
+        val binding = DataBindingUtil.inflate<FragmentMenuBinding>(inflater,
+            R.layout.fragment_menu, container, false)
+        binding.lifecycleOwner = this
 
-        val adapter =
-            MenuAdapter(context!!, imageArray, nameArray)
-        gv.adapter = adapter
 
-        gv.numColumns = 2
-        gv.horizontalSpacing = 15
-        gv.verticalSpacing = 25
-        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
 
-        return view
+//        ProductModel.login(binding.nombre.text.tostrin(),binding.password.text.tostrin())
+
+        ProductModel.ListaCategorias.observe(viewLifecycleOwner , Observer {
+            println("que valor tienen esa cosa:" + it)
+
+            if(it.isNotEmpty() && result){
+                println("entra a formar las categorias")
+                var Categories = ArrayList<String>()
+                ProductModel.ListaCategorias.value!!.forEach { cat->
+                    Categories.add(cat.name)
+                    println(cat.products)
+                }
+                val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
+                val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+                toolbar.title = "Menu"
+                (activity as AppCompatActivity).setSupportActionBar(toolbar)
+                (activity as AppCompatActivity).supportActionBar?.show()
+                toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+                toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
+                (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+
+
+
+                val adapter = MenuAdapter(context!!, imageArray, Categories)
+                binding.mainGrid.adapter = adapter
+
+                binding.mainGrid.numColumns = 2
+                binding.mainGrid.horizontalSpacing = 15
+                binding.mainGrid.verticalSpacing = 25
+                binding.mainGrid.stretchMode = GridView.STRETCH_COLUMN_WIDTH
+                result = false
+            }
+
+
+
+        })
+
+        ProductModel.getCategorias()
+
+
+
+
+
+        return binding.root
     }
 
 }

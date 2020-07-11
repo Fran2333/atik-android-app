@@ -7,14 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.pdm.atikapp.network.AtikAppService2
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AtikAppService2.init()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         var navController = findNavController(R.id.fragment)
 
