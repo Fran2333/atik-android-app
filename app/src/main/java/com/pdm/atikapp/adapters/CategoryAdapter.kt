@@ -1,13 +1,13 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.pdm.atikapp.R
 
 class CategoryAdapter(
     private val context: Context,

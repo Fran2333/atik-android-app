@@ -1,6 +1,5 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pdm.atikapp.R
 import com.pdm.atikapp.databinding.FragmentLoginBinding
 
 /**

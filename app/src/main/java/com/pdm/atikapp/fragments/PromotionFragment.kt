@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_grid_element.*
-import java.util.ArrayList
+import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.PromotionAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -40,7 +40,9 @@ class PromotionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title="Promotion"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()
@@ -50,7 +52,12 @@ class PromotionFragment : Fragment() {
 
 
         var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(context!!, imageArray, namePro, description)
+        val adapter= PromotionAdapter(
+            context!!,
+            imageArray,
+            namePro,
+            description
+        )
         gv.adapter = adapter
 
         gv.numColumns = 1

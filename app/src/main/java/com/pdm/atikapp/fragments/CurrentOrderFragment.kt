@@ -1,18 +1,17 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import kotlinx.android.synthetic.main.fragment_current_order.*
-import kotlinx.android.synthetic.main.fragment_current_order.view.*
+import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.OrderAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -48,7 +47,9 @@ class CurrentOrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_current_order, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Orden Actual"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()
@@ -59,7 +60,12 @@ class CurrentOrderFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 
-        val adapter = OrderAdapter(context!!, titleArray, descArray, precioArray)
+        val adapter = OrderAdapter(
+            context!!,
+            titleArray,
+            descArray,
+            precioArray
+        )
         lv.adapter = adapter
 
         var st = view.findViewById<TextView>(R.id.subtotal)

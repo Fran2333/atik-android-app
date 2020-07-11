@@ -1,8 +1,7 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.Manifest
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -14,9 +13,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.navigation.findNavController
+import com.pdm.atikapp.R
 import  kotlinx.android.synthetic.main.fragment_special_orders.*
 
 
@@ -31,7 +30,9 @@ class SpecialOrdersFragment : Fragment() {
 
     ): View? {
 
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Pedidos especiales"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()

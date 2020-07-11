@@ -3,15 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
 
-    <data>
-
-        <variable
-            name="category"
-            type="com.pdm.atikapp.network.Category" />
-
-        <import type="android.view.View" />
-    </data>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
@@ -35,8 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:paddingBottom="@dimen/margin_e"
-                app:imageUrl="@{category.imageUrl}" />
+                android:paddingBottom="@dimen/margin_e" />
 
             <TextView
                 android:id="@+id/category_name"
@@ -47,8 +37,7 @@
                 android:fontFamily="@font/halant"
                 android:textAlignment="center"
                 android:textColor="#000"
-                android:textSize="@dimen/medium_text"
-                android:text="@{category.name}"/>
+                android:textSize="@dimen/medium_text" />
 
         </RelativeLayout>
 

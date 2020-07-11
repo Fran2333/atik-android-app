@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.OrderAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -42,7 +44,9 @@ class ActiveOrderDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_active_order_detail, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Orden Activa"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
@@ -51,7 +55,12 @@ class ActiveOrderDetailFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 
-        val adapter = OrderAdapter(context!!, titleArray, descArray, precioArray)
+        val adapter = OrderAdapter(
+            context!!,
+            titleArray,
+            descArray,
+            precioArray
+        )
         lv.adapter = adapter
 
         var st = view.findViewById<TextView>(R.id.subtotal)

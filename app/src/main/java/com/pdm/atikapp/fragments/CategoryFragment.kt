@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Build
 import android.os.Bundle
@@ -11,10 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.fragment_category.*
-import kotlinx.android.synthetic.main.fragment_category.view.*
+import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.CategoryAdapter
 import kotlinx.android.synthetic.main.fragment_category.view.cat_toolbar
 
 
@@ -64,7 +63,12 @@ class CategoryFragment : Fragment() {
 
         var rv = view.findViewById<RecyclerView>(R.id.food_list)
         rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val adapter = CategoryAdapter(context!!, titleArray, descArray, precioArray)
+        val adapter = CategoryAdapter(
+            context!!,
+            titleArray,
+            descArray,
+            precioArray
+        )
         rv.adapter = adapter
 
         return view

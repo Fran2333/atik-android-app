@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -7,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.pdm.atikapp.R
 import kotlinx.android.synthetic.main.fragment_complete_order.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -25,7 +23,9 @@ class FragmentCompleteOrder : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Completa tu orden"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()

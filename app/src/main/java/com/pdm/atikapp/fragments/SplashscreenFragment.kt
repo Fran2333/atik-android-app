@@ -1,10 +1,7 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
-import android.animation.ObjectAnimator
-import android.animation.PropertyValuesHolder
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -14,12 +11,9 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
-import androidx.transition.FragmentTransitionSupport
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_splashscreen.*
+import com.pdm.atikapp.MainActivity
+import com.pdm.atikapp.R
 
 
 /**
@@ -36,9 +30,15 @@ class SplashscreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val view : View =  inflater.inflate(R.layout.fragment_splashscreen, container, false)
         
-        val ttb = AnimationUtils.loadAnimation(this.context, R.anim.zickt)
-        val pop = AnimationUtils.loadAnimation(this.context, R.anim.zict);
-        val pap = AnimationUtils.loadAnimation(this.context, R.anim.ziit);
+        val ttb = AnimationUtils.loadAnimation(this.context,
+            R.anim.zickt
+        )
+        val pop = AnimationUtils.loadAnimation(this.context,
+            R.anim.zict
+        );
+        val pap = AnimationUtils.loadAnimation(this.context,
+            R.anim.ziit
+        );
 
         val head = view.findViewById(R.id.cake_image) as ImageView
         val sd = view.findViewById(R.id.chef_image) as ImageView

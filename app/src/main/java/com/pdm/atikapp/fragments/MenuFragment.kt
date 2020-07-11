@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pdm.atikapp.MenuAdapter
+import com.pdm.atikapp.R
 
 /**
  * A simple [Fragment] subclass.
@@ -38,7 +39,9 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Menu"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()
@@ -46,10 +49,16 @@ class MenuFragment : Fragment() {
         toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
 
-        var gv = view.findViewById<RecyclerView>(R.id.mainGrid)
+        var gv = view.findViewById<GridView>(R.id.mainGrid)
 
-        val adapter = MenuAdapter()
+        val adapter =
+            MenuAdapter(context!!, imageArray, nameArray)
         gv.adapter = adapter
+
+        gv.numColumns = 2
+        gv.horizontalSpacing = 15
+        gv.verticalSpacing = 25
+        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
 
         return view
     }

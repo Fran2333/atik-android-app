@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
+import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.LocationAdapter
 
 
 /**
@@ -35,7 +36,9 @@ class LocationsFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_locations, container, false)
 
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+            R.id.toolbar
+        )
         toolbar.title = "Ubicaciones"
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.show()
@@ -43,7 +46,11 @@ class LocationsFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.locations_list)
 
-        val adapter = LocationAdapter(context!!, titleArray, descArray)//, imageArray)
+        val adapter = LocationAdapter(
+            context!!,
+            titleArray,
+            descArray
+        )//, imageArray)
         lv.adapter = adapter
 
         return view

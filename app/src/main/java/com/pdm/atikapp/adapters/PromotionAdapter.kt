@@ -1,7 +1,5 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.adapters
 
-import android.annotation.SuppressLint
-import android.content.ClipDescription
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import com.pdm.atikapp.R
 import kotlinx.android.synthetic.main.activity_grid_element.view.*
-import java.security.AccessControlContext
 
 class PromotionAdapter(
     context: Context,

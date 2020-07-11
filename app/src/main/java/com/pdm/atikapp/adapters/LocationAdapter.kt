@@ -1,15 +1,12 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.adapters
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import com.pdm.atikapp.R
 
 class LocationAdapter (
     private val context: Context,

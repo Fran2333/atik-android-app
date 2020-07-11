@@ -1,4 +1,4 @@
-package com.pdm.atikapp
+package com.pdm.atikapp.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.navigation.findNavController
+import com.pdm.atikapp.R
 import kotlinx.android.synthetic.main.active_order_element.view.*
 
 class ActiveOrderAdapter (
