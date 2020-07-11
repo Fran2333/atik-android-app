@@ -7,12 +7,6 @@
     android:layout_height="150dp"
     android:orientation="vertical" >
 
-    <data>
-        <variable
-            android:name="viewModel"
-            android:type="com.pdm.atikapp.overview.DetailModelLocation"
-            />
-    </data>
     <TextView
         android:id="@+id/header"
         android:layout_width="wrap_content"
