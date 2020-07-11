@@ -105,16 +105,10 @@
             app:destination="@id/registerFragment" />
     </fragment>
     <fragment
-        android:id="@+id/splashscreenFragment2"
+        android:id="@+id/splashscreenFragment"
         android:name="com.pdm.atikapp.SplashscreenFragment"
         android:label="SplashscreenFragment"
-        tools:layout="@layout/fragment_splashscreen">
-        <action
-            android:id="@+id/action_splashscreenFragment2_to_login"
-            app:destination="@id/login"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-    </fragment>
+        tools:layout="@layout/fragment_splashscreen"/>
     <fragment
         android:id="@+id/personalizeOrder"
         android:name="com.pdm.atikapp.PersonalizeOrder"

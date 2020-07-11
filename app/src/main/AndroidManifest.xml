@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pdm.atikapp">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
@@ -11,7 +12,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="locked">
+            android:screenOrientation="locked"/>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

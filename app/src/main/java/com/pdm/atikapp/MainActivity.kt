@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         var navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
