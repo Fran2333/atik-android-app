@@ -4,16 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.pdm.atikapp.R
+import com.pdm.atikapp.entity.product
 
 class CategoryAdapter(
     private val context: Context,
-    private val title: ArrayList<String>,
-    private val description: ArrayList<String>,
-    private val price: ArrayList<Double>
+    private val products: ArrayList<product>
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder (listItem: View) : RecyclerView.ViewHolder(listItem) {
@@ -21,6 +21,8 @@ class CategoryAdapter(
         val textView = listItem.findViewById<TextView>(R.id.text)
         val info = listItem.findViewById<TextView>(R.id.price)
     }
+
+
 
     private val inflater: LayoutInflater =
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -41,13 +43,13 @@ class CategoryAdapter(
     }
 
     override fun getItemCount(): Int {
-        return title.size
+        return products.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.header.setText(title[position])
-        holder.textView.setText(description[position])
-        holder.info.setText(price[position].toString())
+        holder.header.setText(products[position].name)
+        holder.textView.setText(products[position].description)
+        holder.info.setText(products[position].price.toString())
     }
 
 }

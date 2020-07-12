@@ -9,20 +9,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.MenuAdapter
 import com.pdm.atikapp.R
 import com.pdm.atikapp.databinding.FragmentMenuBinding
-import com.pdm.atikapp.entity.categories
-import com.pdm.atikapp.viewModels.ProductosViewModel
+import com.pdm.atikapp.viewModels.ProductViewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class MenuFragment : Fragment() {
-    private val ProductModel: ProductosViewModel by activityViewModels()
+    private val productModel: ProductViewModel by activityViewModels()
 
     var nameArray = arrayListOf<String>(
         "Categoria 1",
@@ -57,16 +55,21 @@ class MenuFragment : Fragment() {
 
 //        ProductModel.login(binding.nombre.text.tostrin(),binding.password.text.tostrin())
 
-        ProductModel.ListaCategorias.observe(viewLifecycleOwner , Observer {
+        productModel.ListaCategorias.observe(viewLifecycleOwner , Observer {
             println("que valor tienen esa cosa:" + it)
 
             if(it.isNotEmpty() && result){
                 println("entra a formar las categorias")
+                var images = ArrayList<String>()
                 var Categories = ArrayList<String>()
-                ProductModel.ListaCategorias.value!!.forEach { cat->
+                productModel.ListaCategorias.value!!.forEach { cat->
                     Categories.add(cat.name)
+                    images.add(cat.imageUrl)
                     println(cat.products)
+                    println(cat.imageUrl)
+                    println("estas son las imagenes")
                 }
+
                 val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
                 val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
                 toolbar.title = "Menu"
@@ -78,7 +81,7 @@ class MenuFragment : Fragment() {
 
 
 
-                val adapter = MenuAdapter(context!!, imageArray, Categories)
+                val adapter = MenuAdapter(context!!, images, Categories)
                 binding.mainGrid.adapter = adapter
 
                 binding.mainGrid.numColumns = 2
@@ -92,7 +95,7 @@ class MenuFragment : Fragment() {
 
         })
 
-        ProductModel.getCategorias()
+        productModel.getCategorias()
 
 
 

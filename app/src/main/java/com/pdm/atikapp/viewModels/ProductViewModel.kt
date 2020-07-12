@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.pdm.atikapp.Repository.RepositoryNetwork
 import com.pdm.atikapp.entity.categories
 
-class ProductosViewModel: ViewModel() {
+class ProductViewModel: ViewModel() {
 
     val Repository = RepositoryNetwork()
 
@@ -16,8 +16,5 @@ class ProductosViewModel: ViewModel() {
     fun getCategorias(){
         Repository.getCategoriesList()
     }
-
-
-
 
 }

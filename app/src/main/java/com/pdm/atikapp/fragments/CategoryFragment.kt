@@ -9,18 +9,24 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.CategoryAdapter
-import kotlinx.android.synthetic.main.fragment_category.view.cat_toolbar
+import com.pdm.atikapp.databinding.FragmentCategoryBinding
+import com.pdm.atikapp.viewModels.CategoryViewModel
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class CategoryFragment : Fragment() {
+    private val categoryModel: CategoryViewModel by activityViewModels()
+
 
     var titleArray = arrayListOf<String>(
         "Producto 1", "Producto 2", "Producto 3", "Producto 4",
@@ -48,32 +54,45 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_category, container, false)
+        super.onCreateView(inflater, container, savedInstanceState)
+        var result: Boolean = true
+
+        val binding = DataBindingUtil.inflate<FragmentCategoryBinding>(
+            inflater,
+            R.layout.fragment_category, container, false
+        )
 
         val toolbar = (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar?.hide()
-        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
+        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
+            View.GONE
 
-        view.cat_toolbar.title = "Categoria"
-        val category_toolbar = view.findViewById<Toolbar>(R.id.category_toolbar)
+        binding.catToolbar.title = "Productos"
+        val category_toolbar = binding.categoryToolbar
         (activity as AppCompatActivity).setSupportActionBar(category_toolbar)
         category_toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         category_toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
 
-        var rv = view.findViewById<RecyclerView>(R.id.food_list)
-        rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val adapter = CategoryAdapter(
-            context!!,
-            titleArray,
-            descArray,
-            precioArray
-        )
-        rv.adapter = adapter
+        binding.lifecycleOwner = this
 
-        return view
+        categoryModel.productsList.observe(viewLifecycleOwner, Observer {
+            println("antes de formar los productos")
+
+            if (it.isNotEmpty() && result) {
+                println("entra a formar los productos")
+
+                val adapter = CategoryAdapter(context!!, ArrayList(categoryModel.productsList.value!!))
+                binding.foodList.adapter = adapter
+                result = false
+            }
+
+
+        })
+
+        categoryModel.getProducts()
+        return binding.root
     }
-
 }
 
 
