@@ -8,11 +8,12 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.pdm.atikapp.R
+import kotlinx.android.synthetic.main.activity_grid_element.*
 import kotlinx.android.synthetic.main.activity_grid_element.view.*
+import kotlinx.android.synthetic.main.grid_element.view.*
 
 class PromotionAdapter(
     context: Context,
-    private val image: Array<Int>,
     private val category: ArrayList<String>,
     private val desc : ArrayList<String>
 ): BaseAdapter() {
@@ -22,25 +23,18 @@ class PromotionAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = inflater.inflate(R.layout.activity_grid_element,null)
 
-        val img: ImageView = view.findViewById(R.id.promotion_img)
-        img.setImageResource(image[position])
-        val name: TextView = view.findViewById(R.id.promotion_name)
+
+        val name: TextView = view.findViewById(R.id.header)
         name.setText(category[position])
 
-        val des : TextView = view.findViewById(R.id.tv_description)
+        val des : TextView = view.findViewById(R.id.textDsc)
         des.text = desc[position]
 
-        view.im_forward.setOnClickListener{
-
-            if(press){
-                it.im_forward.speed = -1f
-                it.im_forward.playAnimation()
-                press = false
+        view.cardViewPromotion.setOnClickListener{
+            if(view.expandableLayout.visibility == View.GONE){
+                view.expandableLayout.visibility = View.VISIBLE
             }else{
-                it.im_forward.speed= 1f;
-                it.im_forward.playAnimation()
-
-                press= true
+                view.expandableLayout.visibility = View.GONE
             }
         }
         return view

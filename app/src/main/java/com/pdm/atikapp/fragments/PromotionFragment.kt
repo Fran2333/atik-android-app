@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.PromotionAdapter
+import kotlinx.android.synthetic.main.activity_grid_element.*
 
 /**
  * A simple [Fragment] subclass.
@@ -19,19 +20,16 @@ class PromotionFragment : Fragment() {
     var namePro = arrayListOf<String>(
         "Promotion 1",
         "Promotion 2",
-        "Promotion 3"
+        "Promotion 3",
+        "Promotion 4"
     )
 
-    var imageArray = arrayOf<Int>(
-        R.drawable.circulefour,
-        R.drawable.circulefive,
-        R.drawable.circulethree
-    )
 
     var description = arrayListOf<String>(
         "Description 1",
          "Description 2",
-        "Description3"
+        "Description 3",
+        "Description 4"
   )
 
     override fun onCreateView(
@@ -54,10 +52,11 @@ class PromotionFragment : Fragment() {
         var gv = view.findViewById<GridView>(R.id.ppGrid)
         val adapter= PromotionAdapter(
             context!!,
-            imageArray,
             namePro,
             description
         )
+
+
         gv.adapter = adapter
 
         gv.numColumns = 1
