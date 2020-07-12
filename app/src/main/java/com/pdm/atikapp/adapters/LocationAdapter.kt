@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.pdm.atikapp.R
+import com.pdm.atikapp.entity.locations
 
 class LocationAdapter (
     private val context: Context,
-    private val title: ArrayList<String>,
-    private val location: ArrayList<String>
-    //private val image: Array<Int>
+    private val ubicaciones : ArrayList<locations>
     ) : BaseAdapter() {
 
         private val inflater: LayoutInflater =
@@ -20,12 +19,12 @@ class LocationAdapter (
 
         //1
         override fun getCount(): Int {
-            return title.size
+            return ubicaciones.size
         }
 
         //2
         override fun getItem(position: Int): Any {
-            return title[position]
+            return ubicaciones[position]
         }
 
         //3
@@ -37,14 +36,13 @@ class LocationAdapter (
         //4
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             // Get view for row item
-            val rowView = inflater.inflate(R.layout.location_list, parent, false)
-            val header: TextView = rowView.findViewById(R.id.header)
-            header.setText(title[position])
-            val textView: TextView = rowView.findViewById(R.id.text)
-            textView.setText(location[position])
-            //val icon: ImageView = rowView.findViewById(R.id.locationIcon)
-           // icon.setImageResource(image[position])
+            val view = inflater.inflate(R.layout.location_list, null)
+            val header: TextView = view.findViewById(R.id.header)
+            header.setText(ubicaciones[position].name)
+            val textView: TextView = view.findViewById(R.id.text)
+            textView.setText(ubicaciones[position].address)
 
-            return rowView
+
+            return view
         }
 }

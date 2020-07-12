@@ -1,47 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/margin_e"
-        android:layout_marginRight="@dimen/margin_e"
-        android:layout_toEndOf="@+id/locationIcon"
-        android:fontFamily="@font/halant_semibold"
-        android:textSize="@dimen/medium_text" />
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/header"
-        android:layout_marginLeft="@dimen/margin_e"
-        android:layout_marginTop="@dimen/margin_e"
-        android:layout_marginRight="@dimen/margin_e"
-        android:layout_marginBottom="@dimen/margin_st"
-        android:layout_toEndOf="@id/locationIcon"
-        android:fontFamily="@font/halant"
-        android:textSize="@dimen/size_content_letter" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/locationIcon"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_centerVertical="true"
-        android:paddingTop="@dimen/margin_st"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewLocation"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
         android:layout_marginLeft="@dimen/margin_st"
         android:layout_marginRight="@dimen/margin_st"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/ubicacion"/>
+        android:layout_marginBottom="@dimen/margin_st"
+        app:cardCornerRadius="@dimen/margin_e"
+        app:cardElevation="@dimen/margin_e">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_st"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_e"
+                android:layout_marginRight="@dimen/margin_e"
+                android:layout_toEndOf="@+id/locationIcon"
+                android:fontFamily="@font/halant_semibold"
+                android:textSize="@dimen/medium_text" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_below="@+id/header"
+                android:layout_marginLeft="@dimen/margin_e"
+                android:layout_marginTop="@dimen/margin_e"
+                android:layout_marginRight="@dimen/margin_e"
+                android:layout_marginBottom="@dimen/margin_st"
+                android:layout_toEndOf="@id/locationIcon"
+                android:fontFamily="@font/halant"
+                android:textSize="@dimen/size_content_letter" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/locationIcon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_st"
+                android:layout_marginRight="@dimen/margin_st"
+                android:paddingTop="@dimen/margin_st"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ubicacion" />
 
 
-</RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
