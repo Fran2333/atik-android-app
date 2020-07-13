@@ -158,7 +158,7 @@ class RepositoryNetwork {
         })
 
     }
-}
+
 
 
     //products
