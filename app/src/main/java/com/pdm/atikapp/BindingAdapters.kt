@@ -1,11 +1,19 @@
 package com.pdm.atikapp
 
+import android.widget.ImageView
+import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.pdm.atikapp.network.LocationProperty
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
-/*@BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<LocationProperty>){
-    val adapter = recyclerView.adapter as PrincipalGridAdapter
-    adapter.submitList(data)
-}*/
+
+@BindingAdapter("imageUrl")
+fun bindImage(imgView: ImageView, imgUrl: String?) {
+    imgUrl?.let {
+        val imgUri = it.toUri().buildUpon().scheme("https").build()
+        Glide
+            .with(imgView.context)
+            .load(imgUri)
+            .into(imgView)
+    }
+}

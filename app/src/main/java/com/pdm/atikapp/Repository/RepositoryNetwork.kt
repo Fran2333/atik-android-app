@@ -2,10 +2,14 @@ package com.pdm.atikapp.Repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+
+import com.pdm.atikapp.interfacesRed.productsRed
+
 import com.pdm.atikapp.entity.*
 import com.pdm.atikapp.interfacesRed.categoriasRed
 import com.pdm.atikapp.interfacesRed.locationsRed
 import com.pdm.atikapp.interfacesRed.promotionsRed
+
 import com.pdm.atikapp.network.AtikAppService2
 import retrofit2.Call
 import retrofit2.Callback
@@ -156,3 +160,53 @@ class RepositoryNetwork {
     }
 }
 
+
+    //products
+    private val _products = MutableLiveData<List<product>>()
+    val products : LiveData<List<product>>
+        get() = _products
+
+    val _getProducts = MutableLiveData<Boolean>()
+    val getProducts: LiveData<Boolean>
+        get() = _getProducts
+
+    init {
+
+        getProductsList()
+    }
+
+    fun getProductsList() {
+        println("entro a traer productos")
+        val request = AtikAppService2.buildService(productsRed::class.java)
+        val call = request.getProductsByCategory()
+        var result: Boolean = false
+
+        call.enqueue(object : Callback<productResponse> {
+            override fun onResponse(
+                call: Call<productResponse>,
+                response: Response<productResponse>
+            ) {
+                if (response.isSuccessful) {
+
+                    _products.value = response.body()?.products
+                    _getProducts.value = true
+                    println("trayendo productos")
+
+                    println(response.body()?.products)
+                } else {
+                    println("Result ${response.headers()}")
+                    result = false
+                    _getProducts.value = false
+                }
+
+            }
+
+            override fun onFailure(call: Call<productResponse>, t: Throwable) {
+                _getProducts.value = false
+                t.stackTrace
+            }
+
+        })
+    }
+
+}

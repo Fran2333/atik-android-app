@@ -79,7 +79,16 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$version_glide"
+
+
+  
+
     implementation "androidx.multidex:multidex:$multidex_version"
+
 
     implementation "com.squareup.retrofit2:converter-gson:$version_retrofit"
     implementation 'com.squareup.okhttp3:okhttp:4.3.1'
