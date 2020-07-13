@@ -39,7 +39,7 @@
                     android:paddingLeft="@dimen/margin_ft"
                     android:paddingBottom="@dimen/margin_st"
                     app:lottie_autoPlay="true"
-                    app:lottie_rawRes="@raw/food" />
+                    app:lottie_rawRes="@raw/forkblue" />
 
                 <TextView
                     android:id="@+id/menu"
@@ -96,7 +96,7 @@
                     android:paddingLeft="@dimen/margin_ft"
                     android:paddingBottom="@dimen/margin_st"
                     app:lottie_autoPlay="true"
-                    app:lottie_rawRes="@raw/documentfile" />
+                    app:lottie_rawRes="@raw/specialblue" />
 
                 <TextView
                     android:id="@+id/specialOrder"
@@ -151,7 +151,7 @@
                     android:layout_centerVertical="true"
                     android:paddingBottom="@dimen/margin_st"
                     app:lottie_autoPlay="true"
-                    app:lottie_rawRes="@raw/paperbounce" />
+                    app:lottie_rawRes="@raw/promoblue" />
 
                 <TextView
                     android:id="@+id/promotion"

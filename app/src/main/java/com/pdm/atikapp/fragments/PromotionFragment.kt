@@ -7,9 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.PromotionAdapter
+import com.pdm.atikapp.databinding.FragmentPromotionBinding
+import com.pdm.atikapp.viewModels.PromotionsViewModel
 import kotlinx.android.synthetic.main.activity_grid_element.*
 
 /**
@@ -17,53 +22,60 @@ import kotlinx.android.synthetic.main.activity_grid_element.*
  */
 class PromotionFragment : Fragment() {
 
-    var namePro = arrayListOf<String>(
-        "Promotion 1",
-        "Promotion 2",
-        "Promotion 3",
-        "Promotion 4"
-    )
 
-
-    var description = arrayListOf<String>(
-        "Description 1",
-         "Description 2",
-        "Description 3",
-        "Description 4"
-  )
+    private val promotionModel: PromotionsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view : View = inflater.inflate(R.layout.fragment_promotion, container, false)
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
-            R.id.toolbar
-        )
-        toolbar.title="Promotion"
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
-        (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
 
+        super.onCreateView(inflater, container, savedInstanceState)
+        var result: Boolean = true
 
-        var gv = view.findViewById<GridView>(R.id.ppGrid)
-        val adapter= PromotionAdapter(
-            context!!,
-            namePro,
-            description
+        val binding = DataBindingUtil.inflate<FragmentPromotionBinding>(
+            inflater, R.layout.fragment_promotion, container, false
         )
 
+        binding.lifecycleOwner = this
 
-        gv.adapter = adapter
+        println("antes del viewmodel de promociones")
+        promotionModel.listPromotions.observe(viewLifecycleOwner, Observer {
+            println("entre al viewmodel de promociones")
 
-        gv.numColumns = 1
-        gv.horizontalSpacing = 15
-        gv.verticalSpacing = 25
-        gv.stretchMode = GridView.STRETCH_COLUMN_WIDTH
-        return view
+            if (it.isNotEmpty() && result) {
+                println("entre a tomar las promociones")
+
+
+                val toolbar =
+                    (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+                        R.id.toolbar
+                    )
+                toolbar.title = "Promociones"
+                (activity as AppCompatActivity).setSupportActionBar(toolbar)
+                (activity as AppCompatActivity).supportActionBar?.show()
+                toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+                toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
+                (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
+                    View.GONE
+
+
+                val adapter =
+                    PromotionAdapter(context!!, ArrayList(promotionModel.listPromotions.value!!))
+                binding.ppGrid.adapter = adapter
+
+                binding.ppGrid.numColumns = 1
+                binding.ppGrid.horizontalSpacing = 15
+                binding.ppGrid.verticalSpacing = 25
+                binding.ppGrid.stretchMode = GridView.STRETCH_COLUMN_WIDTH
+                result = false
+
+            }
+        })
+
+        promotionModel.getPromotions()
+
+        return binding.root
     }
 
 }

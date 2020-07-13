@@ -5,43 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
 import com.pdm.atikapp.R
-import kotlinx.android.synthetic.main.activity_grid_element.*
+import com.pdm.atikapp.entity.promotions
 import kotlinx.android.synthetic.main.activity_grid_element.view.*
-import kotlinx.android.synthetic.main.grid_element.view.*
 
 class PromotionAdapter(
-    context: Context,
-    private val category: ArrayList<String>,
-    private val desc : ArrayList<String>
-): BaseAdapter() {
+    private val context: Context,
+    private val promociones: ArrayList<promotions>
+) : BaseAdapter() {
 
-    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-     private var press = false;
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view = inflater.inflate(R.layout.activity_grid_element,null)
-
-
-        val name: TextView = view.findViewById(R.id.header)
-        name.setText(category[position])
-
-        val des : TextView = view.findViewById(R.id.textDsc)
-        des.text = desc[position]
-
-        view.cardViewPromotion.setOnClickListener{
-            if(view.expandableLayout.visibility == View.GONE){
-                view.expandableLayout.visibility = View.VISIBLE
-            }else{
-                view.expandableLayout.visibility = View.GONE
-            }
-        }
-        return view
-    }
+    private val inflater: LayoutInflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getItem(position: Int): Any {
-       return category[position]
+        return promociones[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -49,9 +27,32 @@ class PromotionAdapter(
     }
 
     override fun getCount(): Int {
-        return category.size
+        return promociones.size
     }
 
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view = inflater.inflate(R.layout.activity_grid_element, null)
+
+
+        val text: TextView = view.findViewById(R.id.promotionText)
+        text.setText(promociones[position].name)
+
+        val price: TextView = view.findViewById(R.id.pricePromotion)
+        price.setText(promociones[position].discount.toString())
+
+        val des: TextView = view.findViewById(R.id.textDsc)
+        des.setText(promociones[position].description)
+
+
+        view.cardViewPromotion.setOnClickListener {
+            if (view.expandableLayout.visibility == View.GONE) {
+                view.expandableLayout.visibility = View.VISIBLE
+            } else {
+                view.expandableLayout.visibility = View.GONE
+            }
+        }
+        return view
+    }
 
 
 }

@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content">
 
                 <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/locationIcon"
+                    android:id="@+id/promotionIcon"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_centerVertical="true"
@@ -31,10 +31,10 @@
                     android:paddingTop="@dimen/margin_st"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/ubicacion" />
+                    app:lottie_rawRes="@raw/offer" />
 
                 <TextView
-                    android:id="@+id/header"
+                    android:id="@+id/promotionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
@@ -67,6 +67,24 @@
                     android:layout_margin="@dimen/margin_e"
                     android:fontFamily="@font/halant"
                     android:textSize="@dimen/margin_st" />
+
+                <TextView
+                    android:id="@+id/pricePromotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_e"
+                    android:fontFamily="@font/halant"
+                    android:textSize="@dimen/margin_st" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/margin_e"
+                    app:lottie_rawRes="@raw/submitbtn" />
+
 
             </LinearLayout>
 

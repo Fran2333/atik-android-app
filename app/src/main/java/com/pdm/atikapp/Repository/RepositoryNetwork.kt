@@ -2,11 +2,10 @@ package com.pdm.atikapp.Repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.pdm.atikapp.entity.categories
-import com.pdm.atikapp.entity.locationResponse
-import com.pdm.atikapp.entity.locations
+import com.pdm.atikapp.entity.*
 import com.pdm.atikapp.interfacesRed.categoriasRed
 import com.pdm.atikapp.interfacesRed.locationsRed
+import com.pdm.atikapp.interfacesRed.promotionsRed
 import com.pdm.atikapp.network.AtikAppService2
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,7 +23,6 @@ class RepositoryNetwork {
     init {
         _ObtuveCategories.value = false
     }
-
 
 
     fun getCategoriesList() {
@@ -109,5 +107,52 @@ class RepositoryNetwork {
         })
     }
 
+
+    //promotion
+    private val _promotions = MutableLiveData<List<promotions>>()
+    val promotions: LiveData<List<promotions>>
+        get() = _promotions
+
+    val _getPromotions = MutableLiveData<Boolean>()
+    val getPromotions: LiveData<Boolean>
+        get() = _getPromotions
+
+    init {
+        getPromotionsList()
+    }
+
+
+    fun getPromotionsList() {
+        println("entro a traer promociones")
+        val request = AtikAppService2.buildService(promotionsRed::class.java)
+        val call = request.getPromotions()
+        var result: Boolean = false
+
+
+        call.enqueue(object : Callback<promotionsResponse> {
+            override fun onFailure(call: Call<promotionsResponse>, t: Throwable) {
+                _getPromotions.value = false
+                t.stackTrace
+            }
+
+            override fun onResponse(
+                call: Call<promotionsResponse>,
+                response: Response<promotionsResponse>
+            ) {
+                if (response.isSuccessful) {
+
+                    _promotions.value = response.body()?.promotions
+                    _getPromotions.value = true
+                    println(response.body()?.promotions)
+                } else {
+                    println("Result ${response.headers()}")
+                    result = false
+                    _getPromotions.value = false
+                }
+            }
+
+        })
+
+    }
 }
 

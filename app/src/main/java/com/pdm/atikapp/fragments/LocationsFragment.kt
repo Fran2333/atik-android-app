@@ -26,15 +26,6 @@ import com.pdm.atikapp.viewModels.locationsViewModel
 class LocationsFragment : Fragment() {
 
     private val LocationModel: locationsViewModel by activityViewModels()
-    var titleArray = arrayListOf<String>(
-        "Ubicacion 1",
-        "Ubicacion 2"
-    )
-
-    var descArray = arrayListOf<String>(
-        "Descripcion 1",
-        "Descripcion 2"
-    )
 
 
     override fun onCreateView(
@@ -66,7 +57,8 @@ class LocationsFragment : Fragment() {
                 (activity as AppCompatActivity).supportActionBar?.show()
                 (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-                val adapter = LocationAdapter(context!!, ArrayList(LocationModel.listLocations.value!!))
+                val adapter =
+                    LocationAdapter(context!!, ArrayList(LocationModel.listLocations.value!!))
                 binding.locationGrid.adapter = adapter
 
                 binding.locationGrid.numColumns = 1
