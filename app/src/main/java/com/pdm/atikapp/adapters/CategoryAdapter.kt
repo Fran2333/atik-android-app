@@ -13,7 +13,7 @@ import com.pdm.atikapp.entity.product
 
 class CategoryAdapter(
     private val context: Context,
-    private val products: ArrayList<product>
+    private val products: List<product>
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder (listItem: View) : RecyclerView.ViewHolder(listItem) {
@@ -28,7 +28,7 @@ class CategoryAdapter(
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getItemId(position: Int): Long {
-        return position.toLong()
+        return products[position].id.toLong()
     }
 
 
@@ -49,7 +49,7 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.header.setText(products[position].name)
         holder.textView.setText(products[position].description)
-        holder.info.setText(products[position].price.toString())
+        holder.info.setText("$ " + products[position].price.toString())
     }
 
 }

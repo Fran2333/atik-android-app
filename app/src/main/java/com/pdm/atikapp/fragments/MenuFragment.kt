@@ -45,7 +45,7 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        var result: Boolean = true
+        var result = true
 
         val binding = DataBindingUtil.inflate<FragmentMenuBinding>(inflater,
             R.layout.fragment_menu, container, false)
@@ -60,9 +60,11 @@ class MenuFragment : Fragment() {
 
             if(it.isNotEmpty() && result){
                 println("entra a formar las categorias")
+                var id = ArrayList<Int>()
                 var images = ArrayList<String>()
                 var Categories = ArrayList<String>()
                 productModel.ListaCategorias.value!!.forEach { cat->
+                    id.add(cat.id)
                     Categories.add(cat.name)
                     images.add(cat.imageUrl)
                     println(cat.products)
@@ -81,7 +83,7 @@ class MenuFragment : Fragment() {
 
 
 
-                val adapter = MenuAdapter(context!!, images, Categories)
+                val adapter = MenuAdapter(context!!, id, images, Categories)
                 binding.mainGrid.adapter = adapter
 
                 binding.mainGrid.numColumns = 2

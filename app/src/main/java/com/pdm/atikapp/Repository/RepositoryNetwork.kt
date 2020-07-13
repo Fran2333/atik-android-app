@@ -78,7 +78,7 @@ class RepositoryNetwork {
     fun getProductsList() {
         println("entro a traer productos")
         val request = AtikAppService2.buildService(productsRed::class.java)
-        val call = request.getProducts()
+        val call = request.getProductsByCategory()
         var result: Boolean = false
 
         call.enqueue(object : Callback<productResponse> {

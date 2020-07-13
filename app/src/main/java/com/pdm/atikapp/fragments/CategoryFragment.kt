@@ -18,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.CategoryAdapter
 import com.pdm.atikapp.databinding.FragmentCategoryBinding
+import com.pdm.atikapp.entity.categories
 import com.pdm.atikapp.viewModels.CategoryViewModel
 
 
@@ -54,6 +55,7 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + arguments?.getInt("category_id"))
         super.onCreateView(inflater, container, savedInstanceState)
         var result: Boolean = true
 
@@ -68,7 +70,7 @@ class CategoryFragment : Fragment() {
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
             View.GONE
 
-        binding.catToolbar.title = "Productos"
+        binding.catToolbar.title = arguments?.getString("category_name")
         val category_toolbar = binding.categoryToolbar
         (activity as AppCompatActivity).setSupportActionBar(category_toolbar)
         category_toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
@@ -82,7 +84,16 @@ class CategoryFragment : Fragment() {
             if (it.isNotEmpty() && result) {
                 println("entra a formar los productos")
 
-                val adapter = CategoryAdapter(context!!, ArrayList(categoryModel.productsList.value!!))
+                val filterList = categoryModel.productsList.value!!.filter { product ->
+                    product.categories.filter {
+                        it.id == arguments?.getInt("category_id")
+                    }.isNotEmpty()
+                }
+
+                println(filterList)
+
+                val adapter =
+                    CategoryAdapter(context!!, filterList)
                 binding.foodList.adapter = adapter
                 result = false
             }
@@ -90,7 +101,7 @@ class CategoryFragment : Fragment() {
 
         })
 
-        categoryModel.getProducts()
+        categoryModel.getProductsByCategory()
         return binding.root
     }
 }

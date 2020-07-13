@@ -10,6 +10,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.grid_element.view.*
 
 class MenuAdapter(
     private val context: Context,
+    private val id: ArrayList<Int>,
     private val image: ArrayList<String>,
     private val category: ArrayList<String>
 ): BaseAdapter() {
@@ -59,7 +61,8 @@ class MenuAdapter(
         name.setText(category[position])
 
         view.card.setOnClickListener {
-            it.findNavController().navigate(R.id.action_menuFragment_to_categoryFragment)
+            val bundle = bundleOf("category_id" to id[position], "category_name" to category[position])
+            it.findNavController().navigate(R.id.action_menuFragment_to_categoryFragment, bundle)
         }
 
 

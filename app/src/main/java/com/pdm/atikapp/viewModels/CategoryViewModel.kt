@@ -13,7 +13,7 @@ class CategoryViewModel : ViewModel() {
     val getProducts: LiveData<Boolean> = repository.getProducts
 
 
-    fun getProducts(){
+    fun getProductsByCategory(){
         repository.getProductsList()
     }
 }
