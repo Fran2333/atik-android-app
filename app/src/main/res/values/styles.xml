@@ -8,35 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!--Splashcreen style -->
-    <style name="sc_style">
-        <item name="android:background">@color/splash_screen_color</item>
-        <item name="android:color">@color/bone_color</item>
-    </style>
-
-    <!--Splashcreen content style-->
-    <style name="sc_content_style">
-        <item name="android:height">@dimen/photo_height</item>
-        <item name="android:width">@dimen/photo_width</item>
-    </style>
 
     <style name="SplashScreenTheme" parent="AppTheme">
         <item name="android:windowBackground">@drawable/splash_screen_background</item>
     </style>
 
-    <!--Splashcreen bar status style-->
-    <style name="sc_bar_status_style">
-        <item name="android:height">@dimen/bs_height</item>
-        <item name="android:width">@dimen/bs_width</item>
-        <item name="android:indeterminate">true</item>
-        <item name="android:indeterminateTintMode">src_atop</item>
-        <item name="android:indeterminateTint">@color/bone_color</item>
-
-    </style>
-
-    <!--Principal view style-->
-    <style name="pv_style">
-    </style>
 
     <!--Title principal view style-->
     <style name="title_ppview_style">
@@ -143,6 +119,7 @@
         <item name="android:layout_marginEnd">@dimen/margin_st</item>
         <item name="android:layout_marginBottom">@dimen/margin_st</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
