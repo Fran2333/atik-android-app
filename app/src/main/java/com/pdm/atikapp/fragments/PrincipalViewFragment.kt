@@ -8,6 +8,7 @@ import android.view.ViewGroup
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -42,7 +43,6 @@ class PrincipalViewFragment : Fragment() {
         binding.promotionCard.setOnClickListener {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment)
         }
-
 
 
 
