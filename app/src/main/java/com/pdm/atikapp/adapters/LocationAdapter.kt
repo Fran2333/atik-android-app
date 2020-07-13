@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.pdm.atikapp.R
-import com.pdm.atikapp.entity.locations
+import com.pdm.atikapp.entity.Locations
 
 class LocationAdapter (
     private val context: Context,
-    private val ubicaciones : ArrayList<locations>
+    private val ubicaciones : ArrayList<Locations>
     ) : BaseAdapter() {
 
         private val inflater: LayoutInflater =

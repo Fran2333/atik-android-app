@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
 import android.widget.GridView
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -17,7 +15,7 @@ import androidx.lifecycle.Observer
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.LocationAdapter
 import com.pdm.atikapp.databinding.FragmentLocationsBinding
-import com.pdm.atikapp.viewModels.locationsViewModel
+import com.pdm.atikapp.viewModels.LocationsViewModel
 
 
 /**
@@ -25,7 +23,7 @@ import com.pdm.atikapp.viewModels.locationsViewModel
  */
 class LocationsFragment : Fragment() {
 
-    private val LocationModel: locationsViewModel by activityViewModels()
+    private val locationModel: LocationsViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -41,7 +39,7 @@ class LocationsFragment : Fragment() {
         binding.lifecycleOwner = this
 
         println("antes del viewmodel")
-        LocationModel.listLocations.observe(viewLifecycleOwner, Observer {
+        locationModel.listLocations.observe(viewLifecycleOwner, Observer {
             println("entre al viewmodel")
 
             if (it.isNotEmpty() && result) {
@@ -58,7 +56,7 @@ class LocationsFragment : Fragment() {
                 (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
                 val adapter =
-                    LocationAdapter(context!!, ArrayList(LocationModel.listLocations.value!!))
+                    LocationAdapter(context!!, ArrayList(locationModel.listLocations.value!!))
                 binding.locationGrid.adapter = adapter
 
                 binding.locationGrid.numColumns = 1
@@ -68,7 +66,7 @@ class LocationsFragment : Fragment() {
                 result = false
             }
         })
-        LocationModel.getLocations()
+        locationModel.getLocations()
 
 
         return binding.root

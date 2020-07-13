@@ -4,16 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.pdm.atikapp.R
-import com.pdm.atikapp.entity.product
+import com.pdm.atikapp.entity.Product
 
 class CategoryAdapter(
     private val context: Context,
-    private val products: List<product>
+    private val products: List<Product>
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder (listItem: View) : RecyclerView.ViewHolder(listItem) {

@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.pdm.atikapp.R
-import com.pdm.atikapp.entity.promotions
+import com.pdm.atikapp.entity.Promotions
 import kotlinx.android.synthetic.main.activity_grid_element.view.*
 
 class PromotionAdapter(
     private val context: Context,
-    private val promociones: ArrayList<promotions>
+    private val promociones: ArrayList<Promotions>
 ) : BaseAdapter() {
 
     private val inflater: LayoutInflater =

@@ -55,7 +55,7 @@ class MenuFragment : Fragment() {
 
 //        ProductModel.login(binding.nombre.text.tostrin(),binding.password.text.tostrin())
 
-        productModel.ListaCategorias.observe(viewLifecycleOwner , Observer {
+        productModel.listaCategorias.observe(viewLifecycleOwner , Observer {
             println("que valor tienen esa cosa:" + it)
 
             if(it.isNotEmpty() && result){
@@ -63,7 +63,7 @@ class MenuFragment : Fragment() {
                 var id = ArrayList<Int>()
                 var images = ArrayList<String>()
                 var Categories = ArrayList<String>()
-                productModel.ListaCategorias.value!!.forEach { cat->
+                productModel.listaCategorias.value!!.forEach { cat->
                     id.add(cat.id)
                     Categories.add(cat.name)
                     images.add(cat.imageUrl)

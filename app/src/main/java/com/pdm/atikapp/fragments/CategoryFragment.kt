@@ -12,13 +12,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.CategoryAdapter
 import com.pdm.atikapp.databinding.FragmentCategoryBinding
-import com.pdm.atikapp.entity.categories
 import com.pdm.atikapp.viewModels.CategoryViewModel
 
 
