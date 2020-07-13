@@ -49,7 +49,8 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.header.setText(products[position].name)
         holder.textView.setText(products[position].description)
-        holder.info.setText("$ " + products[position].price.toString())
+        val price_float : Double = products[position].price.toDouble()/100
+        holder.info.setText("$ " + price_float.toString())
     }
 
 }
