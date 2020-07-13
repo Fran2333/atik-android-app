@@ -2,11 +2,10 @@ package com.pdm.atikapp.Repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.pdm.atikapp.entity.categories
-import com.pdm.atikapp.entity.locationResponse
-import com.pdm.atikapp.entity.locations
+import com.pdm.atikapp.entity.*
 import com.pdm.atikapp.interfacesRed.categoriasRed
 import com.pdm.atikapp.interfacesRed.locationsRed
+import com.pdm.atikapp.interfacesRed.loginRed
 import com.pdm.atikapp.network.AtikAppService2
 import retrofit2.Call
 import retrofit2.Callback
@@ -108,6 +107,42 @@ class RepositoryNetwork {
 
         })
     }
+//login
+private val _user = MutableLiveData<User>()
+    val usuario: LiveData<User> get() = _user
+    private val _pass = MutableLiveData<Boolean>()
+    val pass: LiveData<Boolean> get() =  _pass
+
+fun Login(nombre: String, password: String){
+
+    var result: Boolean = false
+    val request:loginRed = AtikAppService2.buildService(loginRed::class.java)
+    val call  = request.getLoginResponse(login(nombre,password))
+
+    call.enqueue(object: Callback<userResponse>{
+        override fun onResponse(call: Call<userResponse>, response: Response<userResponse>) {
+            if(response.isSuccessful){
+                println("Result ${response.headers()}")
+                result = response.body()!!.correct
+                _pass.value = result
+                _user.value =  response.body()!!.usuario
+            }else{
+
+                result = false
+                _pass.value = result
+            }
+
+        }
+        override fun onFailure(call: Call<userResponse>, t: Throwable) {
+            println(t.message)
+            result = false
+        }
+
+    })
+
+
+
+}
 
 }
 
