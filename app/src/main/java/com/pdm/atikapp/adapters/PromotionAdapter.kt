@@ -37,9 +37,6 @@ class PromotionAdapter(
         val text: TextView = view.findViewById(R.id.promotionText)
         text.setText(promociones[position].name)
 
-        val price: TextView = view.findViewById(R.id.pricePromotion)
-        price.setText(promociones[position].discount.toString())
-
         val des: TextView = view.findViewById(R.id.textDsc)
         des.setText(promociones[position].description)
 
