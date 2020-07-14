@@ -60,5 +60,6 @@
     <string name="display_email_user">%s</string>
     <string name="display_promotion_name">%s</string>
     <string name="display_promotion_discount">%s</string>
+    <string name="ubication_string">Ubicación</string>
 
 </resources>

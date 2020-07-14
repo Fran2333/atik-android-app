@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.pdm.atikapp.R
 import com.pdm.atikapp.databinding.FragmentCompleteOrderBinding
 import com.pdm.atikapp.entity.Locations
@@ -25,7 +26,7 @@ import java.nio.file.Files.size
  * A simple [Fragment] subclass.
  */
 class FragmentCompleteOrder : Fragment() {
-    private val productModel: LocationsViewModel by activityViewModels()
+    private val locationModel: LocationsViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,87 +35,111 @@ class FragmentCompleteOrder : Fragment() {
         var result = true
 
         //binding
-        val binding = DataBindingUtil.inflate<FragmentCompleteOrderBinding>(inflater,
-        R.layout.fragment_complete_order, container, false)
+        val binding = DataBindingUtil.inflate<FragmentCompleteOrderBinding>(
+            inflater,
+            R.layout.fragment_complete_order, container, false
+        )
         binding.lifecycleOwner = this
 
-        //toolbar
-        val toolbar =
-            (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
+        println("antes del viewmodel spinner")
+        locationModel.listLocations.observe(viewLifecycleOwner, Observer {
+            println("entre al viewmodel spinner")
 
-        toolbar.title = "Completa tu orden"
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
+            if (it.isNotEmpty() && result) {
+                println("entre a formar ubicaciones")
 
-        // Inflate the layout for this fragment
-        //val view: View = inflater.inflate(R.layout.fragment_complete_order, container, false)
-        val spinner = view?.findViewById<Spinner>(R.id.spinner2);
-        val location = arrayOf("Santa Tecla", "San Salvador")
-        val btnRadio2 = view?.findViewById<RadioButton>(R.id.btnCollect);
+                var ubicacions = ArrayList<String>()
+                var name = ArrayList<String>()
 
-        spinner?.adapter = ArrayAdapter(
-            context!!,
-            R.layout.support_simple_spinner_dropdown_item,
-            location
-        ) as SpinnerAdapter
-        spinner?.isEnabled = false;
+                locationModel.listLocations.value!!.forEach { lo ->
+
+                    ubicacions.add(lo.address)
+                    name.add(lo.name)
+                    println("aca agrego las ubicaciones")
+                }
+
+                //toolbar
+                val toolbar =
+                    (activity as AppCompatActivity).findViewById<Toolbar>(R.id.toolbar)
+                toolbar.title = "Completa tu orden"
+                (activity as AppCompatActivity).setSupportActionBar(toolbar)
+                (activity as AppCompatActivity).supportActionBar?.show()
+                toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+                toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
+
+                // Inflate the layout for this fragment
+                val view: View =
+                    inflater.inflate(R.layout.fragment_complete_order, container, false)
+                val spinner = binding.spinner2
+                val btnRadio2 = binding.btnCollect
+
+                spinner.adapter = ArrayAdapter(
+                    context!!,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    ubicacions
+                ) as SpinnerAdapter
+                spinner.isEnabled = false;
 
 
-        spinner?.onItemSelectedListener = object : AdapterView.OnItemClickListener,
-            AdapterView.OnItemSelectedListener {
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-                println("erreur")
-            }
+                spinner.onItemSelectedListener = object : AdapterView.OnItemClickListener,
+                    AdapterView.OnItemSelectedListener {
+                    override fun onItemClick(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        TODO("Not yet implemented")
+                    }
 
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val type = parent?.getItemAtPosition(position).toString()
-                if (position != 0) {
-                    val description: String = location.get(position)
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        TODO("Not yet implemented")
+                        println("erreur")
+                    }
+
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        val type = parent?.getItemAtPosition(position).toString()
+                        if (position != 0) {
+                            val description: String = name[position]
+
+                        }
+                    }
 
                 }
 
-
-            }
-
-            override fun onItemClick(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                TODO("Not yet implemented")
-            }
-        }
-
-        val rb = view?.findViewById(R.id.opcionesSer) as RadioGroup
+                val rb = binding.opcionesSer
 
 
-        rb.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
-            // This will get the radiobutton that has changed in its check state
-            val checkedRadioButton =
-                group.findViewById<View>(checkedId) as RadioButton
-            // This puts the value (true/false) into the variable
-            val isChecked = checkedRadioButton.isChecked
-            // If the radiobutton that has changed in check state is now checked...
-            if (isChecked) {
-                // Changes the spinner's state to true by selection btnRadio2
-                spinner?.isEnabled = checkedRadioButton == btnRadio2
+                rb.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                    // This will get the radiobutton that has changed in its check state
+                    val checkedRadioButton =
+                        binding.root.findViewById<View>(checkedId) as RadioButton
+                    // This puts the value (true/false) into the variable
+                    val isChecked = checkedRadioButton.isChecked
+                    // If the radiobutton that has changed in check state is now checked...
+                    if (isChecked) {
+                        // Changes the spinner's state to true by selection btnRadio2
+                        spinner.isEnabled = checkedRadioButton == btnRadio2
+                    }
+                })
             }
         })
 
+        locationModel.getLocations()
 
 
 
-         return binding.root
+
+
+
+
+        return binding.root
     }
 
 }
