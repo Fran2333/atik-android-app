@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment
 import com.pdm.atikapp.R
 
 
-
 /**
  * A simple [Fragment] subclass.
  */
@@ -36,12 +35,16 @@ class FragmentCompleteOrder : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_complete_order, container, false)
         val spinner = view?.findViewById<Spinner>(R.id.spinner2);
-        val location = arrayOf("--Elegir--","Santa Tecla", "San Salvador")
+        val location = arrayOf("Santa Tecla", "San Salvador")
         val btnRadio2 = view.findViewById<RadioButton>(R.id.btnCollect);
 
-        spinner?.adapter = ArrayAdapter(context!!, R.layout.support_simple_spinner_dropdown_item, location) as SpinnerAdapter
+        spinner?.adapter = ArrayAdapter(
+            context!!,
+            R.layout.support_simple_spinner_dropdown_item,
+            location
+        ) as SpinnerAdapter
         spinner.isEnabled = false;
-        spinner.prompt = "--Elegir--'"
+
 
         spinner?.onItemSelectedListener = object : AdapterView.OnItemClickListener,
             AdapterView.OnItemSelectedListener {
@@ -58,10 +61,10 @@ class FragmentCompleteOrder : Fragment() {
                 id: Long
             ) {
                 val type = parent?.getItemAtPosition(position).toString()
-               if(position!=0){
-                   val description: String = location.get(position)
+                if (position != 0) {
+                    val description: String = location.get(position)
 
-               }
+                }
 
 
             }
