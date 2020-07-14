@@ -47,23 +47,24 @@ class MenuFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         var result = true
 
-        val binding = DataBindingUtil.inflate<FragmentMenuBinding>(inflater,
-            R.layout.fragment_menu, container, false)
+        val binding = DataBindingUtil.inflate<FragmentMenuBinding>(
+            inflater,
+            R.layout.fragment_menu, container, false
+        )
         binding.lifecycleOwner = this
-
 
 
 //        ProductModel.login(binding.nombre.text.tostrin(),binding.password.text.tostrin())
 
-        productModel.listaCategorias.observe(viewLifecycleOwner , Observer {
+        productModel.listaCategorias.observe(viewLifecycleOwner, Observer {
             println("que valor tienen esa cosa:" + it)
 
-            if(it.isNotEmpty() && result){
+            if (it.isNotEmpty() && result) {
                 println("entra a formar las categorias")
                 var id = ArrayList<Int>()
                 var images = ArrayList<String>()
                 var Categories = ArrayList<String>()
-                productModel.listaCategorias.value!!.forEach { cat->
+                productModel.listaCategorias.value!!.forEach { cat ->
                     id.add(cat.id)
                     Categories.add(cat.name)
                     images.add(cat.imageUrl)
@@ -73,14 +74,17 @@ class MenuFragment : Fragment() {
                 }
 
                 val view: View = inflater.inflate(R.layout.fragment_menu, container, false)
-                val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+                val toolbar =
+                    (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+                        R.id.toolbar
+                    )
                 toolbar.title = "Menu"
                 (activity as AppCompatActivity).setSupportActionBar(toolbar)
                 (activity as AppCompatActivity).supportActionBar?.show()
                 toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
                 toolbar.setNavigationOnClickListener { activity!!.onBackPressed() }
-                (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility = View.GONE
-
+                (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
+                    View.GONE
 
 
                 val adapter = MenuAdapter(context!!, id, images, Categories)
@@ -92,7 +96,6 @@ class MenuFragment : Fragment() {
                 binding.mainGrid.stretchMode = GridView.STRETCH_COLUMN_WIDTH
                 result = false
             }
-
 
 
         })
