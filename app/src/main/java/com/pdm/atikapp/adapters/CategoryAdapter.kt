@@ -25,10 +25,12 @@ class CategoryAdapter(
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(listItem: View) : RecyclerView.ViewHolder(listItem) {
+        val quantity = listItem.findViewById<TextView>(R.id.quantity)
         val header = listItem.findViewById<TextView>(R.id.header)
         val textView = listItem.findViewById<TextView>(R.id.text)
         val info = listItem.findViewById<TextView>(R.id.price)
         val addToCart = listItem.findViewById<ImageButton>(R.id.add_to_cart)
+        val remove = listItem.findViewById<ImageButton>(R.id.remove)
     }
 
 
@@ -52,10 +54,12 @@ class CategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.quantity.visibility = View.GONE
         holder.header.setText(products[position].name)
         holder.textView.setText(products[position].description)
         val price_float: Double = products[position].price.toDouble() / 100
         holder.info.setText("$ " + price_float.toString())
+        holder.remove.visibility = View.GONE
         
         holder.addToCart.setOnClickListener { view ->
 

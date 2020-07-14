@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import com.pdm.atikapp.R
 import com.pdm.atikapp.entity.CartItem
+import com.pdm.atikapp.entity.ShoppingCart
 
 class OrderAdapter(
     private val context: Context,
@@ -37,6 +39,9 @@ class OrderAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Get view for row item
         val rowView = inflater.inflate(R.layout.list_element, parent, false)
+        val quantity: TextView = rowView.findViewById(R.id.quantity)
+        quantity.visibility = View.VISIBLE
+        quantity.setText("x" + cartItems[position].quantity.toString())
         val header: TextView = rowView.findViewById(R.id.header)
         header.setText(cartItems[position].product.name)
         val textView: TextView = rowView.findViewById(R.id.text)
@@ -44,8 +49,22 @@ class OrderAdapter(
         val info: TextView = rowView.findViewById(R.id.price)
         val price_double = cartItems[position].product.price / 100
         info.setText("$ " + price_double.toString())
-        val btn : ImageButton = rowView.findViewById(R.id.add_to_cart)
+        val btn: ImageButton = rowView.findViewById(R.id.add_to_cart)
         btn.visibility = View.GONE
+
+        val rm: ImageButton = rowView.findViewById(R.id.remove)
+        rm.setOnClickListener { view ->
+            val item = CartItem(cartItems[position].product)
+
+            ShoppingCart.removeItem(item, rm.context)
+
+            Toast.makeText(
+                context,
+                "${cartItems[position].product.name} eliminado de tu orden",
+                Toast.LENGTH_LONG
+            ).show()
+
+        }
 
         return rowView
     }
