@@ -42,4 +42,15 @@
         android:fontFamily="@font/halant_semibold"
         android:textSize="@dimen/size_content_letter" />
 
+    <ImageButton
+        android:id="@+id/add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/base_color_1"
+        android:background="@android:color/white"
+        android:layout_below="@id/price"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24"/>
+
 </RelativeLayout>

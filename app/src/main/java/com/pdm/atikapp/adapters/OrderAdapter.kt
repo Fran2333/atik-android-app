@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.TextView
 import com.pdm.atikapp.R
+import com.pdm.atikapp.entity.CartItem
 
 class OrderAdapter(
     private val context: Context,
-    private val title: ArrayList<String>,
-    private val description: ArrayList<String>,
-    private val price: ArrayList<Double>
+    private val cartItems: List<CartItem>
 ) : BaseAdapter() {
 
     private val inflater: LayoutInflater =
@@ -20,12 +20,12 @@ class OrderAdapter(
 
     //1
     override fun getCount(): Int {
-        return title.size
+        return cartItems.size
     }
 
     //2
     override fun getItem(position: Int): Any {
-        return title[position]
+        return cartItems[position]
     }
 
     //3
@@ -38,11 +38,14 @@ class OrderAdapter(
         // Get view for row item
         val rowView = inflater.inflate(R.layout.list_element, parent, false)
         val header: TextView = rowView.findViewById(R.id.header)
-        header.setText(title[position])
+        header.setText(cartItems[position].product.name)
         val textView: TextView = rowView.findViewById(R.id.text)
-        textView.setText(description[position])
+        textView.setText(cartItems[position].product.description)
         val info: TextView = rowView.findViewById(R.id.price)
-        info.setText(price[position].toString())
+        val price_double = cartItems[position].product.price / 100
+        info.setText("$ " + price_double.toString())
+        val btn : ImageButton = rowView.findViewById(R.id.add_to_cart)
+        btn.visibility = View.GONE
 
         return rowView
     }

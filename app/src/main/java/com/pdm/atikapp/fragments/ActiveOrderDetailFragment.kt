@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.OrderAdapter
+import com.pdm.atikapp.entity.ShoppingCart
 
 /**
  * A simple [Fragment] subclass.
@@ -55,22 +56,24 @@ class ActiveOrderDetailFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 
-        val adapter = OrderAdapter(
-            context!!,
-            titleArray,
-            descArray,
-            precioArray
-        )
+        val adapter = OrderAdapter(context!!, ShoppingCart.getCart())
+        adapter.notifyDataSetChanged()
+
+
+        var subtotal = ShoppingCart.getCart()
+            .fold(0.toDouble()) { acc, cartItem -> acc + cartItem.quantity.times(cartItem.product.price!!.toDouble())  / 100}
+
+
         lv.adapter = adapter
 
         var st = view.findViewById<TextView>(R.id.subtotal)
-        st.setText(subtotal.toString())
+        st.setText("$ " + subtotal.toString())
 
         var sh = view.findViewById<TextView>(R.id.shipping)
-        sh.setText(shipping_price.toString())
+        sh.setText("$ " + shipping_price.toString())
 
         var tp = view.findViewById<TextView>(R.id.total)
-        tp.setText(total.toString())
+        tp.setText("$${subtotal + shipping_price}")
 
         return view
     }
