@@ -9,6 +9,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.pdm.atikapp.R
+import com.pdm.atikapp.adapters.ActiveOrderListAdapter
 import com.pdm.atikapp.adapters.OrderAdapter
 import com.pdm.atikapp.entity.ShoppingCart
 
@@ -56,7 +57,7 @@ class ActiveOrderDetailFragment : Fragment() {
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 
-        val adapter = OrderAdapter(context!!, ShoppingCart.getCart())
+        val adapter = ActiveOrderListAdapter(context!!, ShoppingCart.getCart())
         adapter.notifyDataSetChanged()
 
 
