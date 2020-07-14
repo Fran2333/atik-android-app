@@ -208,5 +208,33 @@ class RepositoryNetwork {
 
         })
     }
+// register
+fun Register(user : User){
+    val request:RegisterRed = AtikAppService2.buildService(RegisterRed::class.java)
+    val call: Call<RegisterResponse> = request.createUser(user)
+    var result: Boolean = false
 
+    println("entro")
+    call.enqueue(object : Callback<RegisterResponse> {
+        override fun onResponse(call: Call<RegisterResponse>, response : Response<RegisterResponse>){
+
+            if(response.isSuccessful){
+
+                Registro.value = true
+                println("Usuario registrado")
+                println(response.body().toString())
+            }else{
+                println(response.body())
+                println(response)
+                println("que pedo")
+                Registro.value = false
+            }
+        }
+        override fun onFailure(call: Call<RegisterResponse>, t: Throwable){
+            println("error")
+            Registro.value = false
+            t.stackTrace
+        }
+    })
+}
 }
