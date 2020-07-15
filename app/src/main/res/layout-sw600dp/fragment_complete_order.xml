@@ -27,31 +27,48 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <RadioButton
-                android:id="@+id/btnAtHome"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:id="@+id/opcionesSer"
+                android:layout_width="421dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/halant"
-                android:text="@string/type_order_btn2"
-                android:textSize="@dimen/size_title_letter3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btnCollect"
-                app:layout_constraintTop_toBottomOf="@+id/textType" />
+                android:layout_marginBottom="24dp"
 
-            <RadioButton
-                android:id="@+id/btnCollect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/halant"
-                android:text="@string/type_order_btn"
-                android:textSize="@dimen/size_title_letter3"
-                app:layout_constraintBottom_toBottomOf="@+id/btnAtHome"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/textType2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textType" />
+                app:layout_constraintTop_toBottomOf="@+id/textType">
+
+
+                <RadioButton
+                    android:id="@+id/btnCollect"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/halant"
+                    android:text="@string/type_order_btn"
+                    android:textSize="@dimen/size_content_letter"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnAtHome"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textType" />
+
+                <RadioButton
+                    android:id="@+id/btnAtHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/halant"
+                    android:text="@string/type_order_btn2"
+                    android:textSize="@dimen/size_content_letter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btnCollect"
+                    app:layout_constraintTop_toBottomOf="@+id/textType" />
+
+
+            </RadioGroup>
+
 
             <TextView
                 android:id="@+id/textType"
@@ -79,36 +96,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnCollect" />
-
-            <Button
-                android:id="@+id/btn_day"
-                android:layout_width="309dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/margin_ft"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="@dimen/margin_ft"
-                android:background="#FFFFFF"
-                android:drawableRight="@drawable/ic_date"
-                android:fontFamily="@font/halant"
-                android:textSize="@dimen/size_title_letter3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textType2" />
+                app:layout_constraintTop_toBottomOf="@+id/opcionesSer" />
 
             <TextView
                 android:id="@+id/textHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/halant"
                 android:text="@string/hour_textview"
                 android:textSize="@dimen/size_title_letter3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_day" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner3" />
 
 
             <EditText
@@ -201,6 +203,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editDirection" />
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textType2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
