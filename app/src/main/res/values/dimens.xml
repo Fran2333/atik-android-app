@@ -91,4 +91,8 @@
 
     <!--Spinner dimens-->
     <dimen name="spinner_width">300dp</dimen>
+    <dimen name="height_location_box">230dp</dimen>
+    <dimen name="tv_height_location">210dp</dimen>
+    <dimen name="lottie_width_location_dimen">75dp</dimen>
+    <dimen name="lottie_height_location_dimen">75dp</dimen>
 </resources>

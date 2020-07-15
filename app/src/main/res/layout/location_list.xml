@@ -15,7 +15,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="215dp"
+            android:layout_height="@dimen/height_location_box"
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/margin_st"
             android:orientation="vertical">
@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/tv_height_location"
                 android:layout_below="@+id/header"
                 android:layout_marginLeft="@dimen/margin_e"
                 android:layout_marginTop="@dimen/margin_e"
@@ -46,8 +46,8 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/locationIcon"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="@dimen/lottie_width_location_dimen"
+                android:layout_height="@dimen/lottie_height_location_dimen"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/margin_st"
                 android:layout_marginRight="@dimen/margin_st"

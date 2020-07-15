@@ -34,6 +34,7 @@ class FragmentCompleteOrder : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         var result = true
 
+
         //binding
         val binding = DataBindingUtil.inflate<FragmentCompleteOrderBinding>(
             inflater,

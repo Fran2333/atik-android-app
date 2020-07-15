@@ -1,5 +1,6 @@
 package com.pdm.atikapp.fragments
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ class Account : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_account, container, false)
 
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
             R.id.toolbar
         )
