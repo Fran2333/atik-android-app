@@ -73,16 +73,16 @@ class FragmentCompleteOrder : Fragment() {
                 val spinner = binding.spinner2
                 val btnRadio2 = binding.btnCollect
 
-                spinner.adapter = ArrayAdapter(
+                spinner?.adapter = ArrayAdapter(
                     context!!,
                     R.layout.support_simple_spinner_dropdown_item,
                     ubicacions
                 ) as SpinnerAdapter
-                spinner.isEnabled = false;
+                spinner?.isEnabled = false;
 
 
 
-                spinner.onItemSelectedListener = object : AdapterView.OnItemClickListener,
+                spinner?.onItemSelectedListener = object : AdapterView.OnItemClickListener,
                     AdapterView.OnItemSelectedListener {
                     override fun onItemClick(
                         parent: AdapterView<*>?,
@@ -125,7 +125,7 @@ class FragmentCompleteOrder : Fragment() {
                     // If the radiobutton that has changed in check state is now checked...
                     if (isChecked) {
                         // Changes the spinner's state to true by selection btnRadio2
-                        spinner.isEnabled = checkedRadioButton == btnRadio2
+                        spinner?.isEnabled = checkedRadioButton == btnRadio2
                     }
                 })
             }
