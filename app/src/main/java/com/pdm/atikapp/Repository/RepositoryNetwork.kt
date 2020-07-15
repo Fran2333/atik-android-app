@@ -1,14 +1,11 @@
 package com.pdm.atikapp.Repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-import com.pdm.atikapp.interfacesRed.ProductsRed
-
 import com.pdm.atikapp.entity.*
-import com.pdm.atikapp.interfacesRed.CategoriasRed
-import com.pdm.atikapp.interfacesRed.LocationsRed
-import com.pdm.atikapp.interfacesRed.PromotionsRed
+import com.pdm.atikapp.interfacesRed.*
 
 import com.pdm.atikapp.network.AtikAppService2
 import retrofit2.Call
@@ -160,10 +157,9 @@ class RepositoryNetwork {
     }
 
 
-
     //products
     private val _products = MutableLiveData<List<Product>>()
-    val products : LiveData<List<Product>>
+    val products: LiveData<List<Product>>
         get() = _products
 
     val _getProducts = MutableLiveData<Boolean>()
@@ -209,4 +205,50 @@ class RepositoryNetwork {
         })
     }
 
+
+    //activeOrder
+    private val _active = MutableLiveData<List<ActiveOrder>>()
+    val active: LiveData<List<ActiveOrder>>
+        get() = _active
+
+    val _ObtuveActivas = MutableLiveData<Boolean>()
+    val ObtuveLasActivas: LiveData<Boolean>
+        get() = _ObtuveActivas
+
+    init {
+        getActivesList()
+    }
+
+    fun getActivesList() {
+        println("entro a traer activas")
+        val request = AtikAppService2.buildService(ActiveOrderRed::class.java)
+        val call = request.getActiveOrders()
+        var result: Boolean = false
+        call.enqueue(object : Callback<ActiveOrderResponse> {
+            override fun onFailure(call: Call<ActiveOrderResponse>, t: Throwable) {
+                _ObtuveActivas.value = false
+                t.stackTrace
+                println(_ObtuveActivas.toString())
+                println(t.stackTrace)
+            }
+
+            override fun onResponse(
+                call: Call<ActiveOrderResponse>,
+                response: Response<ActiveOrderResponse>
+            ) {
+                if (response.isSuccessful) {
+                    _active.value = response.body()?.listaActiva
+                    _ObtuveActivas.value = true
+                    println("trayendo activas")
+                } else {
+                    Log.d("HOLA", response.body().toString())
+                    println("hola ------>>>>>>" + response.body()?.listaActiva)
+                    result = false
+                    _ObtuveActivas.value = false
+                }
+            }
+
+        })
+
+    }
 }

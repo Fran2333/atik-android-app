@@ -7,62 +7,64 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.ActiveOrderAdapter
+import com.pdm.atikapp.databinding.FragmentActiveOrdersBinding
+import com.pdm.atikapp.viewModels.ActiveOrderViewModel
+import kotlinx.android.synthetic.main.activity_grid_element.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class ActiveOrdersFragment : Fragment() {
 
-    var nameArray = arrayListOf<String>(
-        "Orden Activa 1",
-        "Orden Activa 2"
-    )
-
-    var stateArray = arrayListOf<String>(
-        "Aceptada",
-        "En proceso"
-    )
-
-    var productsArray = arrayListOf<String>(
-        "Ver 1 producto",
-        "Ver 8 productos"
-    )
-
-    var dateArray = arrayListOf<String>(
-        "18 Abril 2020",
-        "12 Mayo 2020"
-    )
-
+    private val activeModel: ActiveOrderViewModel by activityViewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_active_orders, container, false)
+        //binding this view
+        super.onCreateView(inflater, container, savedInstanceState)
+        var result: Boolean = true
 
-        val toolbar = (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
-            R.id.toolbar
+        val binding = DataBindingUtil.inflate<FragmentActiveOrdersBinding>(
+            inflater,
+            R.layout.fragment_active_orders,
+            container,
+            false
         )
-        toolbar.title = "Ordenes Activas"
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        binding.lifecycleOwner = this
 
-        var lv = view.findViewById<ListView>(R.id.active_orders_list)
+        println("antes del view model")
+        activeModel.activeList.observe(viewLifecycleOwner, Observer {
+            println("entre al viewmodel")
 
-        val adapter = ActiveOrderAdapter(
-            context!!,
-            nameArray,
-            stateArray,
-            productsArray,
-            dateArray
-        )
-        lv.adapter = adapter
+            if (it.isNotEmpty() && result) {
+                val toolbar =
+                    (activity as AppCompatActivity).findViewById<androidx.appcompat.widget.Toolbar>(
+                        R.id.toolbar
+                    )
+                toolbar.title = "Ordenes Activas"
+                (activity as AppCompatActivity).setSupportActionBar(toolbar)
+                (activity as AppCompatActivity).supportActionBar?.show()
+                (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        return view
+                val adapter =
+                    ActiveOrderAdapter(context!!, ArrayList(activeModel.activeList.value!!))
+                binding.activeOrdersList.adapter = adapter
+
+            }
+        })
+        activeModel.getOrders()
+
+
+
+        return binding.root
     }
 
 }

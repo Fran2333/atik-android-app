@@ -36,9 +36,6 @@ class PrincipalViewFragment : Fragment() {
 
         }
 
-        binding.specialCard.setOnClickListener {
-            it.findNavController().navigate(R.id.action_principalViewFragment_to_specialOrdersFragment)
-        }
 
         binding.promotionCard.setOnClickListener {
             it.findNavController().navigate(R.id.action_principalViewFragment_to_promotionFragment)
