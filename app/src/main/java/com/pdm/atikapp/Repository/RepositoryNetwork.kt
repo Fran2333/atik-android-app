@@ -1,16 +1,15 @@
 package com.pdm.atikapp.Repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-import com.pdm.atikapp.interfacesRed.ProductsRed
-
 import com.pdm.atikapp.entity.*
-import com.pdm.atikapp.interfacesRed.CategoriasRed
-import com.pdm.atikapp.interfacesRed.LocationsRed
-import com.pdm.atikapp.interfacesRed.PromotionsRed
+import com.pdm.atikapp.interfacesRed.*
 
 import com.pdm.atikapp.network.AtikAppService2
+import okhttp3.ResponseBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -160,10 +159,9 @@ class RepositoryNetwork {
     }
 
 
-
     //products
     private val _products = MutableLiveData<List<Product>>()
-    val products : LiveData<List<Product>>
+    val products: LiveData<List<Product>>
         get() = _products
 
     val _getProducts = MutableLiveData<Boolean>()
@@ -208,33 +206,42 @@ class RepositoryNetwork {
 
         })
     }
-// register
-fun Register(user : User){
-    val request:RegisterRed = AtikAppService2.buildService(RegisterRed::class.java)
-    val call: Call<RegisterResponse> = request.createUser(user)
-    var result: Boolean = false
 
-    println("entro")
-    call.enqueue(object : Callback<RegisterResponse> {
-        override fun onResponse(call: Call<RegisterResponse>, response : Response<RegisterResponse>){
+    // register
+    val registro = MutableLiveData<Boolean>()
+    val registrado: LiveData<Boolean>
+        get() = registro
 
-            if(response.isSuccessful){
+    fun Register(user: User) {
+        val request: RegisterRed = AtikAppService2.buildService(RegisterRed::class.java)
+        val call: Call<ResponseBody> = request.createUser(user)
+        var result: Boolean = false
 
-                Registro.value = true
-                println("Usuario registrado")
-                println(response.body().toString())
-            }else{
-                println(response.body())
-                println(response)
-                println("que pedo")
-                Registro.value = false
+        println("entro")
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(
+                call: Call<ResponseBody>,
+                response: Response<ResponseBody>
+            ) {
+
+                if (response.isSuccessful) {
+
+                    registro.value = true
+                    println("Usuario registrado")
+                    println(response.body().toString())
+                } else {
+                    Log.d("API", response.body().toString())
+                    Log.d("API", response.message())
+                    println("que pedo")
+                    registro.value = false
+                }
             }
-        }
-        override fun onFailure(call: Call<RegisterResponse>, t: Throwable){
-            println("error")
-            Registro.value = false
-            t.stackTrace
-        }
-    })
-}
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                println("error")
+                registro.value = false
+                t.stackTrace
+            }
+        })
+    }
 }

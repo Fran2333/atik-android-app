@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.pdm.atikapp.Repository.RepositoryNetwork
 import com.pdm.atikapp.entity.Register
 import com.pdm.atikapp.entity.User
+import org.json.JSONObject
 
 class UserViewModel : ViewModel() {
 

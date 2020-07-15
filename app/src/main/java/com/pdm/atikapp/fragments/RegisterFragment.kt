@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
 import com.pdm.atikapp.R
 import com.pdm.atikapp.databinding.FragmentLoginBinding
 import com.pdm.atikapp.databinding.FragmentRegisterBinding
@@ -24,7 +25,7 @@ import com.pdm.atikapp.viewModels.UserViewModel
  */
 class RegisterFragment : Fragment() {
 
-    private val UserModel : UserViewModel by activityViewModels()
+    private val UserModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,23 +43,30 @@ class RegisterFragment : Fragment() {
         (activity as AppCompatActivity).findViewById<BottomNavigationView>(R.id.bottomNavigationView).visibility =
             View.GONE
 
-binding.buttonRegister.setOnClickListener {
+        binding.buttonRegister.setOnClickListener {
 
-    var user = User(binding.editName.text.toString(),binding.editLastName.text.toString(),"dddddx","1",binding.editMail.text.toString(),binding.editPassword.text.toString())
-    println(user)
-    UserModel.Registrar(user)
+            var user = User(
+                binding.editName.text.toString(),
+                binding.editLastName.text.toString(),
+                "dddddx",
+                "1",
+                binding.editMail.text.toString(),
+                binding.editPassword.text.toString()
+            )
+            println(user)
+            UserModel.Registrar(user)
 
-}
+        }
 
         UserModel.Registrado.observe(viewLifecycleOwner, Observer {
 
-           if(it){
-               println("se va o se queda")
-               this.findNavController().navigate(R.id.menu)
+            if (it) {
+                println("se va o se queda")
+                this.findNavController().navigate(R.id.menu)
 
-           }else{
-               Toast.makeText(context!!, "error", Toast.LENGTH_SHORT).show()
-           }
+            } else {
+                Toast.makeText(context!!, "error", Toast.LENGTH_SHORT).show()
+            }
 
         })
 
