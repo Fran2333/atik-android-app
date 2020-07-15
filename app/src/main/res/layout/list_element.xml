@@ -9,7 +9,8 @@
 
     <TextView
         android:id="@+id/header"
-        android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/quantity"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_e"
         android:layout_marginTop="@dimen/margin_e"
@@ -18,8 +19,21 @@
         android:textSize="@dimen/medium_text" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:gravity="top|start"
+        android:layout_marginLeft="@dimen/margin_e"
+        android:layout_marginTop="@dimen/margin_e"
+        android:layout_marginRight="@dimen/margin_e"
+        android:fontFamily="@font/halant_semibold"
+        android:textSize="@dimen/medium_text"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_toRightOf="@id/quantity"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
         android:layout_marginLeft="@dimen/margin_e"
@@ -34,10 +48,34 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_gravity="top|end"
         android:layout_marginTop="@dimen/margin_e"
         android:fontFamily="@font/halant_semibold"
         android:textSize="@dimen/medium_text" />
+    
+    <ImageButton
+        android:id="@+id/add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/base_color_1"
+        android:background="@android:color/white"
+        android:layout_below="@id/price"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24"/>
+
+    <ImageButton
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/base_color_1"
+        android:background="@android:color/white"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/add_to_cart"
+        app:srcCompat="@drawable/ic_baseline_remove_circle_outline_24"/>
+
+
+
 
 </RelativeLayout>

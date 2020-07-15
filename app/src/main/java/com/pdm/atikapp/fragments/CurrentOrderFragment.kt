@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.pdm.atikapp.R
 import com.pdm.atikapp.adapters.OrderAdapter
+import com.pdm.atikapp.entity.ShoppingCart
 
 /**
  * A simple [Fragment] subclass.
@@ -56,26 +57,28 @@ class CurrentOrderFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val label: TextView = view.findViewById(R.id.current_order_label)
-        label.setText("${titleArray.size.toString()} productos en tu orden");
+        label.setText(ShoppingCart.getShoppingCartSize().toString() + " productos en tu orden");
 
         var lv = view.findViewById<ListView>(R.id.order_list)
 
-        val adapter = OrderAdapter(
-            context!!,
-            titleArray,
-            descArray,
-            precioArray
-        )
+        val adapter = OrderAdapter(context!!, ShoppingCart.getCart())
+        adapter.notifyDataSetChanged()
+
+
+        var subtotal = ShoppingCart.getCart()
+            .fold(0.toDouble()) { acc, cartItem -> acc + cartItem.quantity.times(cartItem.product.price!!.toDouble()) / 100 }
+
+
         lv.adapter = adapter
 
         var st = view.findViewById<TextView>(R.id.subtotal)
-        st.setText(subtotal.toString())
+        st.setText("$ " + subtotal.toString())
 
         var sh = view.findViewById<TextView>(R.id.shipping)
-        sh.setText(shipping_price.toString())
+        sh.setText("$ " + shipping_price.toString())
 
         var tp = view.findViewById<TextView>(R.id.total)
-        tp.setText(total.toString())
+        tp.setText("$${subtotal + shipping_price}")
 
         val completeBtn = view.findViewById<Button>(R.id.complete_btn)
 

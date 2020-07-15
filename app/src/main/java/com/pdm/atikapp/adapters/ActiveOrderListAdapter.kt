@@ -12,9 +12,8 @@ import com.pdm.atikapp.R
 import com.pdm.atikapp.entity.CartItem
 import com.pdm.atikapp.entity.ShoppingCart
 
-class OrderAdapter(
-    private val context: Context,
-    private val cartItems: List<CartItem>
+class ActiveOrderListAdapter(private val context: Context,
+                             private val cartItems: List<CartItem>
 ) : BaseAdapter() {
 
     private val inflater: LayoutInflater =
@@ -53,22 +52,9 @@ class OrderAdapter(
         btn.visibility = View.GONE
 
         val rm: ImageButton = rowView.findViewById(R.id.remove)
-        rm.setOnClickListener { view ->
-            val item = CartItem(cartItems[position].product)
-
-            ShoppingCart.removeItem(item, rm.context)
-
-            Toast.makeText(
-                context,
-                "${cartItems[position].product.name} eliminado de tu orden",
-                Toast.LENGTH_LONG
-            ).show()
-
-        }
+        rm.visibility = View.GONE
 
         return rowView
     }
 
 }
-
-

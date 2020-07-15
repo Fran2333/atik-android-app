@@ -88,6 +88,7 @@ dependencies {
   
 
     implementation "androidx.multidex:multidex:$multidex_version"
+    implementation 'io.paperdb:paperdb:2.6'
 
 
     implementation "com.squareup.retrofit2:converter-gson:$version_retrofit"
